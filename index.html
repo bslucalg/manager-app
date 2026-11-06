@@ -290,6 +290,9 @@ p { color: var(--muted); line-height: 1.65; }
 }
 
 .hero-cover-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
   max-width: 1080px;
   margin: 0 auto 40px;
   border-radius: 20px;
@@ -300,6 +303,8 @@ p { color: var(--muted); line-height: 1.65; }
   position: relative;
 }
 .hero-cover-img {
+  opacity: 1 !important;
+  visibility: visible !important;
   width: 100%;
   height: auto;
   display: block;
@@ -307,6 +312,8 @@ p { color: var(--muted); line-height: 1.65; }
   transition: transform 0.4s ease;
 }
 .hero-cover-wrapper:hover .hero-cover-img {
+  opacity: 1 !important;
+  visibility: visible !important;
   transform: scale(1.012);
 }
 
@@ -943,7 +950,10 @@ p { color: var(--muted); line-height: 1.65; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-visual { order: -1; }
   .hero { padding: 90px 0 60px; }
-  .hero-cover-wrapper { margin-bottom: 28px; border-radius: 14px; }
+  .hero-cover-wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important; margin-bottom: 28px; border-radius: 14px; }
   .hero-ctas { flex-direction: column; align-items: flex-start; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .features-grid { grid-template-columns: 1fr; }
@@ -1010,8 +1020,8 @@ p { color: var(--muted); line-height: 1.65; }
   <div class="container">
 
     <!-- Hero Cover Banner -->
-    <div class="hero-cover-wrapper fade-in">
-      <img src="cover.jpg?v=2" alt="Carriera Allenatore - Career Manager Hub" class="hero-cover-img" />
+    <div class="hero-cover-wrapper">
+      <img src="cover.jpg?v=3" alt="Carriera Allenatore - Career Manager Hub" class="hero-cover-img" />
     </div>
 
     <div class="hero-inner">
