@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manager App – Gestisci la tua squadra</title>
+  <meta name="description" content="Manager è l'app Android per gestire la tua squadra di calcio: rosa, vivaio, mercato, finanze e molto altro. Disponibile ora a €15." />
+  <meta property="og:title" content="Manager App – Gestisci la tua squadra" />
+  <meta property="og:description" content="Rosa, Vivaio, Mercato, Finanze, Lavagna Tattica – tutto in un'unica app Android." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAV
+══════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">⚽ Manager</a>
+    <div class="nav-links">
+      <a href="#features" data-it="Funzionalità" data-en="Features">Funzionalità</a>
+      <a href="#screenshots" data-it="Schermate" data-en="Screenshots">Schermate</a>
+      <a href="#reviews" data-it="Recensioni" data-en="Reviews">Recensioni</a>
+      <a href="#pricing" data-it="Prezzo" data-en="Pricing">Prezzo</a>
+      <a href="#faq" data-it="FAQ" data-en="FAQ">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle" onclick="toggleLang()" aria-label="Cambia lingua">
+        <span id="lang-label">🇬🇧 EN</span>
+      </button>
+      <a href="#pricing" class="btn btn-primary btn-sm" data-it="Acquista ora" data-en="Buy now">Acquista ora</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#features" onclick="toggleMenu()" data-it="Funzionalità" data-en="Features">Funzionalità</a>
+    <a href="#screenshots" onclick="toggleMenu()" data-it="Schermate" data-en="Screenshots">Schermate</a>
+    <a href="#reviews" onclick="toggleMenu()" data-it="Recensioni" data-en="Reviews">Recensioni</a>
+    <a href="#pricing" onclick="toggleMenu()" data-it="Prezzo" data-en="Pricing">Prezzo</a>
+    <a href="#faq" onclick="toggleMenu()" data-it="FAQ" data-en="FAQ">FAQ</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge" data-it="🏆 App per Football Manager" data-en="🏆 Football Manager App">🏆 App per Football Manager</div>
+      <h1 data-it="Gestisci la tua<br/>squadra con precisione" data-en="Manage your team<br/>with precision">Gestisci la tua<br/>squadra con precisione</h1>
+      <p class="hero-sub" data-it="Manager è l'app Android che ti dà il controllo completo: rosa, vivaio, mercato, finanze, lavagna tattica, imprevisti e molto altro — tutto in un'unica soluzione professionale." data-en="Manager is the Android app that gives you complete control: squad, academy, transfer market, finances, tactics board, random events and much more — all in one professional solution.">Manager è l'app Android che ti dà il controllo completo: rosa, vivaio, mercato, finanze, lavagna tattica, imprevisti e molto altro — tutto in un'unica soluzione professionale.</p>
+      <div class="hero-ctas">
+        <!-- SOSTITUISCI CON IL TUO STRIPE PAYMENT LINK -->
+        <a href="https://buy.stripe.com/INSERISCI_QUI_IL_TUO_LINK" class="btn btn-primary btn-lg" id="buy-btn" data-it="🛒 Acquista ora – €15" data-en="🛒 Buy now – €15">🛒 Acquista ora – €15</a>
+        <a href="#features" class="btn btn-outline btn-lg" data-it="Scopri le funzioni" data-en="Discover features">Scopri le funzioni</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge-item" data-it="✅ Pagamento sicuro con Stripe" data-en="✅ Secure payment via Stripe">✅ Pagamento sicuro con Stripe</span>
+        <span class="badge-item" data-it="📱 Solo Android" data-en="📱 Android only">📱 Solo Android</span>
+        <span class="badge-item" data-it="📄 Manuale incluso IT & EN" data-en="📄 Manual included IT & EN">📄 Manuale incluso IT & EN</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="mock-screen">
+            <div class="mock-header">
+              <div class="mock-title">⚽ MANAGER</div>
+              <div class="mock-season">Stag: 1</div>
+            </div>
+            <div class="mock-nav">
+              <span class="mock-nav-item active">Rosa</span>
+              <span class="mock-nav-item">Mercato</span>
+              <span class="mock-nav-item">Finanze</span>
+              <span class="mock-nav-item">Vivaio</span>
+            </div>
+            <div class="mock-content">
+              <div class="mock-player">
+                <div class="mock-pos gk">POR</div>
+                <div class="mock-name">Marco Rossi</div>
+                <div class="mock-rating">87</div>
+              </div>
+              <div class="mock-player">
+                <div class="mock-pos def">DIF</div>
+                <div class="mock-name">Luca Bianchi</div>
+                <div class="mock-rating">79</div>
+              </div>
+              <div class="mock-player">
+                <div class="mock-pos mid">CEN</div>
+                <div class="mock-name">Paolo Verdi</div>
+                <div class="mock-rating">82</div>
+              </div>
+              <div class="mock-player">
+                <div class="mock-pos att">ATT</div>
+                <div class="mock-name">Carlo Neri</div>
+                <div class="mock-rating">91</div>
+              </div>
+              <div class="mock-stat">
+                <span>Budget mercato</span>
+                <span class="mock-val green">€ 2.400.000</span>
+              </div>
+              <div class="mock-stat">
+                <span>Giocatori comunitari</span>
+                <span class="mock-val">14 / 25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     STATS STRIP
+══════════════════════════════════════ -->
+<section class="stats-strip">
+  <div class="container stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">16+</div>
+      <div class="stat-label" data-it="Sezioni dell'app" data-en="App sections">Sezioni dell'app</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label" data-it="Lingue (IT & EN)" data-en="Languages (IT & EN)">Lingue (IT & EN)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">€15</div>
+      <div class="stat-label" data-it="Una tantum, nessun abbonamento" data-en="One-time, no subscription">Una tantum, nessun abbonamento</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label" data-it="Stagioni gestibili" data-en="Seasons manageable">Stagioni gestibili</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FEATURES
+══════════════════════════════════════ -->
+<section class="features section-pad" id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-it="Tutto quello che ti serve per gestire la tua squadra" data-en="Everything you need to manage your team">Tutto quello che ti serve per gestire la tua squadra</h2>
+      <p data-it="Un'app completa, pensata per il football manager esigente." data-en="A complete app, designed for the demanding football manager.">Un'app completa, pensata per il football manager esigente.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3 data-it="Rosa & Prima Squadra" data-en="Squad & First Team">Rosa & Prima Squadra</h3>
+        <p data-it="Registra tutti i giocatori con ruolo, nazionalità, ingaggio, valore, stato e molto altro. Monitoraggio automatico dei limiti comunitari e degli avvisi sulla rosa." data-en="Record all players with role, nationality, salary, value, status, and more. Automatic monitoring of EU player limits and squad alerts.">Registra tutti i giocatori con ruolo, nazionalità, ingaggio, valore, stato e molto altro. Monitoraggio automatico dei limiti comunitari e degli avvisi sulla rosa.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3 data-it="Vivaio / Academy" data-en="Youth Academy">Vivaio / Academy</h3>
+        <p data-it="Gestione completa del settore giovanile. Traccia i talenti, promuovili in prima squadra o cedili al momento giusto." data-en="Complete management of the youth sector. Track talents, promote them to the first team or sell them at the right moment.">Gestione completa del settore giovanile. Traccia i talenti, promuovili in prima squadra o cedili al momento giusto.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3 data-it="Mercato: Acquisti, Cessioni & Prestiti" data-en="Market: Signings, Sales & Loans">Mercato: Acquisti, Cessioni & Prestiti</h3>
+        <p data-it="Traccia ogni operazione di mercato. Controllo automatico dei limiti di rosa e degli obiettivi societari durante le sessioni di mercato." data-en="Track every transfer operation. Automatic checks on squad limits and club objectives during transfer windows.">Traccia ogni operazione di mercato. Controllo automatico dei limiti di rosa e degli obiettivi societari durante le sessioni di mercato.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3 data-it="Finanze & Bilancio" data-en="Finances & Balance">Finanze & Bilancio</h3>
+        <p data-it="Budget, costi ingaggi, ricavi, indicatori di controllo FIGC, plusvalenze e molto altro. Tutti i numeri che contano, in un'unica schermata." data-en="Budget, wage costs, revenues, FIGC control indicators, capital gains and much more. All the numbers that matter, on one screen.">Budget, costi ingaggi, ricavi, indicatori di controllo FIGC, plusvalenze e molto altro. Tutti i numeri che contano, in un'unica schermata.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3 data-it="Lavagna Tattica" data-en="Tactics Board">Lavagna Tattica</h3>
+        <p data-it="Visualizza e pianifica la tua formazione tattica direttamente sull'app. Imposta il modulo e posiziona i giocatori sul campo." data-en="Visualize and plan your tactical formation directly on the app. Set the formation and position players on the pitch.">Visualizza e pianifica la tua formazione tattica direttamente sull'app. Imposta il modulo e posiziona i giocatori sul campo.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎲</div>
+        <h3 data-it="Imprevisti & Eventi" data-en="Random Events">Imprevisti & Eventi</h3>
+        <p data-it="Sistema di estrazione imprevisti per rendere la gestione più dinamica e realistica. Gestisci situazioni inaspettate come un vero manager." data-en="Random event draw system to make management more dynamic and realistic. Handle unexpected situations like a real manager.">Sistema di estrazione imprevisti per rendere la gestione più dinamica e realistica. Gestisci situazioni inaspettate come un vero manager.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3 data-it="Obiettivi Stagionali & Scouting" data-en="Season Objectives & Scouting">Obiettivi Stagionali & Scouting</h3>
+        <p data-it="Imposta gli obiettivi societari stagione per stagione. Tabella obiettivi e istruzioni per lo scouting dell'Academy." data-en="Set club objectives season by season. Objectives table and academy scouting instructions.">Imposta gli obiettivi societari stagione per stagione. Tabella obiettivi e istruzioni per lo scouting dell'Academy.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🗄️</div>
+        <h3 data-it="Archivi Storici" data-en="Historical Archives">Archivi Storici</h3>
+        <p data-it="Archivia ogni stagione e conserva lo storico del club. Consulta i dati passati per prendere decisioni più informate nel futuro." data-en="Archive every season and preserve the club's history. Consult past data to make more informed decisions in the future.">Archivia ogni stagione e conserva lo storico del club. Consulta i dati passati per prendere decisioni più informate nel futuro.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3 data-it="Bilingue IT & EN" data-en="Bilingual IT & EN">Bilingue IT & EN</h3>
+        <p data-it="L'app è disponibile in italiano e inglese. Cambia la lingua dall'app in qualsiasi momento senza perdere i dati." data-en="The app is available in Italian and English. Switch language from within the app at any time without losing data.">L'app è disponibile in italiano e inglese. Cambia la lingua dall'app in qualsiasi momento senza perdere i dati.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SCREENSHOTS
+══════════════════════════════════════ -->
+<section class="screenshots section-pad dark-bg" id="screenshots">
+  <div class="container">
+    <div class="section-header light">
+      <h2 data-it="Vedi l'app in azione" data-en="See the app in action">Vedi l'app in azione</h2>
+      <p data-it="Un'interfaccia pulita e professionale, pensata per essere usata sul campo." data-en="A clean and professional interface, designed to be used on the pitch.">Un'interfaccia pulita e professionale, pensata per essere usata sul campo.</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-card">
+        <div class="screenshot-mock">
+          <div class="ss-header">👥 Prima Squadra</div>
+          <div class="ss-row"><span class="ss-pos gk">POR</span><span>M. Rossi</span><span class="ss-val">87 ⭐</span></div>
+          <div class="ss-row"><span class="ss-pos def">DIF</span><span>L. Bianchi</span><span class="ss-val">79</span></div>
+          <div class="ss-row"><span class="ss-pos mid">CEN</span><span>P. Verdi</span><span class="ss-val">82</span></div>
+          <div class="ss-row highlight"><span class="ss-pos att">ATT</span><span>C. Neri</span><span class="ss-val green">91 🔥</span></div>
+        </div>
+        <p data-it="Rosa – Prima Squadra" data-en="Squad – First Team">Rosa – Prima Squadra</p>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-mock">
+          <div class="ss-header">💰 Finanze & Bilancio</div>
+          <div class="ss-stat"><span data-it="Budget Mercato" data-en="Transfer Budget">Budget Mercato</span><span class="green">€ 2.400.000</span></div>
+          <div class="ss-stat"><span data-it="Costo Ingaggi/Anno" data-en="Wage Cost/Year">Costo Ingaggi/Anno</span><span class="red">€ 1.850.000</span></div>
+          <div class="ss-stat"><span data-it="Ricavi Stagione" data-en="Season Revenue">Ricavi Stagione</span><span class="green">€ 3.200.000</span></div>
+          <div class="ss-divider"></div>
+          <div class="ss-stat bold"><span data-it="Indicatore FIGC" data-en="FIGC Indicator">Indicatore FIGC</span><span class="green">✅ OK</span></div>
+        </div>
+        <p data-it="Finanze & Bilancio" data-en="Finances & Balance">Finanze & Bilancio</p>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-mock">
+          <div class="ss-header">🔄 Mercato</div>
+          <div class="ss-market-item">
+            <span class="ss-badge buy" data-it="ACQUISTO" data-en="SIGNED">ACQUISTO</span>
+            <span>M. Ferrari – €450K</span>
+          </div>
+          <div class="ss-market-item">
+            <span class="ss-badge sell" data-it="CESSIONE" data-en="SOLD">CESSIONE</span>
+            <span>A. Greco – €320K</span>
+          </div>
+          <div class="ss-market-item">
+            <span class="ss-badge loan" data-it="PRESTITO" data-en="LOAN">PRESTITO</span>
+            <span>G. Russo – Serie B</span>
+          </div>
+          <div class="ss-divider"></div>
+          <div class="ss-stat"><span data-it="Saldo netto" data-en="Net balance">Saldo netto</span><span class="red">-€130K</span></div>
+        </div>
+        <p data-it="Gestione Mercato" data-en="Transfer Market">Gestione Mercato</p>
+      </div>
+      <div class="screenshot-card">
+        <div class="screenshot-mock">
+          <div class="ss-header">🗺️ Lavagna Tattica</div>
+          <div class="ss-tactics">
+            <div class="ss-formation">4-3-3</div>
+            <div class="ss-pitch">
+              <div class="ss-line"><span class="ss-dot">ST</span></div>
+              <div class="ss-line"><span class="ss-dot">LW</span><span class="ss-dot">RW</span></div>
+              <div class="ss-line"><span class="ss-dot">CM</span><span class="ss-dot">CM</span><span class="ss-dot">CM</span></div>
+              <div class="ss-line"><span class="ss-dot">LB</span><span class="ss-dot">CB</span><span class="ss-dot">CB</span><span class="ss-dot">RB</span></div>
+              <div class="ss-line"><span class="ss-dot gk-dot">GK</span></div>
+            </div>
+          </div>
+        </div>
+        <p data-it="Lavagna Tattica" data-en="Tactics Board">Lavagna Tattica</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     REVIEWS
+══════════════════════════════════════ -->
+<section class="reviews section-pad" id="reviews">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-it="Cosa dicono i manager" data-en="What managers say">Cosa dicono i manager</h2>
+      <p data-it="Feedback da chi usa Manager ogni giorno." data-en="Feedback from those who use Manager every day.">Feedback da chi usa Manager ogni giorno.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text" data-it="&ldquo;Finalmente un'app seria per gestire la squadra. La sezione finanze è impressionante, con gli indicatori FIGC integrati. Vale ogni centesimo.&rdquo;" data-en="&ldquo;Finally a serious app to manage the team. The finance section is impressive, with integrated FIGC indicators. Worth every penny.&rdquo;">&ldquo;Finalmente un'app seria per gestire la squadra. La sezione finanze è impressionante, con gli indicatori FIGC integrati. Vale ogni centesimo.&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div>
+            <div class="review-name">Marco R.</div>
+            <div class="review-role" data-it="Manager dilettanti" data-en="Amateur Manager">Manager dilettanti</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text" data-it="&ldquo;Ho provato tante app ma questa è la più completa. Il vivaio, il mercato e la lavagna tattica tutto in un'unica app. Fantastico!&rdquo;" data-en="&ldquo;I tried many apps but this is the most complete one. The academy, transfer market and tactics board all in one app. Fantastic!&rdquo;">&ldquo;Ho provato tante app ma questa è la più completa. Il vivaio, il mercato e la lavagna tattica tutto in un'unica app. Fantastico!&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">LS</div>
+          <div>
+            <div class="review-name">Luca S.</div>
+            <div class="review-role" data-it="Allenatore Serie D" data-en="Series D Coach">Allenatore Serie D</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text" data-it="&ldquo;Gli imprevisti rendono tutto più realistico. E il manuale incluso spiega ogni dettaglio. Pagamento sicuro con Stripe, tutto perfetto.&rdquo;" data-en="&ldquo;The random events make everything more realistic. And the included manual explains every detail. Secure payment with Stripe, everything perfect.&rdquo;">&ldquo;Gli imprevisti rendono tutto più realistico. E il manuale incluso spiega ogni dettaglio. Pagamento sicuro con Stripe, tutto perfetto.&rdquo;</p>
+        <div class="review-author">
+          <div class="review-avatar">GP</div>
+          <div>
+            <div class="review-name">Giovanni P.</div>
+            <div class="review-role" data-it="Direttore Sportivo amatoriale" data-en="Amateur Sporting Director">Direttore Sportivo amatoriale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRICING
+══════════════════════════════════════ -->
+<section class="pricing section-pad dark-bg" id="pricing">
+  <div class="container">
+    <div class="section-header light">
+      <h2 data-it="Un prezzo unico, per sempre" data-en="One price, forever">Un prezzo unico, per sempre</h2>
+      <p data-it="Nessun abbonamento, nessuna sorpresa. Paghi una volta sola e l'app è tua." data-en="No subscription, no surprises. Pay once and the app is yours.">Nessun abbonamento, nessuna sorpresa. Paghi una volta sola e l'app è tua.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-badge" data-it="🏆 Accesso Completo" data-en="🏆 Full Access">🏆 Accesso Completo</div>
+      <div class="pricing-price">€15</div>
+      <div class="pricing-period" data-it="pagamento unico" data-en="one-time payment">pagamento unico</div>
+      <ul class="pricing-list">
+        <li data-it="✅ App Manager per Android (APK)" data-en="✅ Manager App for Android (APK)">✅ App Manager per Android (APK)</li>
+        <li data-it="✅ Manuale utente in Italiano (PDF)" data-en="✅ User manual in Italian (PDF)">✅ Manuale utente in Italiano (PDF)</li>
+        <li data-it="✅ User Manual in English (PDF)" data-en="✅ User Manual in English (PDF)">✅ User Manual in English (PDF)</li>
+        <li data-it="✅ Tutte le funzioni incluse" data-en="✅ All features included">✅ Tutte le funzioni incluse</li>
+        <li data-it="✅ Supporto bilingue IT & EN nell'app" data-en="✅ Bilingual IT & EN support in app">✅ Supporto bilingue IT & EN nell'app</li>
+        <li data-it="✅ Aggiornamenti futuri" data-en="✅ Future updates">✅ Aggiornamenti futuri</li>
+        <li data-it="✅ Pagamento sicuro con Stripe" data-en="✅ Secure payment via Stripe">✅ Pagamento sicuro con Stripe</li>
+      </ul>
+      <!-- SOSTITUISCI CON IL TUO STRIPE PAYMENT LINK -->
+      <a href="https://buy.stripe.com/INSERISCI_QUI_IL_TUO_LINK" class="btn btn-primary btn-xl" data-it="🛒 Acquista ora – €15" data-en="🛒 Buy now – €15">🛒 Acquista ora – €15</a>
+      <p class="pricing-note" data-it="🔒 Pagamento gestito da Stripe. Dopo il pagamento riceverai i link per scaricare l'APK e i manuali." data-en="🔒 Payment handled by Stripe. After payment you'll receive the links to download the APK and manuals.">🔒 Pagamento gestito da Stripe. Dopo il pagamento riceverai i link per scaricare l'APK e i manuali.</p>
+    </div>
+    <div class="pricing-reassurance">
+      <div class="reassurance-item">
+        <span class="r-icon">🔒</span>
+        <span data-it="Pagamento 100% sicuro" data-en="100% secure payment">Pagamento 100% sicuro</span>
+      </div>
+      <div class="reassurance-item">
+        <span class="r-icon">📱</span>
+        <span data-it="Android 8.0+ richiesto" data-en="Android 8.0+ required">Android 8.0+ richiesto</span>
+      </div>
+      <div class="reassurance-item">
+        <span class="r-icon">⚡</span>
+        <span data-it="Download immediato" data-en="Immediate download">Download immediato</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════ -->
+<section class="howto section-pad" id="howto">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-it="Come funziona" data-en="How it works">Come funziona</h2>
+      <p data-it="Semplice, rapido e sicuro." data-en="Simple, fast and secure.">Semplice, rapido e sicuro.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4 data-it="Clicca su Acquista ora" data-en="Click Buy now">Clicca su Acquista ora</h4>
+        <p data-it="Verrai reindirizzato alla pagina di pagamento sicura di Stripe." data-en="You'll be redirected to Stripe's secure payment page.">Verrai reindirizzato alla pagina di pagamento sicura di Stripe.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4 data-it="Completa il pagamento" data-en="Complete the payment">Completa il pagamento</h4>
+        <p data-it="Paga €15 con carta di credito/debito in modo sicuro tramite Stripe." data-en="Pay €15 with credit/debit card securely via Stripe.">Paga €15 con carta di credito/debito in modo sicuro tramite Stripe.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4 data-it="Scarica tutto" data-en="Download everything">Scarica tutto</h4>
+        <p data-it="Accedi alla pagina di conferma e scarica l'APK + i manuali nella tua lingua." data-en="Access the confirmation page and download the APK + manuals in your language.">Accedi alla pagina di conferma e scarica l'APK + i manuali nella tua lingua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq section-pad" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-it="Domande frequenti" data-en="Frequently Asked Questions">Domande frequenti</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="L'app funziona su iPhone?" data-en="Does the app work on iPhone?">L'app funziona su iPhone?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="No, Manager è un'app Android (APK). Richiede Android 8.0 o superiore. Non è disponibile per iOS." data-en="No, Manager is an Android app (APK). It requires Android 8.0 or higher. It is not available for iOS.">No, Manager è un'app Android (APK). Richiede Android 8.0 o superiore. Non è disponibile per iOS.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Come installo un APK su Android?" data-en="How do I install an APK on Android?">Come installo un APK su Android?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="Dopo aver scaricato il file APK, vai su Impostazioni → Sicurezza → abilita 'Installa app da fonti sconosciute' (o 'Installa app sconosciute'). Poi apri il file APK e segui le istruzioni. Il manuale incluso descrive il processo in dettaglio." data-en="After downloading the APK file, go to Settings → Security → enable 'Install from unknown sources' (or 'Install unknown apps'). Then open the APK file and follow the instructions. The included manual describes the process in detail.">Dopo aver scaricato il file APK, vai su Impostazioni → Sicurezza → abilita 'Installa app da fonti sconosciute'. Poi apri il file APK e segui le istruzioni. Il manuale incluso descrive il processo in dettaglio.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Il pagamento è sicuro?" data-en="Is the payment secure?">Il pagamento è sicuro?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="Assolutamente sì. I pagamenti sono gestiti da Stripe, uno dei sistemi di pagamento più sicuri al mondo. Non memorizziamo nessun dato della tua carta." data-en="Absolutely yes. Payments are handled by Stripe, one of the world's most secure payment systems. We do not store any of your card data.">Assolutamente sì. I pagamenti sono gestiti da Stripe, uno dei sistemi di pagamento più sicuri al mondo. Non memorizziamo nessun dato della tua carta.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Ci sono abbonamenti o costi nascosti?" data-en="Are there subscriptions or hidden costs?">Ci sono abbonamenti o costi nascosti?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="No. Manager costa €15 una volta sola. Nessun abbonamento mensile, nessuna in-app purchase, nessun costo aggiuntivo." data-en="No. Manager costs €15 one time only. No monthly subscription, no in-app purchases, no additional costs.">No. Manager costa €15 una volta sola. Nessun abbonamento mensile, nessuna in-app purchase, nessun costo aggiuntivo.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Cosa ricevo dopo il pagamento?" data-en="What do I receive after payment?">Cosa ricevo dopo il pagamento?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="Dopo il pagamento verrai reindirizzato a una pagina di conferma da cui potrai scaricare: il file APK di Manager, il manuale utente in Italiano (PDF) e il manuale in inglese (PDF)." data-en="After payment you'll be redirected to a confirmation page from which you can download: the Manager APK file, the user manual in Italian (PDF) and the manual in English (PDF).">Dopo il pagamento verrai reindirizzato a una pagina di conferma da cui potrai scaricare: il file APK di Manager, il manuale in Italiano (PDF) e il manuale in Inglese (PDF).</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Posso cambiare la lingua nell'app?" data-en="Can I change the language in the app?">Posso cambiare la lingua nell'app?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a" data-it="Sì! Manager è disponibile in Italiano e Inglese. Puoi cambiare la lingua direttamente dall'app in qualsiasi momento, senza perdere i dati inseriti." data-en="Yes! Manager is available in Italian and English. You can change the language directly from the app at any time, without losing any data.">Sì! Manager è disponibile in Italiano e Inglese. Puoi cambiare la lingua direttamente dall'app in qualsiasi momento, senza perdere i dati inseriti.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">⚽ Manager</div>
+      <p data-it="L'app Android per la gestione completa della tua squadra di calcio." data-en="The Android app for complete football team management.">L'app Android per la gestione completa della tua squadra di calcio.</p>
+    </div>
+    <div class="footer-links">
+      <h5 data-it="Link utili" data-en="Useful links">Link utili</h5>
+      <!-- AGGIORNA I LINK DOPO AVER CARICATO I FILE SU GITHUB RELEASES -->
+      <a href="#pricing" data-it="Acquista ora" data-en="Buy now">Acquista ora</a>
+      <a href="#faq" data-it="FAQ" data-en="FAQ">FAQ</a>
+      <a href="#features" data-it="Funzionalità" data-en="Features">Funzionalità</a>
+    </div>
+    <div class="footer-links">
+      <h5 data-it="Download manuali" data-en="Download manuals">Download manuali</h5>
+      <!-- SOSTITUISCI CON I VERI LINK GITHUB RELEASES -->
+      <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download data-it="📄 Manuale ITA (PDF) – dopo acquisto" data-en="📄 Manual ITA (PDF) – after purchase">📄 Manuale ITA (PDF)</a>
+      <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download data-it="📄 Manual EN (PDF) – dopo acquisto" data-en="📄 Manual EN (PDF) – after purchase">📄 Manual EN (PDF)</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-it="© 2026 Manager App. Tutti i diritti riservati. Pagamenti gestiti da Stripe." data-en="© 2026 Manager App. All rights reserved. Payments handled by Stripe.">© 2026 Manager App. Tutti i diritti riservati. Pagamenti gestiti da Stripe.</p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
