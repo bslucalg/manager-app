@@ -3,932 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grazie! – Download Manager App</title>
+  <title>Grazie! – Download Career Manager Hub</title>
   <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
 /* ══════════════════════════════════════════
-   MANAGER APP – WEBSITE STYLES
+   SUCCESS PAGE STYLES
    ══════════════════════════════════════════ */
-
 :root {
-  --navy: #0f1f3d;
-  --blue: #1769aa;
-  --blue-light: #2196f3;
-  --gold: #d4a017;
-  --green: #1a7a3c;
-  --red: #c0392b;
-  --light: #eef5fb;
-  --bg: #ffffff;
-  --bg-dark: #0f1f3d;
-  --bg-dark2: #162744;
-  --text: #1a2535;
-  --muted: #5a6a80;
-  --border: #d7e1ea;
-  --card-bg: #f8fbff;
-  --radius: 14px;
-  --radius-sm: 8px;
-  --shadow: 0 4px 24px rgba(15,31,61,0.10);
-  --shadow-lg: 0 12px 48px rgba(15,31,61,0.18);
-  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --navy: #0b172a;
+  --blue: #1e6bb8;
+  --blue-light: #2b8cf5;
+  --gold: #f5a623;
+  --green: #10b981;
+  --light: #f0f6fc;
+  --text: #132238;
+  --muted: #576b85;
+  --border: #d4e0ee;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-  font-size: 16px;
-  overflow-x: hidden;
-}
-
-/* ── TYPOGRAPHY ── */
-h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.1; }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; line-height: 1.2; }
-h3 { font-size: 1.15rem; font-weight: 700; }
-h4 { font-size: 1.05rem; font-weight: 600; }
-p { color: var(--muted); line-height: 1.65; }
-
-/* ── CONTAINER ── */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section-pad { padding: 80px 0; }
-
-/* ── BUTTONS ── */
-.btn {
-  display: inline-flex;
+  background: linear-gradient(135deg, #0b172a 0%, #152544 100%);
+  min-height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border: none;
-  border-radius: 50px;
-  font-family: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: var(--transition);
-  white-space: nowrap;
+  padding: 36px 16px;
 }
-.btn-primary {
-  background: linear-gradient(135deg, var(--blue-light), var(--blue));
-  color: white;
-  box-shadow: 0 4px 16px rgba(23,105,170,0.35);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(23,105,170,0.45);
-  filter: brightness(1.08);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--blue);
-  border: 2px solid var(--blue);
-}
-.btn-outline:hover {
-  background: var(--blue);
-  color: white;
-  transform: translateY(-2px);
-}
-.btn-sm  { padding: 9px 20px; font-size: 0.88rem; }
-.btn-lg  { padding: 15px 32px; font-size: 1.05rem; }
-.btn-xl  { padding: 18px 44px; font-size: 1.15rem; width: 100%; max-width: 380px; }
-
-/* ── SECTION HEADER ── */
-.section-header {
-  text-align: center;
-  margin-bottom: 52px;
-}
-.section-header h2 { color: var(--navy); margin-bottom: 12px; }
-.section-header p { max-width: 580px; margin: 0 auto; font-size: 1.08rem; }
-.section-header.light h2 { color: white; }
-.section-header.light p { color: rgba(255,255,255,0.7); }
-
-/* ═══════════════════════════════════════
-   NAVBAR
-═══════════════════════════════════════ */
-.navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  transition: var(--transition);
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.nav-logo {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--navy);
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.nav-links {
-  display: flex;
-  gap: 24px;
-  flex: 1;
-}
-.nav-links a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 500;
-  font-size: 0.93rem;
-  transition: var(--transition);
-}
-.nav-links a:hover { color: var(--blue); }
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-.lang-toggle {
-  background: var(--light);
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 7px 14px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--navy);
-  transition: var(--transition);
-}
-.lang-toggle:hover { background: var(--blue); color: white; border-color: var(--blue); }
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--navy);
-  margin-left: auto;
-}
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  padding: 16px 24px;
-  border-top: 1px solid var(--border);
-  gap: 12px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  text-decoration: none;
-  color: var(--navy);
-  font-weight: 500;
-  padding: 8px 0;
-}
-
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
-.hero {
-  padding: 140px 0 90px;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 50%, #f5f0ff 100%);
-}
-.hero-bg-shapes { position: absolute; inset: 0; pointer-events: none; }
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.12;
-}
-.shape-1 {
-  width: 500px; height: 500px;
-  background: var(--blue);
-  top: -150px; right: -100px;
-}
-.shape-2 {
-  width: 300px; height: 300px;
-  background: var(--gold);
-  bottom: -80px; left: -60px;
-}
-.shape-3 {
-  width: 200px; height: 200px;
-  background: var(--blue-light);
-  top: 60%; right: 20%;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-.hero-badge {
-  display: inline-block;
+.success-box {
   background: white;
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--blue);
-  margin-bottom: 20px;
-  box-shadow: var(--shadow);
-}
-.hero-text h1 { color: var(--navy); margin-bottom: 20px; }
-.hero-sub { font-size: 1.08rem; margin-bottom: 32px; max-width: 500px; }
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
-.hero-badges { display: flex; gap: 10px; flex-wrap: wrap; }
-.badge-item {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 5px 13px;
-  font-size: 0.82rem;
-  color: var(--navy);
-  font-weight: 500;
-}
-
-/* ── Phone Mockup ── */
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.phone-mockup {
-  width: 260px;
-  background: var(--navy);
-  border-radius: 36px;
-  padding: 14px;
-  box-shadow: 0 30px 70px rgba(15,31,61,0.30), 0 0 0 1px rgba(255,255,255,0.1);
-  position: relative;
-}
-.phone-mockup::before {
-  content: '';
-  display: block;
-  width: 60px; height: 8px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 4px;
-  margin: 0 auto 10px;
-}
-.phone-screen {
-  background: white;
-  border-radius: 24px;
-  overflow: hidden;
-}
-.mock-screen { background: #f8fbff; }
-.mock-header {
-  background: var(--navy);
-  color: white;
-  padding: 12px 14px 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-.mock-nav {
-  display: flex;
-  background: white;
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto;
-}
-.mock-nav-item {
-  padding: 7px 10px;
-  font-size: 0.65rem;
-  color: var(--muted);
-  white-space: nowrap;
-  font-weight: 500;
-}
-.mock-nav-item.active {
-  color: var(--blue);
-  border-bottom: 2px solid var(--blue);
-  font-weight: 700;
-}
-.mock-content { padding: 10px 12px; }
-.mock-player {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 0;
-  border-bottom: 1px solid #f0f4f8;
-  font-size: 0.72rem;
-}
-.mock-pos {
-  width: 28px;
-  height: 20px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.6rem;
-  color: white;
-  flex-shrink: 0;
-}
-.gk { background: #d4a017; }
-.def { background: #1769aa; }
-.mid { background: #247a52; }
-.att { background: #c0392b; }
-.mock-name { flex: 1; color: var(--navy); font-weight: 500; }
-.mock-rating { font-weight: 700; color: var(--navy); }
-.mock-stat {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0;
-  font-size: 0.65rem;
-  color: var(--muted);
-  border-top: 1px solid #f0f4f8;
-  margin-top: 4px;
-}
-.mock-val { font-weight: 700; color: var(--navy); }
-.mock-val.green { color: var(--green); }
-
-/* ═══════════════════════════════════════
-   STATS STRIP
-═══════════════════════════════════════ */
-.stats-strip {
-  background: var(--navy);
-  padding: 36px 0;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-.stat-num {
-  font-size: 2.4rem;
-  font-weight: 800;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.stat-label { color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 500; }
-
-/* ═══════════════════════════════════════
-   FEATURES
-═══════════════════════════════════════ */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.feature-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  transition: var(--transition);
-}
-.feature-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-4px);
-  border-color: var(--blue);
-}
-.feature-icon { font-size: 2rem; margin-bottom: 14px; }
-.feature-card h3 { color: var(--navy); margin-bottom: 10px; }
-.feature-card p { font-size: 0.93rem; }
-
-/* ═══════════════════════════════════════
-   DARK BG SECTIONS
-═══════════════════════════════════════ */
-.dark-bg {
-  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark2));
-}
-
-/* ═══════════════════════════════════════
-   SCREENSHOTS
-═══════════════════════════════════════ */
-.screenshots-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.screenshot-card { text-align: center; }
-.screenshot-card p {
-  color: rgba(255,255,255,0.65);
-  font-size: 0.88rem;
-  margin-top: 12px;
-  font-weight: 500;
-}
-.screenshot-mock {
-  background: white;
-  border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  min-height: 220px;
-}
-.ss-header {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--navy);
-  background: var(--light);
-  padding: 7px 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  text-align: left;
-}
-.ss-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 0;
-  border-bottom: 1px solid #f0f4f8;
-  font-size: 0.68rem;
-}
-.ss-row.highlight { background: #fff8e1; border-radius: 4px; padding: 5px 4px; }
-.ss-pos {
-  width: 26px; height: 18px;
-  border-radius: 3px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.55rem; font-weight: 700; color: white; flex-shrink: 0;
-}
-.ss-val { margin-left: auto; font-weight: 700; color: var(--navy); font-size: 0.68rem; }
-.ss-val.green { color: var(--green); }
-.ss-stat {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.68rem;
-  padding: 5px 0;
-  border-bottom: 1px solid #f0f4f8;
-  color: var(--muted);
-}
-.ss-stat.bold { font-weight: 700; border-top: 1px solid var(--border); border-bottom: none; margin-top: 4px; }
-.ss-stat .green { color: var(--green); font-weight: 700; }
-.ss-stat .red { color: var(--red); font-weight: 700; }
-.ss-divider { height: 1px; background: var(--border); margin: 8px 0; }
-.ss-market-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 0;
-  border-bottom: 1px solid #f0f4f8;
-  font-size: 0.65rem;
-  color: var(--navy);
-}
-.ss-badge {
-  display: inline-block;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 0.55rem;
-  font-weight: 700;
-  color: white;
-  flex-shrink: 0;
-}
-.ss-badge.buy { background: var(--green); }
-.ss-badge.sell { background: var(--red); }
-.ss-badge.loan { background: var(--blue); }
-.ss-tactics { text-align: center; padding: 4px 0; }
-.ss-formation { font-size: 1.3rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-.ss-pitch { background: #2d7a2d; border-radius: 6px; padding: 8px 4px; }
-.ss-line {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-.ss-dot {
-  width: 24px; height: 24px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.45rem;
-  font-weight: 700;
-  color: var(--navy);
-}
-.ss-dot.gk-dot { background: #f39c12; }
-
-/* ═══════════════════════════════════════
-   REVIEWS
-═══════════════════════════════════════ */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.review-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  transition: var(--transition);
-}
-.review-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-.review-stars { font-size: 1.1rem; margin-bottom: 14px; }
-.review-text {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.6;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-.review-author { display: flex; align-items: center; gap: 12px; }
-.review-avatar {
-  width: 40px; height: 40px;
-  background: var(--blue);
-  color: white;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700;
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
-.review-name { font-weight: 600; color: var(--navy); font-size: 0.93rem; }
-.review-role { font-size: 0.8rem; color: var(--muted); }
-
-/* ═══════════════════════════════════════
-   PRICING
-═══════════════════════════════════════ */
-.pricing-card {
-  max-width: 480px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 24px;
-  padding: 44px 40px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
-.pricing-badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  border-radius: 50px;
-  padding: 6px 20px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 24px;
-}
-.pricing-price {
-  font-size: 5rem;
-  font-weight: 800;
-  color: white;
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.pricing-period {
-  color: rgba(255,255,255,0.6);
-  font-size: 0.95rem;
-  margin-bottom: 32px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.pricing-list {
-  list-style: none;
-  margin-bottom: 32px;
-  text-align: left;
-}
-.pricing-list li {
-  color: rgba(255,255,255,0.88);
-  font-size: 0.98rem;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-weight: 500;
-}
-.pricing-list li:last-child { border-bottom: none; }
-.pricing-note {
-  margin-top: 20px;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
-}
-.pricing-reassurance {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-.reassurance-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.75);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.r-icon { font-size: 1.3rem; }
-
-/* ═══════════════════════════════════════
-   HOW IT WORKS
-═══════════════════════════════════════ */
-.steps-grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.step-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-  flex: 1;
-  min-width: 200px;
-  max-width: 280px;
-  transition: var(--transition);
-}
-.step-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-.step-num {
-  width: 52px; height: 52px;
-  background: linear-gradient(135deg, var(--blue-light), var(--blue));
-  color: white;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin: 0 auto 16px;
-}
-.step-card h4 { color: var(--navy); margin-bottom: 8px; }
-.step-card p { font-size: 0.9rem; }
-.step-arrow { font-size: 2rem; color: var(--blue); flex-shrink: 0; }
-
-/* ═══════════════════════════════════════
-   FAQ
-═══════════════════════════════════════ */
-.faq-list { max-width: 740px; margin: 0 auto; }
-.faq-item {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  margin-bottom: 10px;
-  overflow: hidden;
-  transition: var(--transition);
-}
-.faq-item:hover { border-color: var(--blue); }
-.faq-q {
+  border-radius: 26px;
+  padding: 48px 40px;
+  max-width: 600px;
   width: 100%;
-  background: var(--card-bg);
-  border: none;
-  padding: 18px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.98rem;
-  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.38);
+}
+.page-top-logo {
+  width: 78px;
+  height: 78px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(11,23,42,0.18);
+  margin-bottom: 16px;
+  border: 2px solid #eef3f8;
+}
+.success-icon {
+  font-size: 3.8rem;
+  margin-bottom: 14px;
+  animation: bounce 0.6s ease;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.success-box h1 {
+  font-size: 1.9rem;
+  font-weight: 900;
   color: var(--navy);
-  gap: 12px;
+  margin-bottom: 10px;
+}
+.success-box > p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+.download-section {
+  background: #f0f6fc;
+  border: 1px solid #d8e5f2;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
   text-align: left;
 }
-.faq-q:hover { background: var(--light); }
-.faq-arrow { font-size: 0.75rem; flex-shrink: 0; transition: transform 0.2s; }
-.faq-q.open .faq-arrow { transform: rotate(180deg); }
-.faq-a {
-  display: none;
-  padding: 0 20px 18px;
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.65;
-  background: var(--card-bg);
-}
-.faq-a.visible { display: block; }
-
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-.footer {
-  background: var(--navy);
-  color: white;
-  padding-top: 60px;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.footer-logo {
-  font-size: 1.4rem;
+.download-section h3 {
+  color: var(--navy);
+  margin-bottom: 14px;
+  font-size: 1.05rem;
   font-weight: 800;
-  margin-bottom: 12px;
 }
-.footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.93rem; }
-.footer-links h5 {
-  color: white;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+.download-btn:hover {
+  border-color: var(--blue);
+  box-shadow: 0 6px 20px rgba(30,107,184,0.18);
+  transform: translateY(-2px);
+}
+.download-btn .dl-icon { font-size: 1.8rem; flex-shrink: 0; }
+.download-btn .dl-info { flex: 1; }
+.download-btn .dl-title { font-size: 0.98rem; font-weight: 800; color: var(--navy); display: block; }
+.download-btn .dl-sub { font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.download-btn .dl-arrow { color: var(--blue); font-size: 1.3rem; font-weight: 900; }
+.lang-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.lang-tab {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88rem;
+  transition: 0.2s;
+  color: var(--muted);
+}
+.lang-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+.manual-panel { display: none; }
+.manual-panel.active { display: block; }
+
+.ai-hint-box {
+  background: linear-gradient(135deg, #f5eaff 0%, #edf4ff 100%);
+  border: 1px solid #d8b4fe;
+  border-radius: 14px;
+  padding: 16px 18px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.ai-hint-box h4 {
+  color: #7928ca;
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ai-hint-box p {
+  color: #4a2574;
+  font-size: 0.84rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.install-note {
+  background: #fff9e6;
+  border: 1px solid #f3d98c;
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: left;
+  margin-top: 14px;
+}
+.install-note p {
+  color: #7a5c00;
+  font-size: 0.84rem;
+  margin: 0;
+  line-height: 1.55;
+}
+.back-link {
+  margin-top: 16px;
+  display: inline-block;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 0.92rem;
   font-weight: 700;
 }
-.footer-links a {
-  display: block;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  transition: var(--transition);
-}
-.footer-links a:hover { color: var(--gold); }
-.footer-bottom {
-  text-align: center;
-  padding: 20px 24px;
-}
-.footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.82rem; }
-
-/* ═══════════════════════════════════════
-   FADE-IN ANIMATIONS
-═══════════════════════════════════════ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger effect for grids */
-.features-grid .feature-card:nth-child(2) { transition-delay: 0.08s; }
-.features-grid .feature-card:nth-child(3) { transition-delay: 0.16s; }
-.features-grid .feature-card:nth-child(4) { transition-delay: 0.08s; }
-.features-grid .feature-card:nth-child(5) { transition-delay: 0.16s; }
-.features-grid .feature-card:nth-child(6) { transition-delay: 0.24s; }
-.features-grid .feature-card:nth-child(7) { transition-delay: 0.08s; }
-.features-grid .feature-card:nth-child(8) { transition-delay: 0.16s; }
-.features-grid .feature-card:nth-child(9) { transition-delay: 0.24s; }
-
-.reviews-grid .review-card:nth-child(2) { transition-delay: 0.1s; }
-.reviews-grid .review-card:nth-child(3) { transition-delay: 0.2s; }
-
-.screenshots-grid .screenshot-card:nth-child(2) { transition-delay: 0.08s; }
-.screenshots-grid .screenshot-card:nth-child(3) { transition-delay: 0.16s; }
-.screenshots-grid .screenshot-card:nth-child(4) { transition-delay: 0.24s; }
-
-/* ═══════════════════════════════════════
-   UTILS
-═══════════════════════════════════════ */
-.green { color: var(--green) !important; }
-.red { color: var(--red) !important; }
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .nav-links, .nav-actions .btn { display: none; }
-  .hamburger { display: block; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { order: -1; }
-  .hero { padding: 100px 0 60px; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .features-grid { grid-template-columns: 1fr; }
-  .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
-  .reviews-grid { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-  .phone-mockup { width: 220px; }
-  .pricing-card { padding: 32px 24px; }
-  .steps-grid { flex-direction: column; align-items: stretch; }
-  .step-arrow { transform: rotate(90deg); align-self: center; }
-  .step-card { max-width: 100%; }
-  .pricing-reassurance { gap: 20px; }
-}
-
-@media (max-width: 480px) {
-  .screenshots-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-price { font-size: 3.5rem; }
-  h1 { font-size: 1.9rem; }
-  .hero-badges { gap: 6px; }
-  .badge-item { font-size: 0.75rem; padding: 4px 10px; }
-}
-
-</style>
-  <style>
-    body { background: linear-gradient(135deg, #0f1f3d, #162744); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-    .success-box {
-      background: white;
-      border-radius: 24px;
-      padding: 52px 44px;
-      max-width: 560px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
-    }
-    .success-icon { font-size: 4rem; margin-bottom: 16px; animation: bounce 0.6s ease; }
-    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-    .success-box h1 { font-size: 1.9rem; color: #0f1f3d; margin-bottom: 10px; }
-    .success-box > p { color: #5a6a80; margin-bottom: 32px; }
-    .download-section { background: #f0f7ff; border-radius: 16px; padding: 28px; margin-bottom: 24px; }
-    .download-section h3 { color: #0f1f3d; margin-bottom: 18px; font-size: 1.1rem; }
-    .download-btn {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: white;
-      border: 1px solid #d7e1ea;
-      border-radius: 12px;
-      padding: 14px 18px;
-      text-decoration: none;
-      color: #0f1f3d;
-      font-weight: 600;
-      margin-bottom: 10px;
-      transition: 0.2s;
-      text-align: left;
-    }
-    .download-btn:hover { border-color: #1769aa; box-shadow: 0 4px 16px rgba(23,105,170,0.15); transform: translateY(-2px); }
-    .download-btn .dl-icon { font-size: 1.8rem; flex-shrink: 0; }
-    .download-btn .dl-info { flex: 1; }
-    .download-btn .dl-title { font-size: 0.95rem; font-weight: 700; color: #0f1f3d; display: block; }
-    .download-btn .dl-sub { font-size: 0.8rem; color: #5a6a80; font-weight: 400; }
-    .download-btn .dl-arrow { color: #1769aa; font-size: 1.2rem; }
-    .lang-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
-    .lang-tab {
-      flex: 1;
-      padding: 8px;
-      border: 1px solid #d7e1ea;
-      border-radius: 8px;
-      background: white;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 0.88rem;
-      transition: 0.2s;
-      color: #5a6a80;
-    }
-    .lang-tab.active { background: #1769aa; color: white; border-color: #1769aa; }
-    .manual-panel { display: none; }
-    .manual-panel.active { display: block; }
-    .install-note {
-      background: #fff8e1;
-      border: 1px solid #d4a017;
-      border-radius: 12px;
-      padding: 16px 18px;
-      text-align: left;
-      margin-top: 16px;
-    }
-    .install-note p { color: #7a5c00; font-size: 0.88rem; margin: 0; line-height: 1.6; }
-    .back-link { margin-top: 20px; display: inline-block; color: #1769aa; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-    .back-link:hover { text-decoration: underline; }
+.back-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 <div class="success-box">
+  <div><img src="logo.jpg" onerror="if(this.src.indexOf('assets')===-1){this.src='assets/img/logo.jpg';}" alt="Career Manager Hub" class="page-top-logo" /></div>
   <div class="success-icon">🎉</div>
-  <h1 data-it="Pagamento completato!" data-en="Payment complete!">Pagamento completato!</h1>
-  <p data-it="Grazie per aver acquistato Manager. Scarica qui sotto l'app e i manuali." data-en="Thank you for purchasing Manager. Download the app and manuals below.">Grazie per aver acquistato Manager. Scarica qui sotto l'app e i manuali.</p>
+  <h1 data-it="Pagamento confermato!" data-en="Payment confirmed!">Pagamento confermato!</h1>
+  <p data-it="Benvenuto su <strong>Career Manager Hub</strong>! Scarica subito l'app Android e i manuali utente per iniziare a dominare la tua Carriera." data-en="Welcome to <strong>Career Manager Hub</strong>! Download the Android APK and guides below to start mastering your Career.">Benvenuto su <strong>Career Manager Hub</strong>! Scarica subito l'app Android e i manuali utente per iniziare a dominare la tua Carriera.</p>
 
   <!-- APK DOWNLOAD -->
   <div class="download-section">
-    <h3 data-it="📱 App Manager per Android" data-en="📱 Manager App for Android">📱 App Manager per Android</h3>
-    <!-- SOSTITUISCI CON IL VERO LINK GITHUB RELEASES -->
+    <h3 data-it="📱 Download App Android (.APK)" data-en="📱 Download Android App (.APK)">📱 Download App Android (.APK)</h3>
     <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manager-v1.0.apk.apk" download>
       <span class="dl-icon">📦</span>
       <span class="dl-info">
-        <span class="dl-title">Manager-v1.0.apk</span>
-        <span class="dl-sub" data-it="Android 8.0+ • ~XX MB" data-en="Android 8.0+ • ~XX MB">Android 8.0+ • ~XX MB</span>
+        <span class="dl-title">CareerManagerHub-v1.0.apk</span>
+        <span class="dl-sub" data-it="Compatibile con Android 8.0+ • Versione Completa" data-en="Compatible with Android 8.0+ • Full Version">Compatibile con Android 8.0+ • Versione Completa</span>
       </span>
       <span class="dl-arrow">↓</span>
     </a>
     <div class="install-note">
-      <p data-it="⚠️ <strong>Come installare:</strong> Scarica il file APK. Sul tuo Android vai in <em>Impostazioni → Sicurezza → Installa app da fonti sconosciute</em> e abilita l'opzione. Poi apri il file scaricato e segui le istruzioni." data-en="⚠️ <strong>How to install:</strong> Download the APK file. On your Android go to <em>Settings → Security → Install unknown apps</em> and enable the option. Then open the downloaded file and follow the instructions.">⚠️ <strong>Come installare:</strong> Scarica il file APK. Sul tuo Android vai in <em>Impostazioni → Sicurezza → Installa app da fonti sconosciute</em> e abilita l'opzione. Poi apri il file scaricato e segui le istruzioni.</p>
+      <p data-it="⚠️ <strong>Installazione Android:</strong> Apri il file scaricato. Se richiesto, abilita 'Consenti da questa sorgente' (o 'Installa app da origini sconosciute'). L'installazione richiede pochi secondi." data-en="⚠️ <strong>Android Installation:</strong> Open the downloaded file. If prompted, toggle 'Allow from this source'. Installation finishes in seconds.">⚠️ <strong>Installazione Android:</strong> Apri il file scaricato. Se richiesto, abilita 'Consenti da questa sorgente' (o 'Installa app da origini sconosciute'). L'installazione richiede pochi secondi.</p>
     </div>
+  </div>
+
+  <!-- AI AGENT TIP BOX -->
+  <div class="ai-hint-box">
+    <h4 data-it="🤖 Agente IA Gemini (Presidente / DS)" data-en="🤖 Gemini AI Agent (President / DS)">🤖 Agente IA Gemini (Presidente / DS)</h4>
+    <p data-it="Nel capitolo 15 del manuale allegato trovi le istruzioni per condividere i tuoi dati con l'Agente IA Gemini e ricevere consigli su mercato, monte ingaggi e vivaio come se parlassi con il tuo Direttore Sportivo!" data-en="In chapter 15 of the included manual you will find instructions to share your career data with the Gemini AI Agent to receive transfer advice as if consulting your Sporting Director!">Nel capitolo 15 del manuale allegato trovi le istruzioni per condividere i tuoi dati con l'Agente IA Gemini e ricevere consigli su mercato, monte ingaggi e vivaio come se parlassi con il tuo Direttore Sportivo!</p>
   </div>
 
   <!-- MANUALS DOWNLOAD -->
   <div class="download-section">
-    <h3 data-it="📄 Manuali utente" data-en="📄 User Manuals">📄 Manuali utente</h3>
+    <h3 data-it="📄 Manuali Utente in PDF (16 Capitoli)" data-en="📄 User Manuals in PDF (16 Chapters)">📄 Manuali Utente in PDF (16 Capitoli)</h3>
     <div class="lang-tabs">
       <button class="lang-tab active" onclick="showManual('it', this)">🇮🇹 Italiano</button>
       <button class="lang-tab" onclick="showManual('en', this)">🇬🇧 English</button>
     </div>
     <div class="manual-panel active" id="manual-it">
-      <!-- SOSTITUISCI CON IL VERO LINK GITHUB RELEASES -->
       <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download>
         <span class="dl-icon">📄</span>
         <span class="dl-info">
           <span class="dl-title">Manuale_utente_Manager_ITA.pdf</span>
-          <span class="dl-sub">Guida completa in Italiano</span>
+          <span class="dl-sub">Guida completa in Italiano con spiegazione formule FIGC</span>
         </span>
         <span class="dl-arrow">↓</span>
       </a>
     </div>
     <div class="manual-panel" id="manual-en">
-      <!-- SOSTITUISCI CON IL VERO LINK GITHUB RELEASES -->
       <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download>
         <span class="dl-icon">📄</span>
         <span class="dl-info">
           <span class="dl-title">User_Manual_Manager_EN.pdf</span>
-          <span class="dl-sub">Complete guide in English</span>
+          <span class="dl-sub">Complete user guide in English with formula breakdown</span>
         </span>
         <span class="dl-arrow">↓</span>
       </a>
@@ -946,16 +248,18 @@ function showManual(lang, btn) {
   btn.classList.add('active');
 }
 
-// Language persistence from main page
 const savedLang = localStorage.getItem('lang') || 'it';
 if (savedLang === 'en') {
   document.querySelectorAll('[data-en]').forEach(el => {
     el.innerHTML = el.getAttribute('data-en');
   });
   document.documentElement.lang = 'en';
-  document.title = 'Thank you! – Download Manager App';
+  document.title = 'Thank you! – Download Career Manager Hub';
+  const tabs = document.querySelectorAll('.lang-tab');
+  if (tabs.length > 1) {
+    showManual('en', tabs[1]);
+  }
 }
 </script>
 </body>
 </html>
-
