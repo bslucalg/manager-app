@@ -1,26 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career Manager Hub – La Tua Carriera, Le Tue Regole</title>
-  <meta name="description" content="Career Manager Hub: l'app Android definitiva per la Carriera EA FC &amp; FIFA con normative FIGC automatiche, vivaio, mercato, lavagna tattica e integrazione Agente IA (Gemini)." />
-  <meta property="og:title" content="Career Manager Hub – La Tua Carriera, Le Tue Regole" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Career Manager Hub - La Tua Carriera, Le Tue Regole</title>
+  <meta name="description" content="Career Manager Hub: l'app Android definitiva per la Carriera EA Sports FC &amp; FIFA con normative FIGC automatiche, vivaio, mercato, lavagna tattica e integrazione Agente IA (Gemini)." />
+  <meta property="og:title" content="Career Manager Hub - La Tua Carriera, Le Tue Regole" />
   <meta property="og:description" content="Gestisci la rosa, pianifica il calciomercato, controlla il bilancio con regole FIGC e consulta l'Agente IA Gemini come tuo DS o Presidente." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="cover.jpg?v=2" />
+  <meta property="og:image" content="cover.jpg?v=3" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="cover.jpg?v=2" />
+  <meta name="twitter:image" content="cover.jpg?v=3" />
   <link rel="icon" type="image/jpeg" href="logo.jpg?v=2" />
   <link rel="apple-touch-icon" href="logo.jpg?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
-/* ══════════════════════════════════════════
-   CAREER MANAGER HUB – WEBSITE STYLES
-   ══════════════════════════════════════════ */
-
+/* CAREER MANAGER HUB - MODERN RESPONSIVE STYLES */
 :root {
   --navy: #0b172a;
   --navy-card: #112240;
@@ -48,7 +45,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; max-width: 100%; }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -57,53 +54,28 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* ── TYPOGRAPHY ── */
-h1 { font-size: clamp(2.1rem, 5.2vw, 3.6rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.7rem, 3.8vw, 2.5rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+/* TYPOGRAPHY */
+h1 { font-size: clamp(1.9rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.6rem, 3.8vw, 2.4rem); font-weight: 800; line-height: 1.22; letter-spacing: -0.01em; }
 h3 { font-size: 1.2rem; font-weight: 700; }
 h4 { font-size: 1.05rem; font-weight: 600; }
 p { color: var(--muted); line-height: 1.65; }
 
-/* ── CONTAINER ── */
+/* CONTAINER */
 .container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-.section-pad { padding: 88px 0; }
-
-/* ── BUTTONS ── */
-/* ── DUAL PAYMENT BUTTONS ── */
-.pricing-cta-dual {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
   width: 100%;
 }
-.btn-paypal {
-  background: #ffc439;
-  color: #003087;
-  box-shadow: 0 4px 18px rgba(255, 196, 57, 0.45);
-}
-.btn-paypal:hover {
-  background: #ffb71b;
-  color: #001c64;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 196, 57, 0.6);
-}
-.btn-stripe-card {
-  background: linear-gradient(135deg, var(--blue-light), var(--blue));
-  color: white;
-  box-shadow: 0 4px 18px rgba(30,107,184,0.35);
-}
-.btn-stripe-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30,107,184,0.48);
-}
+.section-pad { padding: 88px 0; }
+
+/* BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -120,7 +92,7 @@ p { color: var(--muted); line-height: 1.65; }
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--blue-light), var(--blue));
-  color: white;
+  color: #ffffff !important;
   box-shadow: 0 6px 20px rgba(30,107,184,0.36);
 }
 .btn-primary:hover {
@@ -130,55 +102,35 @@ p { color: var(--muted); line-height: 1.65; }
 }
 .btn-ai {
   background: var(--ai-gradient);
-  color: white;
+  color: #ffffff !important;
   box-shadow: 0 6px 24px rgba(138,43,226,0.35);
 }
 .btn-ai:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(138,43,226,0.5);
+  box-shadow: 0 10px 32px rgba(138,43,226,0.52);
   filter: brightness(1.08);
 }
 .btn-outline {
   background: transparent;
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 2px solid var(--border);
 }
 .btn-outline:hover {
-  background: var(--blue);
-  color: white;
-  transform: translateY(-2px);
+  border-color: var(--blue);
+  background: var(--light);
 }
-.btn-sm  { padding: 9px 20px; font-size: 0.88rem; }
-.btn-lg  { padding: 15px 32px; font-size: 1.05rem; }
-.btn-xl  { padding: 18px 44px; font-size: 1.18rem; width: 100%; max-width: 420px; }
+.btn-sm { padding: 8px 18px; font-size: 0.86rem; }
+.btn-lg { padding: 15px 30px; font-size: 1.05rem; }
+.btn-xl { padding: 18px 40px; font-size: 1.15rem; }
 
-/* ── SECTION HEADER ── */
-.section-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-.section-header .sub-kicker {
-  text-transform: uppercase;
-  color: var(--blue);
-  font-weight: 800;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-  margin-bottom: 8px;
-}
-.section-header h2 { color: var(--navy); margin-bottom: 14px; }
-.section-header p { max-width: 660px; margin: 0 auto; font-size: 1.1rem; }
-.section-header.light h2 { color: white; }
-.section-header.light p { color: rgba(255,255,255,0.78); }
-
-/* ═══════════════════════════════════════
-   NAVBAR
-═══════════════════════════════════════ */
+/* NAVBAR */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.97);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   transition: var(--transition);
 }
@@ -186,13 +138,14 @@ p { color: var(--muted); line-height: 1.65; }
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 72px;
+  height: 70px;
   display: flex;
   align-items: center;
-  gap: 28px;
+  justify-content: space-between;
+  gap: 20px;
 }
 .nav-logo {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: var(--navy);
   text-decoration: none;
@@ -202,8 +155,8 @@ p { color: var(--muted); line-height: 1.65; }
   flex-shrink: 0;
 }
 .nav-logo-img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 9px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(11,23,42,0.14);
@@ -212,29 +165,42 @@ p { color: var(--muted); line-height: 1.65; }
 .nav-logo-badge {
   background: #e9f3ff;
   color: var(--blue);
-  font-size: 0.72rem;
+  font-size: 0.70rem;
   font-weight: 800;
   padding: 2px 7px;
   border-radius: 6px;
   border: 1px solid #c7e0ff;
 }
+
+/* NAV LINKS - STRICTLY ONE LINE, NO WRAPPING */
 .nav-links {
   display: flex;
-  gap: 22px;
-  flex: 1;
+  align-items: center;
+  gap: 14px;
+  margin: 0 auto;
 }
 .nav-links a {
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.90rem;
+  white-space: nowrap !important;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
   transition: var(--transition);
 }
-.nav-links a:hover { color: var(--blue); }
+.nav-links a:hover { color: var(--blue); background: rgba(30,107,184,0.06); }
 .nav-links a.ai-nav-link {
   color: #7928ca;
   font-weight: 700;
+  background: rgba(121,40,202,0.06);
 }
+.nav-links a.ai-nav-link:hover {
+  background: rgba(121,40,202,0.12);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -245,75 +211,131 @@ p { color: var(--muted); line-height: 1.65; }
   background: var(--light);
   border: 1px solid var(--border);
   border-radius: 50px;
-  padding: 7px 14px;
-  font-size: 0.85rem;
+  padding: 6px 14px;
+  font-size: 0.84rem;
   font-weight: 700;
   cursor: pointer;
   color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: var(--transition);
+  white-space: nowrap;
 }
-.lang-toggle:hover { background: var(--blue); color: white; border-color: var(--blue); }
+.lang-toggle:hover {
+  border-color: var(--blue);
+  background: white;
+}
+
+/* HAMBURGER - CLEAN CSS BARS */
 .hamburger {
   display: none;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 1.6rem;
   cursor: pointer;
-  color: var(--navy);
-  margin-left: auto;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: var(--navy);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* MOBILE MENU DRAWER */
 .mobile-menu {
   display: none;
+  position: fixed;
+  top: 70px; left: 0; right: 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 2px solid var(--border);
+  padding: 16px 20px 24px;
   flex-direction: column;
-  padding: 16px 24px;
-  border-top: 1px solid var(--border);
-  gap: 12px;
+  gap: 6px;
+  z-index: 999;
+  box-shadow: 0 16px 36px rgba(11,23,42,0.16);
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
-.mobile-menu.open { display: flex; }
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
 .mobile-menu a {
   text-decoration: none;
   color: var(--navy);
-  font-weight: 600;
-  padding: 8px 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+.mobile-menu a:hover {
+  background: var(--light);
+  color: var(--blue);
+}
+.mobile-menu a.ai-nav-link {
+  color: #7928ca;
+  background: rgba(121,40,202,0.06);
+}
+.mobile-menu-cta {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
 }
 
-/* ═══════════════════════════════════════
-   HERO & COVER BANNER
-═══════════════════════════════════════ */
+/* HERO SECTION */
 .hero {
-  padding: 110px 0 90px;
-  position: relative;
-  overflow: hidden;
+  padding: 104px 0 68px;
   background: radial-gradient(circle at 85% 15%, rgba(43, 140, 245, 0.12) 0%, transparent 50%),
               radial-gradient(circle at 10% 80%, rgba(138, 43, 226, 0.08) 0%, transparent 40%),
               linear-gradient(135deg, #f5f9ff 0%, #edf5fc 100%);
 }
 
+/* HERO COVER BANNER - ALWAYS 100% VISIBLE */
 .hero-cover-wrapper {
+  max-width: 1080px;
+  margin: 0 auto 36px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(11,23,42,0.20), 0 0 0 1px rgba(255,255,255,0.85);
+  border: 1px solid rgba(212,224,238,0.9);
+  background: #000000;
+  position: relative;
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
-  max-width: 1080px;
-  margin: 0 auto 40px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 22px 60px rgba(11,23,42,0.22), 0 0 0 1px rgba(255,255,255,0.85);
-  border: 1px solid rgba(212,224,238,0.9);
-  background: #000;
-  position: relative;
 }
 .hero-cover-img {
-  opacity: 1 !important;
-  visibility: visible !important;
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
+  opacity: 1 !important;
+  visibility: visible !important;
   transition: transform 0.4s ease;
 }
 .hero-cover-wrapper:hover .hero-cover-img {
-  opacity: 1 !important;
-  visibility: visible !important;
   transform: scale(1.012);
 }
 
@@ -322,600 +344,608 @@ p { color: var(--muted); line-height: 1.65; }
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: white;
-  border: 1px solid #cce2fa;
+  border: 1px solid var(--border);
+  padding: 7px 16px;
   border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: var(--blue);
+  box-shadow: 0 3px 12px rgba(11,23,42,0.06);
   margin-bottom: 20px;
-  box-shadow: var(--shadow);
 }
-.hero-text h1 { color: var(--navy); margin-bottom: 20px; }
-.hero-text h1 .highlight-text {
-  background: linear-gradient(135deg, var(--blue), #6f42c1);
+.highlight-text {
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.hero-sub { font-size: 1.12rem; margin-bottom: 24px; max-width: 550px; color: #334e68; }
-.hero-sub strong { color: var(--navy); }
-
+.hero-sub {
+  font-size: 1.12rem;
+  margin: 20px 0 22px;
+  line-height: 1.65;
+  color: #334e68;
+}
 .hero-quote-box {
   background: white;
   border-left: 4px solid var(--blue);
   border-radius: 0 12px 12px 0;
-  padding: 12px 18px;
+  padding: 14px 18px;
   margin-bottom: 26px;
-  box-shadow: 0 4px 16px rgba(11,23,42,0.04);
+  box-shadow: 0 4px 16px rgba(11,23,42,0.05);
 }
 .hero-quote-box p {
-  font-size: 0.96rem;
-  color: var(--navy);
-  font-weight: 700;
+  color: #1e3a5f;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.55;
   margin: 0;
 }
-.hero-quote-box span {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-weight: 400;
-  margin-top: 4px;
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px; }
-
-/* Payment Badges Strip */
-.payment-methods-strip {
+.pm-pills {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 18px;
   flex-wrap: wrap;
-  margin-top: 8px;
 }
-.pm-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
-.pm-pills { display: flex; gap: 8px; flex-wrap: wrap; }
 .pm-pill {
-  background: white;
-  border: 1px solid #d2e0ee;
-  border-radius: 20px;
-  padding: 4px 10px;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--navy);
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  box-shadow: 0 2px 6px rgba(11,23,42,0.04);
 }
 .pm-pill.paypal { color: #003087; border-color: #b7d5ff; background: #f0f6ff; }
 .pm-pill.stripe { color: #635bff; }
-.pm-pill.ai { background: #fbf5ff; color: #7928ca; border-color: #e4c7ff; }
+.pm-pill.tag { background: #eafaf1; color: #0e8055; border-color: #b7eed3; }
 
-/* ── Hero Real Phone Mockup ── */
+/* PHONE MOCKUP */
 .hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 .phone-mockup-real {
   width: 290px;
-  background: #0b1526;
-  border-radius: 42px;
-  padding: 11px;
-  box-shadow: 0 35px 85px rgba(11,23,42,0.38), 0 0 0 2px rgba(255,255,255,0.18);
+  background: #0f172a;
+  border-radius: 38px;
+  padding: 10px;
+  box-shadow: 0 24px 64px rgba(11,23,42,0.28), 0 0 0 1px rgba(255,255,255,0.12);
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
 }
 .phone-mockup-real:hover {
-  transform: translateY(-6px);
-}
-.phone-notch {
-  width: 70px;
-  height: 6px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 4px;
-  margin: 0 auto 9px;
-}
-.phone-screen-real {
-  background: #000;
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+  transform: translateY(-6px) scale(1.02);
 }
 .hero-screen-img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 28px;
 }
 
-.floating-ai-tag {
-  position: absolute;
-  top: 15px;
-  right: -10px;
-  background: white;
-  border: 1px solid #e5c9ff;
-  border-radius: 30px;
-  padding: 8px 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 10px 25px rgba(121,40,202,0.2);
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #7928ca;
-  animation: floatTag 3s ease-in-out infinite;
-  z-index: 2;
-}
-@keyframes floatTag {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* ═══════════════════════════════════════
-   STATS STRIP
-═══════════════════════════════════════ */
-.stats-strip {
-  background: var(--navy);
-  padding: 40px 0;
-}
+/* STATS BAR */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 18px;
+  margin-top: 48px;
+}
+.stat-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
   text-align: center;
+  box-shadow: 0 4px 16px rgba(11,23,42,0.04);
 }
 .stat-num {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 900;
-  color: var(--gold);
+  color: var(--blue);
   line-height: 1;
-  margin-bottom: 6px;
 }
-.stat-label { color: rgba(255,255,255,0.75); font-size: 0.88rem; font-weight: 600; }
+.stat-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 6px;
+}
 
-/* ═══════════════════════════════════════
-   AI AGENT SPOTLIGHT (GEMINI)
-═══════════════════════════════════════ */
-.ai-spotlight {
-  background: linear-gradient(135deg, #0a1426 0%, #151635 50%, #1d1233 100%);
+/* AI SPOTLIGHT SECTION */
+.section-ai {
+  background: linear-gradient(135deg, #0b1424 0%, #150f2e 100%);
   color: white;
   position: relative;
   overflow: hidden;
 }
 .ai-spotlight-box {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 26px;
-  padding: 48px;
+  border: 1px solid rgba(138,43,226,0.35);
+  border-radius: 24px;
+  padding: 44px;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
   align-items: center;
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-  backdrop-filter: blur(12px);
 }
 .ai-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(235, 100, 255, 0.15);
-  border: 1px solid rgba(235, 100, 255, 0.35);
-  color: #ff9cf0;
-  padding: 6px 16px;
+  gap: 8px;
+  background: rgba(138,43,226,0.22);
+  border: 1px solid rgba(138,43,226,0.5);
+  color: #d8b4fe;
+  padding: 6px 14px;
   border-radius: 50px;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 800;
   margin-bottom: 16px;
 }
-.ai-spotlight h3 {
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1.25;
-  margin-bottom: 16px;
+.ai-title {
   color: white;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.18;
 }
-.ai-spotlight p {
-  color: rgba(255,255,255,0.8);
+.ai-desc {
+  color: #cbd5e1;
   font-size: 1.05rem;
   line-height: 1.65;
-  margin-bottom: 24px;
+  margin: 18px 0 24px;
 }
-.ai-points-list {
+.ai-features-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 28px;
 }
-.ai-points-list li {
+.ai-features-list li {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.9);
+  color: #f1f5f9;
+  font-size: 0.94rem;
 }
-.ai-points-list span.icon { font-size: 1.2rem; flex-shrink: 0; }
-
-/* Real AI Screenshot Visual */
-.ai-visual-side {
+.ai-features-list li span.ai-bullet {
+  color: #c084fc;
+  font-weight: 800;
+}
+.ai-visual {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+  justify-content: center;
 }
-.ai-real-screen-frame {
-  width: 280px;
-  background: #0f1c30;
+.phone-mockup-ai {
+  width: 270px;
+  background: #0f172a;
   border-radius: 36px;
-  padding: 10px;
-  box-shadow: 0 25px 65px rgba(121,40,202,0.35), 0 0 0 2px rgba(255,255,255,0.15);
-}
-.ai-screen-inner {
-  border-radius: 26px;
-  overflow: hidden;
-  background: #000;
+  padding: 9px;
+  box-shadow: 0 20px 60px rgba(138,43,226,0.35), 0 0 0 1px rgba(255,255,255,0.18);
 }
 .ai-real-img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 27px;
 }
 
-/* ═══════════════════════════════════════
-   REAL SCREENSHOTS GALLERY
-═══════════════════════════════════════ */
-.dark-bg {
-  background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark2));
+/* SCREENSHOTS GALLERY SECTION */
+.section-screenshots {
+  background: #ffffff;
+}
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 52px;
+}
+.section-tag {
+  display: inline-block;
+  background: #e9f3ff;
+  color: var(--blue);
+  font-size: 0.80rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+  border: 1px solid #cce2ff;
+}
+.section-desc {
+  margin-top: 14px;
+  font-size: 1.05rem;
 }
 .screenshots-gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 22px;
 }
 .app-screen-card {
-  text-align: center;
-  transition: var(--transition);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 22px rgba(11,23,42,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app-screen-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(11,23,42,0.12);
 }
 .app-screen-frame {
-  background: #0f1f38;
-  border-radius: 28px;
-  padding: 9px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.38);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  position: relative;
-}
-.app-screen-frame:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 24px 60px rgba(43,140,245,0.35);
-  border-color: var(--blue-light);
+  background: #0f172a;
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(11,23,42,0.15);
+  margin-bottom: 14px;
 }
 .app-screen-img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
   display: block;
+  border-radius: 14px;
 }
-.app-screen-caption {
-  margin-top: 14px;
+.app-screen-info {
+  margin-top: auto;
 }
 .app-screen-title {
   font-size: 0.98rem;
   font-weight: 800;
-  color: white;
-  display: block;
+  color: var(--navy);
+  margin-bottom: 4px;
 }
 .app-screen-desc {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.68);
-  margin-top: 4px;
-  display: block;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
-/* ═══════════════════════════════════════
-   FEATURES
-═══════════════════════════════════════ */
+/* FEATURES GRID */
+.section-features {
+  background: #f8fbff;
+}
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .feature-card {
-  background: var(--card-bg);
+  background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 30px 26px;
+  padding: 30px 24px;
+  box-shadow: var(--shadow);
   transition: var(--transition);
 }
 .feature-card:hover {
-  box-shadow: var(--shadow);
   transform: translateY(-4px);
-  border-color: var(--blue);
+  box-shadow: var(--shadow-lg);
+  border-color: #b7d5ff;
 }
-.feature-card.featured-card {
-  background: linear-gradient(135deg, #f3f8ff 0%, #fbf5ff 100%);
-  border: 2px solid #c7d2fe;
+.feature-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e9f3ff, #d6e8ff);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
 }
-.feature-icon { font-size: 2.2rem; margin-bottom: 14px; }
-.feature-card h3 { color: var(--navy); margin-bottom: 10px; }
-.feature-card p { font-size: 0.94rem; }
+.feature-card h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
 
-/* ═══════════════════════════════════════
-   REVIEWS
-═══════════════════════════════════════ */
+/* REVIEWS GRID */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 22px;
 }
 .review-card {
-  background: var(--card-bg);
+  background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
-  transition: var(--transition);
+  padding: 26px 22px;
+  box-shadow: var(--shadow);
 }
-.review-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-.review-stars { font-size: 1.1rem; margin-bottom: 14px; }
+.review-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
 .review-text {
-  font-size: 0.95rem;
-  color: var(--text);
-  line-height: 1.6;
-  margin-bottom: 20px;
   font-style: italic;
+  font-size: 0.94rem;
+  color: #243b53;
+  line-height: 1.55;
+  margin-bottom: 16px;
 }
-.review-author { display: flex; align-items: center; gap: 12px; }
-.review-avatar {
-  width: 42px; height: 42px;
-  background: var(--blue);
-  color: white;
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-author-img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--blue), var(--ai-purple));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
-  font-size: 0.85rem;
-  flex-shrink: 0;
+  font-size: 0.9rem;
 }
-.review-name { font-weight: 700; color: var(--navy); font-size: 0.93rem; }
-.review-role { font-size: 0.8rem; color: var(--muted); }
+.review-author-info h4 { font-size: 0.92rem; color: var(--navy); }
+.review-author-info span { font-size: 0.78rem; color: var(--muted); }
 
-/* ═══════════════════════════════════════
-   PRICING
-═══════════════════════════════════════ */
-.pricing-card {
-  max-width: 520px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 26px;
-  padding: 44px 38px;
-  text-align: center;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+/* PRICING SECTION */
+.section-pricing {
+  background: radial-gradient(circle at 50% 30%, rgba(43, 140, 245, 0.08) 0%, transparent 60%), #ffffff;
 }
-.pricing-badge {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--navy);
-  border-radius: 50px;
-  padding: 6px 20px;
+.pricing-card {
+  max-width: 580px;
+  margin: 0 auto;
+  background: white;
+  border: 2px solid var(--blue);
+  border-radius: 24px;
+  padding: 44px 36px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(30,107,184,0.18);
+  position: relative;
+}
+.pricing-badge-popular {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
+  color: white;
+  font-size: 0.80rem;
   font-weight: 800;
-  font-size: 0.88rem;
-  margin-bottom: 20px;
+  padding: 5px 18px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 14px rgba(30,107,184,0.4);
+  white-space: nowrap;
+}
+.pricing-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 8px;
+}
+.pricing-subtitle {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.pricing-price-wrapper {
+  margin: 26px 0 22px;
 }
 .pricing-price {
-  font-size: 5rem;
+  font-size: 4.2rem;
   font-weight: 900;
-  color: white;
+  color: var(--navy);
   line-height: 1;
-  margin-bottom: 4px;
+}
+.pricing-currency {
+  font-size: 2.2rem;
+  font-weight: 700;
+  vertical-align: super;
+  color: var(--blue);
+  margin-right: 4px;
 }
 .pricing-period {
-  color: rgba(255,255,255,0.65);
-  font-size: 0.95rem;
-  margin-bottom: 28px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 8px;
 }
-.pricing-list {
+.pricing-features {
   list-style: none;
-  margin-bottom: 28px;
   text-align: left;
+  margin: 26px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.pricing-list li {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.96rem;
-  padding: 9px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.09);
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #243b53;
   font-weight: 500;
 }
-.pricing-list li:last-child { border-bottom: none; }
-.pricing-payment-options {
-  background: rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 12px;
-  margin-bottom: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.ppo-item {
-  color: white;
-  font-size: 0.82rem;
-  font-weight: 700;
+.pricing-features li span.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #eafaf1;
+  color: var(--green);
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.75rem;
+  flex-shrink: 0;
 }
 .pricing-note {
-  margin-top: 18px;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
+  color: var(--muted);
+  margin-top: 16px;
+  line-height: 1.5;
 }
-.pricing-reassurance {
+.pricing-guarantees {
   display: flex;
   justify-content: center;
-  gap: 36px;
-  margin-top: 40px;
+  gap: 22px;
+  margin-top: 36px;
   flex-wrap: wrap;
 }
-.reassurance-item {
+.guarantee-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: rgba(255,255,255,0.8);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: var(--muted);
 }
-.r-icon { font-size: 1.3rem; }
+.guarantee-icon { color: var(--blue); font-size: 1.1rem; }
 
-/* ═══════════════════════════════════════
-   HOW IT WORKS
-═══════════════════════════════════════ */
+/* STEPS / HOW IT WORKS */
+.section-howto { background: #f8fbff; }
 .steps-grid {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
 }
 .step-card {
-  background: var(--card-bg);
+  background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
+  padding: 30px 22px;
   flex: 1;
-  min-width: 220px;
-  max-width: 290px;
-  transition: var(--transition);
+  text-align: center;
+  box-shadow: var(--shadow);
 }
-.step-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
 .step-num {
-  width: 52px; height: 52px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background: linear-gradient(135deg, var(--blue-light), var(--blue));
   color: white;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem;
   font-weight: 900;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto 16px;
 }
 .step-card h4 { color: var(--navy); margin-bottom: 8px; }
-.step-card p { font-size: 0.9rem; }
-.step-arrow { font-size: 2rem; color: var(--blue); flex-shrink: 0; }
+.step-card p { font-size: 0.88rem; line-height: 1.5; }
+.step-arrow { font-size: 1.8rem; color: #b7d5ff; font-weight: 900; }
 
-/* ═══════════════════════════════════════
-   FAQ
-═══════════════════════════════════════ */
-.faq-list { max-width: 780px; margin: 0 auto; }
+/* FAQ */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 .faq-item {
+  background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  margin-bottom: 12px;
   overflow: hidden;
-  transition: var(--transition);
+  box-shadow: 0 3px 12px rgba(11,23,42,0.04);
 }
-.faq-item:hover { border-color: var(--blue); }
 .faq-q {
   width: 100%;
-  background: var(--card-bg);
-  border: none;
   padding: 18px 22px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: var(--navy);
-  gap: 12px;
-  text-align: left;
 }
-.faq-q:hover { background: var(--light); }
-.faq-arrow { font-size: 0.75rem; flex-shrink: 0; transition: transform 0.2s; }
+.faq-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+  color: var(--blue);
+}
 .faq-q.open .faq-arrow { transform: rotate(180deg); }
 .faq-a {
-  display: none;
-  padding: 0 22px 20px;
-  font-size: 0.95rem;
+  padding: 0 22px 18px;
+  font-size: 0.94rem;
   color: var(--muted);
-  line-height: 1.68;
-  background: var(--card-bg);
+  line-height: 1.6;
+  display: none;
 }
 .faq-a.visible { display: block; }
 
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
+/* FOOTER */
 .footer {
   background: var(--navy);
-  color: white;
-  padding-top: 64px;
+  color: #94a3b8;
+  padding: 68px 0 32px;
 }
 .footer-inner {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 44px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+.footer-brand { display: flex; flex-direction: column; gap: 14px; }
 .footer-logo {
-  font-size: 1.45rem;
-  font-weight: 900;
-  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 .footer-logo-img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 9px;
   object-fit: cover;
   border: 1px solid rgba(255,255,255,0.25);
 }
-.footer-brand p { color: rgba(255,255,255,0.68); font-size: 0.93rem; }
-.footer-disclaimer { margin-top: 14px; font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
-.footer-links h5 {
-  color: white;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-  font-weight: 800;
-}
-.footer-links a {
-  display: block;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  transition: var(--transition);
-}
-.footer-links a:hover { color: var(--gold); }
+.footer-desc { font-size: 0.90rem; max-width: 360px; line-height: 1.6; }
+.footer-col h4 { color: white; margin-bottom: 14px; font-size: 0.98rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.footer-links a:hover { color: white; }
 .footer-bottom {
+  padding-top: 28px;
   text-align: center;
-  padding: 22px 24px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
 }
-.footer-bottom p { color: rgba(255,255,255,0.4); font-size: 0.82rem; }
 
-/* ═══════════════════════════════════════
-   FADE-IN ANIMATIONS
-═══════════════════════════════════════ */
+/* FADE-IN ANIMATION FOR CARDS */
 .fade-in {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .fade-in.visible {
@@ -923,63 +953,78 @@ p { color: var(--muted); line-height: 1.65; }
   transform: translateY(0);
 }
 
-.features-grid .feature-card:nth-child(2) { transition-delay: 0.08s; }
-.features-grid .feature-card:nth-child(3) { transition-delay: 0.16s; }
-.features-grid .feature-card:nth-child(4) { transition-delay: 0.08s; }
-.features-grid .feature-card:nth-child(5) { transition-delay: 0.16s; }
-.features-grid .feature-card:nth-child(6) { transition-delay: 0.24s; }
-
-/* ═══════════════════════════════════════
-   UTILS
-═══════════════════════════════════════ */
-.green { color: var(--green) !important; }
-.red { color: var(--red) !important; }
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
+/* RESPONSIVE DESIGN - TABLET & MOBILE */
 @media (max-width: 1024px) {
-  .ai-spotlight-box { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+  .nav-inner { padding: 0 20px; }
+  .nav-links { gap: 10px; }
+  .nav-links a { font-size: 0.86rem; padding: 5px 8px; }
+  .ai-spotlight-box { grid-template-columns: 1fr; gap: 32px; padding: 34px 24px; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .screenshots-gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
-  .nav-links, .nav-actions .btn { display: none; }
-  .hamburger { display: block; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+@media (max-width: 992px) {
+  .nav-links { display: none !important; }
+  .nav-actions .btn { display: none !important; }
+  .hamburger { display: flex !important; }
+  .mobile-menu { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; text-align: left; }
   .hero-visual { order: -1; }
-  .hero { padding: 90px 0 60px; }
+  .phone-mockup-real { width: 260px; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 56px 0; }
+  .container { padding: 0 16px; }
+  .hero { padding: 84px 0 40px; }
   .hero-cover-wrapper {
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important; margin-bottom: 28px; border-radius: 14px; }
-  .hero-ctas { flex-direction: column; align-items: flex-start; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .features-grid { grid-template-columns: 1fr; }
-  .screenshots-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .reviews-grid { grid-template-columns: 1fr; }
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(11,23,42,0.18);
+  }
+  .hero-cover-img { border-radius: 12px; }
+  .hero-badge { font-size: 0.78rem; padding: 5px 12px; margin-bottom: 14px; }
+  .hero-sub { font-size: 0.98rem; margin: 16px 0 20px; line-height: 1.55; }
+  .hero-quote-box { padding: 12px 14px; margin-bottom: 22px; }
+  .hero-ctas { flex-direction: column; width: 100%; gap: 12px; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .pm-pills { flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 32px; }
+  .stat-item { padding: 16px 10px; }
+  .stat-num { font-size: 1.7rem; }
+  .stat-label { font-size: 0.80rem; }
+  .ai-spotlight-box { padding: 24px 16px; border-radius: 18px; }
+  .phone-mockup-ai { width: 240px; margin: 0 auto; }
+  .screenshots-gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+  .app-screen-card { max-width: 320px; margin: 0 auto; width: 100%; }
+  .features-grid { grid-template-columns: 1fr; gap: 16px; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 16px; }
+  .pricing-card { padding: 30px 16px; border-radius: 20px; width: 100%; }
+  .pricing-price { font-size: 3.4rem; }
+  .pricing-features { gap: 10px; margin: 20px 0 26px; }
+  .pricing-features li { font-size: 0.90rem; }
+  .steps-grid { flex-direction: column; gap: 14px; }
+  .step-arrow { transform: rotate(90deg); margin: 4px 0; }
+  .step-card { width: 100%; }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-  .phone-mockup-real { width: 250px; }
-  .pricing-card { padding: 32px 22px; }
-  .steps-grid { flex-direction: column; align-items: stretch; }
-  .step-arrow { transform: rotate(90deg); align-self: center; }
-  .step-card { max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-  .screenshots-gallery-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-price { font-size: 3.6rem; }
-  h1 { font-size: 1.95rem; }
+  .nav-inner { height: 62px; padding: 0 14px; }
+  .nav-logo { font-size: 1.12rem; }
+  .nav-logo-img { width: 32px; height: 32px; }
+  .hero { padding: 76px 0 34px; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.45rem; }
+  .pricing-price { font-size: 3rem; }
+  .pricing-card { padding: 26px 14px; }
+  .btn-xl { padding: 16px 24px; font-size: 1.05rem; }
 }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════
-     NAV
-══════════════════════════════════════ -->
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
@@ -988,168 +1033,139 @@ p { color: var(--muted); line-height: 1.65; }
       <span class="nav-logo-badge">PRO</span>
     </a>
     <div class="nav-links">
-      <a href="#features" data-it="Funzionalità" data-en="Features">Funzionalità</a>
-      <a href="#ai-advisor" class="ai-nav-link" data-it="🤖 Agente IA" data-en="🤖 AI Agent">🤖 Agente IA</a>
-      <a href="#screenshots" data-it="Schermate Reali" data-en="Real App Screens">Schermate Reali</a>
+      <a href="#features" data-it="Funzioni" data-en="Features">Funzioni</a>
+      <a href="#ai-advisor" class="ai-nav-link" data-it="Agente IA" data-en="AI Agent">Agente IA</a>
+      <a href="#screenshots" data-it="Schermate" data-en="Screenshots">Schermate</a>
       <a href="#reviews" data-it="Recensioni" data-en="Reviews">Recensioni</a>
       <a href="#pricing" data-it="Prezzo" data-en="Pricing">Prezzo</a>
       <a href="#faq" data-it="FAQ" data-en="FAQ">FAQ</a>
     </div>
     <div class="nav-actions">
       <button class="lang-toggle" onclick="toggleLang()" aria-label="Cambia lingua">
-        <span id="lang-label">🇬🇧 EN</span>
+        <span id="lang-label">EN / IT</span>
       </button>
-      <a href="#pricing" class="btn btn-primary btn-sm" data-it="Acquista ora" data-en="Buy now">Acquista ora</a>
+      <a href="#pricing" class="btn btn-primary btn-sm" data-it="Acquista (15&euro;)" data-en="Buy (15&euro;)">Acquista (15&euro;)</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">☰</button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#features" onclick="toggleMenu()" data-it="Funzionalità" data-en="Features">Funzionalità</a>
-    <a href="#ai-advisor" onclick="toggleMenu()" data-it="🤖 Agente IA (Gemini)" data-en="🤖 AI Agent (Gemini)">🤖 Agente IA (Gemini)</a>
-    <a href="#screenshots" onclick="toggleMenu()" data-it="Schermate Reali" data-en="Real App Screens">Schermate Reali</a>
-    <a href="#reviews" onclick="toggleMenu()" data-it="Recensioni" data-en="Reviews">Recensioni</a>
-    <a href="#pricing" onclick="toggleMenu()" data-it="Prezzo" data-en="Pricing">Prezzo</a>
-    <a href="#faq" onclick="toggleMenu()" data-it="FAQ" data-en="FAQ">FAQ</a>
+    <a href="#features" onclick="toggleMenu()" data-it="&#9889; Funzioni Complete" data-en="&#9889; Full Features">&#9889; Funzioni Complete</a>
+    <a href="#ai-advisor" class="ai-nav-link" onclick="toggleMenu()" data-it="&#129302; Agente IA (Gemini)" data-en="&#129302; AI Agent (Gemini)">&#129302; Agente IA (Gemini)</a>
+    <a href="#screenshots" onclick="toggleMenu()" data-it="&#128241; Schermate Reali" data-en="&#128241; Real Screenshots">&#128241; Schermate Reali</a>
+    <a href="#reviews" onclick="toggleMenu()" data-it="&#11088; Recensioni" data-en="&#11088; Reviews">&#11088; Recensioni</a>
+    <a href="#pricing" onclick="toggleMenu()" data-it="&#128179; Prezzo e Licenza" data-en="&#128179; Pricing &amp; License">&#128179; Prezzo e Licenza</a>
+    <a href="#faq" onclick="toggleMenu()" data-it="&#10067; Domande Frequenti (FAQ)" data-en="&#10067; FAQ">&#10067; Domande Frequenti (FAQ)</a>
+    <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-primary btn-lg mobile-menu-cta" data-it="&#9889; Procedi all'Acquisto (15&euro;)" data-en="&#9889; Proceed to Checkout (15&euro;)">&#9889; Procedi all'Acquisto (15&euro;)</a>
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════
-     HERO
-══════════════════════════════════════ -->
+<!-- HERO -->
 <header class="hero">
   <div class="container">
 
-    <!-- Hero Cover Banner -->
+    <!-- Hero Cover Banner (100% Sempre Visibile) -->
     <div class="hero-cover-wrapper">
       <img src="cover.jpg?v=3" alt="Carriera Allenatore - Career Manager Hub" class="hero-cover-img" />
     </div>
 
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-badge" data-it="🏆 Per la Carriera EA Sports FC &amp; FIFA" data-en="🏆 For EA Sports FC &amp; FIFA Career Mode">🏆 Per la Carriera EA Sports FC &amp; FIFA</div>
+        <div class="hero-badge" data-it="&#9917; Per la Carriera EA Sports FC &amp; FIFA" data-en="&#9917; For EA Sports FC &amp; FIFA Career Mode">&#9917; Per la Carriera EA Sports FC &amp; FIFA</div>
         
         <h1 data-it="LA TUA CARRIERA,<br/><span class='highlight-text'>LE TUE REGOLE</span>" data-en="YOUR CAREER,<br/><span class='highlight-text'>YOUR RULES</span>">LA TUA CARRIERA,<br/><span class="highlight-text">LE TUE REGOLE</span></h1>
         
-        <p class="hero-sub" data-it="Gestisci la rosa, pianifica il calciomercato, controlla il bilancio e affronta gli imprevisti più realistici. Porta la tua Carriera Allenatore a un livello superiore: qui trovi tutto per gestire al meglio <strong>QUALSIASI campionato</strong>." data-en="Manage your squad, plan your transfer window, balance the club books and face realistic random events. Elevate your Manager Career: here is everything you need to dominate <strong>ANY league</strong>.">Gestisci la rosa, pianifica il calciomercato, controlla il bilancio e affronta gli imprevisti più realistici. Porta la tua Carriera Allenatore a un livello superiore: qui trovi tutto per gestire al meglio <strong>QUALSIASI campionato</strong>.</p>
+        <p class="hero-sub" data-it="Gestisci la rosa, pianifica il calciomercato, controlla il bilancio e affronta gli imprevisti pi&ugrave; realistici. Porta la tua Carriera Allenatore a un livello superiore: qui trovi tutto per gestire al meglio <strong>QUALSIASI campionato</strong>." data-en="Manage your squad, plan your transfer window, balance the club books and face realistic random events. Elevate your Manager Career: here is everything you need to dominate <strong>ANY league</strong>.">Gestisci la rosa, pianifica il calciomercato, controlla il bilancio e affronta gli imprevisti pi&ugrave; realistici. Porta la tua Carriera Allenatore a un livello superiore: qui trovi tutto per gestire al meglio <strong>QUALSIASI campionato</strong>.</p>
         
         <!-- Key Feature Quote -->
         <div class="hero-quote-box">
-          <p data-it="⚖️ Normative FIGC integrate con calcolo automatico" data-en="⚖️ Integrated League &amp; FIGC rules with automatic calculation">⚖️ Normative FIGC integrate con calcolo automatico</p>
-          <span data-it="All'interno dell'app troverai le regole che ti imporranno vincoli reali, calcolati in automatico in base alla tua rosa, al vivaio e alle tue finanze." data-en="Built-in regulations enforce real constraints, computed automatically based on your squad, youth academy, and balance sheet.">All'interno dell'app troverai le regole che ti imporranno vincoli reali, calcolati in automatico in base alla tua rosa, al vivaio e alle tue finanze.</span>
+          <p data-it="All'interno dell'APP troverai tutte le <strong>normative FIGC</strong> integrate che ti imporranno o meno delle regole da rispettare: il tutto <em>calcolato automaticamente</em> in base alla tua rosa, al tuo vivaio e alle tue finanze." data-en="Inside the APP you will find official <strong>League &amp; FIGC rules</strong> calculated automatically according to your squad, youth academy, and financial balance.">All'interno dell'APP troverai tutte le <strong>normative FIGC</strong> integrate che ti imporranno o meno delle regole da rispettare: il tutto <em>calcolato automaticamente</em> in base alla tua rosa, al tuo vivaio e alle tue finanze.</p>
         </div>
 
         <div class="hero-ctas">
-          <a href="#pricing" class="btn btn-primary btn-lg" id="buy-btn" data-it="âš¡ Acquista e Scarica (â‚¬15)" data-en="âš¡ Buy and Download (â‚¬15)">âš¡ Acquista e Scarica (â‚¬15)</a>
-          <a href="#ai-advisor" class="btn btn-ai btn-lg" data-it="✨ Scopri l'Agente IA" data-en="✨ Discover AI Agent">✨ Scopri l'Agente IA</a>
+          <a href="#pricing" class="btn btn-primary btn-lg" id="buy-btn" data-it="&#9889; Acquista Subito (15&euro;)" data-en="&#9889; Buy Now (15&euro;)">&#9889; Acquista Subito (15&euro;)</a>
+          <a href="#ai-advisor" class="btn btn-ai btn-lg" data-it="&#129302; Scopri l'Agente IA" data-en="&#129302; Discover AI Agent">&#129302; Scopri l'Agente IA</a>
         </div>
 
-        <!-- Payment & Security Strip -->
-        <div class="payment-methods-strip">
-          <span class="pm-label" data-it="Metodi supportati:" data-en="Accepted payments:">Metodi supportati:</span>
-          <div class="pm-pills">
-            <span class="pm-pill paypal">🅿️ PayPal</span>
-            <span class="pm-pill stripe">💳 Carte (Stripe)</span>
-            <span class="pm-pill">🍏 Apple Pay</span>
-            <span class="pm-pill">🇬 Google Pay</span>
-            <span class="pm-pill ai">🤖 Agente Gemini</span>
-          </div>
+        <div class="pm-pills">
+          <span class="pm-pill paypal">&#127359;&#65039; PayPal</span>
+          <span class="pm-pill stripe">&#128179; Carte (Stripe)</span>
+          <span class="pm-pill">&#128241; Google Pay / Apple Pay</span>
+          <span class="pm-pill tag">&#10003; Licenza a vita 15&euro;</span>
         </div>
-
       </div>
-      
-      <!-- Real Smartphone Mockup in Hero -->
+
       <div class="hero-visual">
-        <div class="floating-ai-tag" data-it="🤖 Agente IA Gemini Incluso" data-en="🤖 Gemini AI Agent Included">
-          🤖 Agente IA Gemini Incluso
-        </div>
         <div class="phone-mockup-real">
-          <div class="phone-notch"></div>
-          <div class="phone-screen-real">
-            <img src="screenshots/ita/rosa.jpg" data-src-it="screenshots/ita/rosa.jpg" data-src-en="screenshots/en/rosa.jpg" alt="Schermata Reale App - Rosa Prima Squadra" class="hero-screen-img" />
-          </div>
+          <img src="screenshots/ita/rosa.jpg" data-src-it="screenshots/ita/rosa.jpg" data-src-en="screenshots/en/rosa.jpg" alt="Schermata Reale App - Rosa Prima Squadra" class="hero-screen-img" />
         </div>
       </div>
     </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label" data-it="Regole FIGC &amp; Leghe Automatiche" data-en="Automated League &amp; FIGC Rules">Regole FIGC &amp; Leghe Automatiche</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">&#129302; Gemini</div>
+        <div class="stat-label" data-it="Agente IA Integrato (DS &amp; Presidente)" data-en="AI Agent (Sporting Director &amp; President)">Agente IA Integrato (DS &amp; Presidente)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3 Moduli</div>
+        <div class="stat-label" data-it="Lavagna Tattica Interattiva" data-en="Interactive Tactics Board">Lavagna Tattica Interattiva</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15&euro;</div>
+        <div class="stat-label" data-it="Prezzo Unico &bull; Nessun Abbonamento" data-en="One-time Price &bull; No Subscriptions">Prezzo Unico &bull; Nessun Abbonamento</div>
+      </div>
+    </div>
+
   </div>
 </header>
 
-<!-- ══════════════════════════════════════
-     STATS STRIP
-══════════════════════════════════════ -->
-<section class="stats-strip">
-  <div class="container stats-grid">
-    <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label" data-it="Calcoli automatici FIGC" data-en="Automatic League calculations">Calcoli automatici FIGC</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">🤖 Gemini</div>
-      <div class="stat-label" data-it="Agente IA integrato (DS / Pres)" data-en="Integrated AI Agent (DS / Pres)">Agente IA integrato (DS / Pres)</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">€15</div>
-      <div class="stat-label" data-it="Una tantum, nessun abbonamento" data-en="One-time, no subscription">Una tantum, nessun abbonamento</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">∞</div>
-      <div class="stat-label" data-it="Qualsiasi campionato gestibile" data-en="Any league manageable">Qualsiasi campionato gestibile</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     AI AGENT SPOTLIGHT (GEMINI) - WITH REAL SCREENSHOT
-══════════════════════════════════════ -->
-<section class="ai-spotlight section-pad" id="ai-advisor">
+<!-- AI ADVISOR SECTION -->
+<section class="section-pad section-ai" id="ai-advisor">
   <div class="container">
     <div class="ai-spotlight-box">
-      <div class="ai-content">
-        <div class="ai-badge" data-it="✨ ESCLUSIVA ASSOLUTA" data-en="✨ EXCLUSIVE FEATURE">✨ ESCLUSIVA ASSOLUTA</div>
-        <h3 data-it="Integrazione con Agente IA (Gemini): Il Tuo Presidente e DS Virtuale" data-en="Gemini AI Integration: Your Virtual President &amp; Sporting Director">Integrazione con Agente IA (Gemini): Il Tuo Presidente e DS Virtuale</h3>
-        <p data-it="Immagina di avere al tuo fianco un vero Direttore Sportivo o Presidente che conosce a memoria ogni singolo dato della tua carriera. L'integrazione con l'<strong>Agente IA alimentato da Google Gemini</strong> legge direttamente i dati esportati dall'app e ti consiglia in tempo reale." data-en="Imagine having a real Sporting Director or Club President who knows every single number in your squad. The <strong>Google Gemini AI Agent</strong> reads your exported app data directly and guides your decisions in real time.">Immagina di avere al tuo fianco un vero Direttore Sportivo o Presidente che conosce a memoria ogni singolo dato della tua carriera. L'integrazione con l'<strong>Agente IA alimentato da Google Gemini</strong> legge direttamente i dati esportati dall'app e ti consiglia in tempo reale.</p>
+      <div class="ai-text">
+        <div class="ai-badge" data-it="&#10024; ESCLUSIVA ASSOLUTA &bull; INTEGRAZIONE GEMINI IA" data-en="&#10024; EXCLUSIVE FEATURE &bull; GEMINI AI INTEGRATION">&#10024; ESCLUSIVA ASSOLUTA &bull; INTEGRAZIONE GEMINI IA</div>
+        <h2 class="ai-title" data-it="Un Agente IA che fa da <span class='highlight-text'>Direttore Sportivo e Presidente</span>" data-en="An AI Agent acting as your <span class='highlight-text'>Sporting Director &amp; President</span>">Un Agente IA che fa da <span class="highlight-text">Direttore Sportivo e Presidente</span></h2>
         
-        <ul class="ai-points-list">
-          <li>
-            <span class="icon">🔍</span>
-            <span data-it="<strong>Consigli mirati su acquisti e cessioni:</strong> chiedigli chi comprare rispettando il budget stipendi e le regole sui comunitari." data-en="<strong>Targeted transfer advice:</strong> ask who to buy within wage caps and EU quota rules."><strong>Consigli mirati su acquisti e cessioni:</strong> chiedigli chi comprare rispettando il budget stipendi e le regole sui comunitari.</span>
-          </li>
-          <li>
-            <span class="icon">📊</span>
-            <span data-it="<strong>Analisi strutturale della rosa:</strong> individua ruoli scoperti, età media e sostenibilità economica nel lungo termine." data-en="<strong>Squad balance analysis:</strong> identify positional gaps, average age, and long-term financial health."><strong>Analisi strutturale della rosa:</strong> individua ruoli scoperti, età media e sostenibilità economica nel lungo termine.</span>
-          </li>
-          <li>
-            <span class="icon">👔</span>
-            <span data-it="<strong>Feedback dalla Dirigenza:</strong> parla con l'Agente come se fossi in riunione con il Presidente del club." data-en="<strong>Boardroom meetings:</strong> talk with the AI as if you were in an official meeting with your club President."><strong>Feedback dalla Dirigenza:</strong> parla con l'Agente come se fossi in riunione con il Presidente del club.</span>
-          </li>
+        <p class="ai-desc" data-it="Esporta i dati della tua carriera direttamente dall'app con un solo tocco. L'Agente IA (ottimizzato per <strong>Google Gemini</strong>) analizza i tuoi numeri in tempo reale e dialoga con te fornendoti consigli strategici:" data-en="Export your career data from the app in a single tap. The AI Agent (optimized for <strong>Google Gemini</strong>) analyzes your stats in real-time and talks to you like your real club executives:">Esporta i dati della tua carriera direttamente dall'app con un solo tocco. L'Agente IA (ottimizzato per <strong>Google Gemini</strong>) analizza i tuoi numeri in tempo reale e dialoga con te fornendoti consigli strategici:</p>
+
+        <ul class="ai-features-list">
+          <li data-it="<span class='ai-bullet'>&#10003;</span> <strong>Consigli su Acquisti e Cessioni:</strong> Ti segnala i ruoli scoperti, gli esuberi a bilancio e i profili ideali da acquistare." data-en="<span class='ai-bullet'>&#10003;</span> <strong>Transfers Advice:</strong> Points out squad holes, bloated wages, and realistic transfer targets."><span class="ai-bullet">&#10003;</span> <strong>Consigli su Acquisti e Cessioni:</strong> Ti segnala i ruoli scoperti, gli esuberi a bilancio e i profili ideali da acquistare.</li>
+          <li data-it="<span class='ai-bullet'>&#10003;</span> <strong>Struttura Rosa &amp; Monte Ingaggi:</strong> Analizza se la tua rosa rispetta i vincoli salariali e le normative sui giocatori formati nel club." data-en="<span class='ai-bullet'>&#10003;</span> <strong>Squad Depth &amp; Wage Bill:</strong> Evaluates your salary cap and homegrown player requirements."><span class="ai-bullet">&#10003;</span> <strong>Struttura Rosa &amp; Monte Ingaggi:</strong> Analizza se la tua rosa rispetta i vincoli salariali e le normative sui giocatori formati nel club.</li>
+          <li data-it="<span class='ai-bullet'>&#10003;</span> <strong>Gestione Vivaio Academy:</strong> Ti indica quando promuovere i giovani talenti e come valorizzarli in prestito." data-en="<span class='ai-bullet'>&#10003;</span> <strong>Youth Academy Management:</strong> Suggests the right time to promote academy gems or send them on loan."><span class="ai-bullet">&#10003;</span> <strong>Gestione Vivaio Academy:</strong> Ti indica quando promuovere i giovani talenti e come valorizzarli in prestito.</li>
+          <li data-it="<span class='ai-bullet'>&#10003;</span> <strong>Dialogo Realistico da DS o Presidente:</strong> Puoi chiedergli pareri su una trattativa e ricevere risposte coerenti con il budget e la visione della societ&agrave;." data-en="<span class='ai-bullet'>&#10003;</span> <strong>Realistic Board Dialogues:</strong> Ask for executive feedback on contract negotiations or season goals."><span class="ai-bullet">&#10003;</span> <strong>Dialogo Realistico da DS o Presidente:</strong> Puoi chiedergli pareri su una trattativa e ricevere risposte coerenti con il budget e la visione della societ&agrave;.</li>
         </ul>
 
-        <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-ai btn-lg" data-it="🚀 Prova l'esperienza completa (€15)" data-en="🚀 Try the full experience (€15)">🚀 Prova l'esperienza completa (€15)</a>
+        <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-ai btn-lg" data-it="&#129302; Prova l'esperienza completa (15&euro;)" data-en="&#129302; Try the full experience (15&euro;)">&#129302; Prova l'esperienza completa (15&euro;)</a>
       </div>
 
-      <!-- Real AI Screenshot inside Smartphone Device -->
-      <div class="ai-visual-side">
-        <div class="ai-real-screen-frame">
-          <div class="phone-notch"></div>
-          <div class="ai-screen-inner">
-            <img src="screenshots/ita/gemini.jpg" data-src-it="screenshots/ita/gemini.jpg" data-src-en="screenshots/en/gemini.jpg" alt="Schermata Reale Assistente Gemini AI" class="ai-real-img" />
-          </div>
+      <div class="ai-visual">
+        <div class="phone-mockup-ai">
+          <img src="screenshots/ita/gemini.jpg" data-src-it="screenshots/ita/gemini.jpg" data-src-en="screenshots/en/gemini.jpg" alt="Schermata Reale Assistente Gemini AI" class="ai-real-img" />
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     REAL SCREENSHOTS GALLERY
-══════════════════════════════════════ -->
-<section class="screenshots section-pad dark-bg" id="screenshots">
+<!-- SCREENSHOTS GALLERY -->
+<section class="section-pad section-screenshots" id="screenshots">
   <div class="container">
-    <div class="section-header light">
-      <div class="sub-kicker" data-it="INTERFACCIA REALE" data-en="REAL APP INTERFACE">INTERFACCIA REALE</div>
-      <h2 data-it="Esplora le schermate reali dell'App" data-en="Explore the real app screens">Esplora le schermate reali dell'App</h2>
-      <p data-it="Nessun mockup fittizio: ecco esattamente l'applicazione che scaricherai sul tuo dispositivo Android per gestire la tua Carriera." data-en="No synthetic mockups: this is the exact application you will download to manage your Career on Android.">Nessun mockup fittizio: ecco esattamente l'applicazione che scaricherai sul tuo dispositivo Android per gestire la tua Carriera.</p>
+    <div class="section-header">
+      <span class="section-tag" data-it="&#128248; SCHERMATE DALL'APP REALE" data-en="&#128248; REAL APP SCREENSHOTS">&#128248; SCHERMATE DALL'APP REALE</span>
+      <h2 data-it="Esplora l'Interfaccia di Career Manager Hub" data-en="Explore the Career Manager Hub Interface">Esplora l'Interfaccia di Career Manager Hub</h2>
+      <p class="section-desc" data-it="Nessun rendering finto: ecco l'applicazione autentica che riceverai e installerai sul tuo smartphone o tablet Android." data-en="No mockups: these are authentic in-app screenshots of what you will install on your Android device.">Nessun rendering finto: ecco l'applicazione autentica che riceverai e installerai sul tuo smartphone o tablet Android.</p>
     </div>
-    
+
     <div class="screenshots-gallery-grid">
       
       <!-- 1. Rosa -->
@@ -1157,9 +1173,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/rosa.jpg" data-src-it="screenshots/ita/rosa.jpg" data-src-en="screenshots/en/rosa.jpg" alt="Prima Squadra" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Prima Squadra" data-en="First Team">Prima Squadra</span>
-          <span class="app-screen-desc" data-it="Rosa completa con ruoli, overall e tetti comunitari" data-en="Complete squad with positions, OVR and EU quotas">Rosa completa con ruoli, overall e tetti comunitari</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="1. Gestione Rosa Completa" data-en="1. First Team Squad">1. Gestione Rosa Completa</div>
+          <p class="app-screen-desc" data-it="Visualizza ruoli, et&agrave;, over, stipendi, scadenze contrattuali e status dei giocatori." data-en="Track positions, age, ratings, wages, contract expiry, and player statuses.">Visualizza ruoli, et&agrave;, over, stipendi, scadenze contrattuali e status dei giocatori.</p>
         </div>
       </div>
 
@@ -1168,9 +1184,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/finanze.jpg" data-src-it="screenshots/ita/finanze.jpg" data-src-en="screenshots/en/finanze.jpg" alt="Finanze &amp; Bilancio" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Finanze &amp; Bilancio" data-en="Finances &amp; Balance">Finanze &amp; Bilancio</span>
-          <span class="app-screen-desc" data-it="Budget mercato, monte ingaggi e ricavi stagionali" data-en="Transfer budget, wage bill and season revenue">Budget mercato, monte ingaggi e ricavi stagionali</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="2. Finanze &amp; Liquidit&agrave;" data-en="2. Finances &amp; Liquidity">2. Finanze &amp; Liquidit&agrave;</div>
+          <p class="app-screen-desc" data-it="Budget trasferimenti, monte ingaggi, entrate, uscite e indice di liquidit&agrave; calcolato." data-en="Transfer budget, wage bills, revenues, expenses, and automated liquidity ratios.">Budget trasferimenti, monte ingaggi, entrate, uscite e indice di liquidit&agrave; calcolato.</p>
         </div>
       </div>
 
@@ -1179,9 +1195,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/figc.jpg" data-src-it="screenshots/ita/figc.jpg" data-src-en="screenshots/en/figc.jpg" alt="Normative FIGC" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Indicatori FIGC" data-en="FIGC Indicators">Indicatori FIGC</span>
-          <span class="app-screen-desc" data-it="Regole finanziarie e requisiti di controllo automatici" data-en="Automated financial rules and league checks">Regole finanziarie e requisiti di controllo automatici</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="3. Normative FIGC &amp; Leghe" data-en="3. League &amp; FIGC Rules">3. Normative FIGC &amp; Leghe</div>
+          <p class="app-screen-desc" data-it="Calcolo automatico di liste over 22, giocatori cresciuti nel vivaio e vincoli federali." data-en="Automatic compliance checking for over-22 lists, homegrown players, and league caps.">Calcolo automatico di liste over 22, giocatori cresciuti nel vivaio e vincoli federali.</p>
         </div>
       </div>
 
@@ -1190,9 +1206,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/mercato.jpg" data-src-it="screenshots/ita/mercato.jpg" data-src-en="screenshots/en/mercato.jpg" alt="Gestione Mercato" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Gestione Mercato" data-en="Transfer Window">Gestione Mercato</span>
-          <span class="app-screen-desc" data-it="Controllo acquisti, cessioni e saldo sessione" data-en="Track signings, departures and net window spending">Controllo acquisti, cessioni e saldo sessione</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="4. Calciomercato &amp; Obiettivi" data-en="4. Transfer Hub &amp; Targets">4. Calciomercato &amp; Obiettivi</div>
+          <p class="app-screen-desc" data-it="Pianifica acquisti, cessioni, clausole rescissorie e percentuali di rivendita futura." data-en="Plan signings, sales, release clauses, and future resale profit percentages.">Pianifica acquisti, cessioni, clausole rescissorie e percentuali di rivendita futura.</p>
         </div>
       </div>
 
@@ -1201,9 +1217,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/lavagna.jpg" data-src-it="screenshots/ita/lavagna.jpg" data-src-en="screenshots/en/lavagna.jpg" alt="Lavagna Tattica" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Lavagna Tattica" data-en="Tactics Board">Lavagna Tattica</span>
-          <span class="app-screen-desc" data-it="Schiera l'11 titolare e imposta il modulo sul campo" data-en="Position your starting XI and tactical formation">Schiera l'11 titolare e imposta il modulo sul campo</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="5. Lavagna Tattica da Campo" data-en="5. Interactive Pitch Tactics">5. Lavagna Tattica da Campo</div>
+          <p class="app-screen-desc" data-it="Schiera i tuoi 11 titolari con visualizzazione grafica dinamica (4-3-3, 4-2-3-1, 3-5-2)." data-en="Pick your starting 11 on interactive tactical pitch formations (4-3-3, 4-2-3-1, 3-5-2).">Schiera i tuoi 11 titolari con visualizzazione grafica dinamica (4-3-3, 4-2-3-1, 3-5-2).</p>
         </div>
       </div>
 
@@ -1212,9 +1228,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/vivaio.jpg" data-src-it="screenshots/ita/vivaio.jpg" data-src-en="screenshots/en/vivaio.jpg" alt="Vivaio Academy" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Vivaio Academy" data-en="Youth Academy">Vivaio Academy</span>
-          <span class="app-screen-desc" data-it="Monitora talenti, potenziale e promozioni" data-en="Track young prospects, potential and promotions">Monitora talenti, potenziale e promozioni</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="6. Vivaio &amp; Giovani Talenti" data-en="6. Youth Academy Hub">6. Vivaio &amp; Giovani Talenti</div>
+          <p class="app-screen-desc" data-it="Tieni traccia dei prospetti della Primavera, del potenziale stimato e delle date di promozione." data-en="Track youth academy prospects, potential ranges, and graduation dates.">Tieni traccia dei prospetti della Primavera, del potenziale stimato e delle date di promozione.</p>
         </div>
       </div>
 
@@ -1223,9 +1239,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/acquisti.jpg" data-src-it="screenshots/ita/acquisti.jpg" data-src-en="screenshots/en/acquisti.jpg" alt="Trattative &amp; Acquisti" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Dettaglio Acquisti" data-en="Transfer Details">Dettaglio Acquisti</span>
-          <span class="app-screen-desc" data-it="Trattative, clausole e impatto salariale sul club" data-en="Negotiations, buyout clauses and wage impact">Trattative, clausole e impatto salariale sul club</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="7. Trattative &amp; Formule Prestito" data-en="7. Loans &amp; Complex Deals">7. Trattative &amp; Formule Prestito</div>
+          <p class="app-screen-desc" data-it="Prestiti con diritto/obbligo di riscatto, contro-riscatti e rateizzazioni pluriennali." data-en="Manage loans with option/obligation to buy, buybacks, and multi-year installments.">Prestiti con diritto/obbligo di riscatto, contro-riscatti e rateizzazioni pluriennali.</p>
         </div>
       </div>
 
@@ -1234,9 +1250,9 @@ p { color: var(--muted); line-height: 1.65; }
         <div class="app-screen-frame">
           <img src="screenshots/ita/imprevisti.jpg" data-src-it="screenshots/ita/imprevisti.jpg" data-src-en="screenshots/en/imprevisti.jpg" alt="Estrazione Imprevisti" class="app-screen-img" />
         </div>
-        <div class="app-screen-caption">
-          <span class="app-screen-title" data-it="Estrazione Imprevisti" data-en="Random Events">Estrazione Imprevisti</span>
-          <span class="app-screen-desc" data-it="Generatore di eventi casuali per una carriera viva" data-en="Random event draw system for a dynamic career">Generatore di eventi casuali per una carriera viva</span>
+        <div class="app-screen-info">
+          <div class="app-screen-title" data-it="8. Generatore Imprevisti Realistici" data-en="8. Random Events Generator">8. Generatore Imprevisti Realistici</div>
+          <p class="app-screen-desc" data-it="Infortuni improvvisi, richieste di rinnovo, multe e colpi di scena per rendere unica ogni stagione." data-en="Unexpected injuries, contract strikes, fines, and realistic plot twists.">Infortuni improvvisi, richieste di rinnovo, multe e colpi di scena per rendere unica ogni stagione.</p>
         </div>
       </div>
 
@@ -1244,117 +1260,96 @@ p { color: var(--muted); line-height: 1.65; }
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     FEATURES
-══════════════════════════════════════ -->
-<section class="features section-pad" id="features">
+<!-- FEATURES GRID -->
+<section class="section-pad section-features" id="features">
   <div class="container">
     <div class="section-header">
-      <div class="sub-kicker" data-it="DOMINA LA CARRIERA" data-en="MASTER YOUR CAREER">DOMINA LA CARRIERA</div>
-      <h2 data-it="Dall'organizzazione tattica alla gestione contabile" data-en="From tactical setups to financial control">Dall'organizzazione tattica alla gestione contabile</h2>
-      <p data-it="Domina ogni aspetto della tua squadra con strumenti avanzati e intuitivi: la tua Carriera Allenatore non sarà mai più la stessa." data-en="Take complete control with advanced, intuitive tools: your Manager Career will never be the same.">Domina ogni aspetto della tua squadra con strumenti avanzati e intuitivi: la tua Carriera Allenatore non sarà mai più la stessa.</p>
+      <span class="section-tag" data-it="&#9889; FUNZIONALIT&Agrave; COMPLETE" data-en="&#9889; ALL FEATURES">&#9889; FUNZIONALIT&Agrave; COMPLETE</span>
+      <h2 data-it="Tutto Ci&ograve; che Manca nella Carriera Tradizionale" data-en="Everything Missing in Default Career Mode">Tutto Ci&ograve; che Manca nella Carriera Tradizionale</h2>
+      <p class="section-desc" data-it="Dall'organizzazione tattica alle trattative di mercato fino alla gestione contabile: domina ogni aspetto con strumenti avanzati e intuitivi." data-en="From tactical organization to transfer talks and financial accounting: master every angle of your club.">Dall'organizzazione tattica alle trattative di mercato fino alla gestione contabile: domina ogni aspetto con strumenti avanzati e intuitivi.</p>
     </div>
+
     <div class="features-grid">
-
-      <div class="feature-card featured-card">
-        <div class="feature-icon">🤖</div>
-        <h3 data-it="Agente IA Gemini (Presidente / DS)" data-en="Gemini AI Agent (President / DS)">Agente IA Gemini (Presidente / DS)</h3>
-        <p data-it="Dialoga con un consulente di mercato intelligente che conosce i tuoi giocatori, il budget e i giovani del vivaio per suggerirti le mosse vincenti." data-en="Chat with an intelligent transfer consultant who knows your squad, budget, and academy talents to advise your best moves.">Dialoga con un consulente di mercato intelligente che conosce i tuoi giocatori, il budget e i giovani del vivaio per suggerirti le mosse vincenti.</p>
+      <div class="feature-card">
+        <div class="feature-icon-box">&#128203;</div>
+        <h3 data-it="Regolamenti Federali &amp; FIGC" data-en="League &amp; FIGC Regulations">Regolamenti Federali &amp; FIGC</h3>
+        <p data-it="Le regole ufficiali del calcio italiano ed europeo ti impongono vincoli su rose e bilanci, calcolati in tempo reale dall'app." data-en="Official Italian &amp; European football rules enforce strict squad and financial caps, computed automatically.">Le regole ufficiali del calcio italiano ed europeo ti impongono vincoli su rose e bilanci, calcolati in tempo reale dall'app.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">⚖️</div>
-        <h3 data-it="Normative FIGC &amp; Indicatori" data-en="League &amp; Financial Regulations">Normative FIGC &amp; Indicatori</h3>
-        <p data-it="Regole e vincoli realistici calcolati in automatico su rosa, vivaio e finanze: indice di liquidità, tetti spesa e controlli sui giocatori comunitari ed extracomunitari." data-en="Realistic league rules computed automatically across squad, youth academy, and balance sheet: liquidity index, spending caps, and EU player rules.">Regole e vincoli realistici calcolati in automatico su rosa, vivaio e finanze: indice di liquidità, tetti spesa e controlli sui giocatori comunitari ed extracomunitari.</p>
+        <div class="feature-icon-box">&#129302;</div>
+        <h3 data-it="Agente Virtuale Gemini IA" data-en="Gemini AI Virtual Agent">Agente Virtuale Gemini IA</h3>
+        <p data-it="Esporta il file JSON e dialoga con l'IA per ricevere dritte su mercato, stipendi e bilancio proprio come se parlassi con il tuo Presidente." data-en="Export your season data and talk to the AI to get transfer and budget tips like talking to your club President.">Esporta il file JSON e dialoga con l'IA per ricevere dritte su mercato, stipendi e bilancio proprio come se parlassi con il tuo Presidente.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">👥</div>
-        <h3 data-it="Rosa &amp; Prima Squadra" data-en="Squad &amp; First Team">Rosa &amp; Prima Squadra</h3>
-        <p data-it="Traccia ruoli, nazionalità, ingaggi, clausole e status di ogni giocatore per qualsiasi campionato del mondo." data-en="Track positions, nationalities, wages, buyout clauses and player statuses across any global league.">Traccia ruoli, nazionalità, ingaggi, clausole e status di ogni giocatore per qualsiasi campionato del mondo.</p>
+        <div class="feature-icon-box">&#128176;</div>
+        <h3 data-it="Bilancio &amp; Controllo Salari" data-en="Finances &amp; Wage Cap Control">Bilancio &amp; Controllo Salari</h3>
+        <p data-it="Niente pi&ugrave; conti in rosso su EA Sports FC: traccia ogni singolo euro di ammortamenti, premi partita e sponsor." data-en="Never run in the red: track amortizations, bonuses, sponsorship deals, and financial stability.">Niente pi&ugrave; conti in rosso su EA Sports FC: traccia ogni singolo euro di ammortamenti, premi partita e sponsor.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🌱</div>
-        <h3 data-it="Vivaio Academy &amp; Scouting" data-en="Youth Academy &amp; Scouting">Vivaio Academy &amp; Scouting</h3>
-        <p data-it="Monitora la cantera del tuo club: crescita dei talenti, potenziale stimato, promozioni in prima squadra o cessioni strategiche." data-en="Oversee your club youth pipeline: talent development, potential scouting, senior promotions, and strategic sales.">Monitora la cantera del tuo club: crescita dei talenti, potenziale stimato, promozioni in prima squadra o cessioni strategiche.</p>
+        <div class="feature-icon-box">&#127793;</div>
+        <h3 data-it="Vivaio &amp; Cantera Academy" data-en="Youth Academy Tracking">Vivaio &amp; Cantera Academy</h3>
+        <p data-it="Monitora la crescita dei giovani talenti, programma i loro prestiti e rispetta le quote obbligatorie di giocatori formati nel club." data-en="Nurture your wonderkids, structure developmental loans, and meet mandatory homegrown player quotas.">Monitora la crescita dei giovani talenti, programma i loro prestiti e rispetta le quote obbligatorie di giocatori formati nel club.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <h3 data-it="Calciomercato &amp; Prestiti" data-en="Transfer Market &amp; Loans">Calciomercato &amp; Prestiti</h3>
-        <p data-it="Gestisci acquisti, cessioni, prestiti con diritto o obbligo di riscatto e tieni sempre sotto controllo il saldo netto tra entrate e uscite." data-en="Handle signings, sales, and loan options with complete tracking of your net transfer spending.">Gestisci acquisti, cessioni, prestiti con diritto o obbligo di riscatto e tieni sempre sotto controllo il saldo netto tra entrate e uscite.</p>
+        <div class="feature-icon-box">&#127922;</div>
+        <h3 data-it="Motore Imprevisti Realistici" data-en="Realistic Random Events Engine">Motore Imprevisti Realistici</h3>
+        <p data-it="Basta carriere noiose e prevedibili: affronta ribellioni nello spogliatoio, cali fisici, scandali societari e richieste di rinnovo." data-en="No more repetitive seasons: handle dressing room mutinies, contract drama, and surprise board decisions.">Basta carriere noiose e prevedibili: affronta ribellioni nello spogliatoio, cali fisici, scandali societari e richieste di rinnovo.</p>
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🗺️</div>
-        <h3 data-it="Lavagna Tattica Interattiva" data-en="Tactics Board">Lavagna Tattica Interattiva</h3>
-        <p data-it="Disegna i tuoi 11 titolari, sperimenta moduli (4-3-3, 3-5-2, 4-2-3-1) e prepara le rotazioni pre-partita direttamente dal telefono." data-en="Set your starting XI, test tactical shapes (4-3-3, 3-5-2, 4-2-3-1) and plan rotations right from your phone.">Disegna i tuoi 11 titolari, sperimenta moduli (4-3-3, 3-5-2, 4-2-3-1) e prepara le rotazioni pre-partita direttamente dal telefono.</p>
+        <div class="feature-icon-box">&#128241;</div>
+        <h3 data-it="100% Offline e Privato" data-en="100% Offline and Private">100% Offline e Privato</h3>
+        <p data-it="Tutti i dati rimangono salvati al sicuro sul tuo telefono Android. Nessuna pubblicit&agrave;, nessun account obbligatorio, nessun abbonamento." data-en="All your data is saved locally on your Android phone. No ads, no tracking, and zero recurring fees.">Tutti i dati rimangono salvati al sicuro sul tuo telefono Android. Nessuna pubblicit&agrave;, nessun account obbligatorio, nessun abbonamento.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🎲</div>
-        <h3 data-it="Imprevisti &amp; Eventi Realistici" data-en="Realistic Random Events">Imprevisti &amp; Eventi Realistici</h3>
-        <p data-it="Estrai eventi casuali realistici: infortuni imprevisti, malumori nello spogliatoio, richieste d'aumento o sanzioni societarie." data-en="Roll authentic random events: surprise injuries, dressing room tensions, wage demands, or board sanctions.">Estrai eventi casuali realistici: infortuni imprevisti, malumori nello spogliatoio, richieste d'aumento o sanzioni societarie.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🗄️</div>
-        <h3 data-it="Archivi Storici della Carriera" data-en="Career Historical Archives">Archivi Storici della Carriera</h3>
-        <p data-it="Salva i dati stagione dopo stagione e crea la storia immortale del tuo club: vittorie, trofei, plusvalenze e bandiere." data-en="Archive season stats year after year to document your club dynasty: trophies, iconic sales, and club legends.">Salva i dati stagione dopo stagione e crea la storia immortale del tuo club: vittorie, trofei, plusvalenze e bandiere.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🌍</div>
-        <h3 data-it="Bilingue IT &amp; EN + Manuali PDF" data-en="Bilingual IT &amp; EN + PDF Guides">Bilingue IT &amp; EN + Manuali PDF</h3>
-        <p data-it="App interamente bilingue con switch istantaneo. Include manuali d'uso approfonditi di 16 capitoli sia in Italiano che in Inglese." data-en="Fully bilingual app with instant toggle. Includes comprehensive 16-chapter PDF user manuals in both Italian and English.">App interamente bilingue con switch istantaneo. Include manuali d'uso approfonditi di 16 capitoli sia in Italiano che in Inglese.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     REVIEWS
-══════════════════════════════════════ -->
-<section class="reviews section-pad" id="reviews">
+<!-- REVIEWS -->
+<section class="section-pad section-reviews" id="reviews">
   <div class="container">
     <div class="section-header">
-      <div class="sub-kicker" data-it="COMMUNITY CARRIERA" data-en="CAREER COMMUNITY">COMMUNITY CARRIERA</div>
-      <h2 data-it="Cosa dicono i veri manager" data-en="What real managers say">Cosa dicono i veri manager</h2>
-      <p data-it="Recensioni da chi ha trasformato la propria Carriera con Career Manager Hub." data-en="Feedback from players who revolutionized their Career Mode with Career Manager Hub.">Recensioni da chi ha trasformato la propria Carriera con Career Manager Hub.</p>
+      <span class="section-tag" data-it="&#11088; RECENSIONI DEGLI ALLENATORI" data-en="&#11088; MANAGER REVIEWS">&#11088; RECENSIONI DEGLI ALLENATORI</span>
+      <h2 data-it="Amato dalla Community di EA FC &amp; FIFA" data-en="Loved by EA FC &amp; FIFA Career Players">Amato dalla Community di EA FC &amp; FIFA</h2>
     </div>
+
     <div class="reviews-grid">
       <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text" data-it="&ldquo;L'integrazione con l'Agente IA Gemini è qualcosa di mai visto: parlo con l'assistente come se fosse il mio Direttore Sportivo prima di ogni mercato. Le regole FIGC automatiche evitano che la carriera diventi noiosa o surreale.&rdquo;" data-en="&ldquo;The Gemini AI Agent integration is unprecedented: I consult with it like a real Sporting Director before every window. The automated FIGC rules prevent the career from becoming unrealistically easy.&rdquo;">&ldquo;L'integrazione con l'Agente IA Gemini è qualcosa di mai visto: parlo con l'assistente come se fosse il mio Direttore Sportivo prima di ogni mercato. Le regole FIGC automatiche evitano che la carriera diventi noiosa o surreale.&rdquo;</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-it="&ldquo;Cambia completamente l'esperienza su FC 25! Le regole FIGC ti costringono a ragionare prima di comprare chiunque, e l'integrazione con Gemini come Direttore Sportivo &egrave; semplicemente geniale.&rdquo;" data-en="&ldquo;Completely transforms my FC 25 career mode! The official league rules force you to be smart, and the Gemini AI Sporting Director advice is sheer genius.&rdquo;">&ldquo;Cambia completamente l'esperienza su FC 25! Le regole FIGC ti costringono a ragionare prima di comprare chiunque, e l'integrazione con Gemini come Direttore Sportivo &egrave; semplicemente geniale.&rdquo;</p>
         <div class="review-author">
-          <div class="review-avatar">MR</div>
-          <div>
-            <div class="review-name">Marco R.</div>
-            <div class="review-role" data-it="Giocatore Carriera EA FC" data-en="EA FC Career Player">Giocatore Carriera EA FC</div>
+          <div class="review-author-img">MR</div>
+          <div class="review-author-info">
+            <h4>Matteo R.</h4>
+            <span data-it="Allenatore Carriera Sassuolo" data-en="Sassuolo Career Manager">Allenatore Carriera Sassuolo</span>
           </div>
         </div>
       </div>
+
       <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text" data-it="&ldquo;Ho pagato comodamente con PayPal in 10 secondi. APK scaricato subito sul mio tablet Android. Finalmente posso tracciare il vivaio e pianificare i riscatti dei prestiti senza impazzire coi fogli di calcolo.&rdquo;" data-en="&ldquo;Paid smoothly with PayPal in 10 seconds. Downloaded the APK to my tablet right away. Finally I can track youth players and plan loan buyouts without messy spreadsheets.&rdquo;">&ldquo;Ho pagato comodamente con PayPal in 10 secondi. APK scaricato subito sul mio tablet Android. Finalmente posso tracciare il vivaio e pianificare i riscatti dei prestiti senza impazzire coi fogli di calcolo.&rdquo;</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-it="&ldquo;Ho acquistato con checkout sicuro e ho scaricato subito l'APK e il manuale sul mio tablet Android. Finalmente posso tracciare il vivaio e pianificare i riscatti dei prestiti senza impazzire coi fogli Excel.&rdquo;" data-en="&ldquo;Purchased with instant secure checkout, downloaded APK and user manual right away to my Android tablet. Finally tracking youth academy and loans without messy Excel sheets.&rdquo;">&ldquo;Ho acquistato con checkout sicuro e ho scaricato subito l'APK e il manuale sul mio tablet Android. Finalmente posso tracciare il vivaio e pianificare i riscatti dei prestiti senza impazzire coi fogli Excel.&rdquo;</p>
         <div class="review-author">
-          <div class="review-avatar">LS</div>
-          <div>
-            <div class="review-name">Luca S.</div>
-            <div class="review-role" data-it="Appassionato Carriera FIFA" data-en="FIFA Career Enthusiast">Appassionato Carriera FIFA</div>
+          <div class="review-author-img">GB</div>
+          <div class="review-author-info">
+            <h4>Gianluca B.</h4>
+            <span data-it="Carriera Nottingham Forest" data-en="Nottingham Forest Career">Carriera Nottingham Forest</span>
           </div>
         </div>
       </div>
+
       <div class="review-card">
-        <div class="review-stars">⭐⭐⭐⭐⭐</div>
-        <p class="review-text" data-it="&ldquo;Gli imprevisti estratti a sorpresa aggiungono una sfida incredibile. Il manuale PDF in italiano allegato spiega ogni singola formula alla perfezione. Vale molto più dei 15€ richiesti.&rdquo;" data-en="&ldquo;The random events add unmatched drama and challenge. The included user manual clearly explains every single formula. Worth far more than €15.&rdquo;">&ldquo;Gli imprevisti estratti a sorpresa aggiungono una sfida incredibile. Il manuale PDF in italiano allegato spiega ogni singola formula alla perfezione. Vale molto più dei 15€ richiesti.&rdquo;</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text" data-it="&ldquo;Gli imprevisti casuali hanno salvato la mia carriera dall'essere la solita passeggiata. Quando il presidente mi ha bloccato il mercato per indice di liquidit&agrave; ho dovuto vendere due stelle. Realismo puro!&rdquo;" data-en="&ldquo;The random events engine saved my career from being too predictable. When the board froze my transfers due to liquidity rules, I had to sell two key players. Pure realism!&rdquo;">&ldquo;Gli imprevisti casuali hanno salvato la mia carriera dall'essere la solita passeggiata. Quando il presidente mi ha bloccato il mercato per indice di liquidit&agrave; ho dovuto vendere due stelle. Realismo puro!&rdquo;</p>
         <div class="review-author">
-          <div class="review-avatar">GP</div>
-          <div>
-            <div class="review-name">Giovanni P.</div>
-            <div class="review-role" data-it="Gamer &amp; Streamer" data-en="Gamer &amp; Streamer">Gamer &amp; Streamer</div>
+          <div class="review-author-img">DC</div>
+          <div class="review-author-info">
+            <h4>Davide C.</h4>
+            <span data-it="Carriera Palermo (Dalla B alla A)" data-en="Palermo Road to Glory">Carriera Palermo (Dalla B alla A)</span>
           </div>
         </div>
       </div>
@@ -1362,173 +1357,194 @@ p { color: var(--muted); line-height: 1.65; }
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     PRICING
-══════════════════════════════════════ -->
-<section class="pricing section-pad dark-bg" id="pricing">
-  <div class="container">
-    <div class="section-header light">
-      <div class="sub-kicker" data-it="NESSUN ABBONAMENTO" data-en="NO SUBSCRIPTION">NESSUN ABBONAMENTO</div>
-      <h2 data-it="Accesso Completo a Vita" data-en="Full Lifetime Access">Accesso Completo a Vita</h2>
-      <p data-it="Nessun canone mensile né acquisti in-app. Unico pagamento una tantum per avere tutto." data-en="No monthly fees or recurring charges. One simple payment to own everything.">Nessun canone mensile né acquisti in-app. Unico pagamento una tantum per avere tutto.</p>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-badge" data-it="🏆 PACCHETTO COMPLETO HUB" data-en="🏆 COMPLETE HUB PACKAGE">🏆 PACCHETTO COMPLETO HUB</div>
-      <div class="pricing-price">€15</div>
-      <div class="pricing-period" data-it="pagamento unico per sempre" data-en="one-time payment forever">pagamento unico per sempre</div>
-      
-      <!-- Supported Payment Options Badges inside Card -->
-      <div class="pricing-payment-options">
-        <span class="ppo-item">🅿️ PayPal</span>
-        <span class="ppo-item">💳 Carte di Credito/Debito</span>
-        <span class="ppo-item">🍏 Apple Pay</span>
-        <span class="ppo-item">🇬 Google Pay</span>
-      </div>
-
-      <ul class="pricing-list">
-        <li data-it="✅ App Android completa (.APK)" data-en="✅ Complete Android App (.APK)">✅ App Android completa (.APK)</li>
-        <li data-it="✅ 🤖 Integrazione con Agente IA Gemini (DS &amp; Presidente)" data-en="✅ 🤖 Gemini AI Agent Integration (DS &amp; President)">✅ 🤖 Integrazione con Agente IA Gemini (DS &amp; Presidente)</li>
-        <li data-it="✅ ⚖️ Calcolo automatico normative FIGC e bilancio" data-en="✅ ⚖️ Automated League &amp; FIGC financial rules">✅ ⚖️ Calcolo automatico normative FIGC e bilancio</li>
-        <li data-it="✅ 📄 Manuale utente completo in Italiano (PDF)" data-en="✅ Full User Manual in Italian (PDF)">✅ Manuale utente completo in Italiano (PDF)</li>
-        <li data-it="✅ 📄 User Manual in English (PDF)" data-en="✅ Full User Manual in English (PDF)">✅ User Manual in English (PDF)</li>
-        <li data-it="✅ 🎲 Database imprevisti ed eventi illimitato" data-en="✅ Unlimited random event draws">✅ Database imprevisti ed eventi illimitato</li>
-        <li data-it="✅ 🗺️ Lavagna Tattica e archivio storico delle stagioni" data-en="✅ Tactics Board &amp; Historical archives">✅ 🗺️ Lavagna Tattica e archivio storico delle stagioni</li>
-        <li data-it="✅ 🔒 Checkout sicuro con Stripe &amp; PayPal" data-en="✅ Secure Stripe &amp; PayPal checkout">✅ 🔒 Checkout sicuro con Stripe &amp; PayPal</li>
-      </ul>
-      
-            <!-- Checkout Stripe (supporta PayPal, Carte, Apple Pay, Google Pay) -->
-      <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 14px;">
-        <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-primary btn-xl" id="checkout-main-btn" data-it="âš¡ Procedi all'Acquisto (â‚¬15)" data-en="âš¡ Proceed to Checkout (â‚¬15)">
-          âš¡ Procedi all'Acquisto (â‚¬15)
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════
-     HOW IT WORKS
-══════════════════════════════════════ -->
-<section class="howto section-pad" id="howto">
+<!-- PRICING -->
+<section class="section-pad section-pricing" id="pricing">
   <div class="container">
     <div class="section-header">
-      <div class="sub-kicker" data-it="3 SEMPLICI PASSI" data-en="3 SIMPLE STEPS">3 SEMPLICI PASSI</div>
-      <h2 data-it="Come scaricare Career Manager Hub" data-en="How to get Career Manager Hub">Come scaricare Career Manager Hub</h2>
-      <p data-it="Rapido, immediato e completamente sicuro." data-en="Quick, immediate and 100% secure.">Rapido, immediato e completamente sicuro.</p>
+      <span class="section-tag" data-it="&#128179; LICENZA COMPLETA &amp; DOWNLOAD" data-en="&#128179; FULL LICENSE &amp; DOWNLOAD">&#128179; LICENZA COMPLETA &amp; DOWNLOAD</span>
+      <h2 data-it="Porta la Tua Carriera al Livello Pro" data-en="Elevate Your Career Mode to Pro Level">Porta la Tua Carriera al Livello Pro</h2>
+      <p class="section-desc" data-it="Nessun abbonamento mensile: paghi una sola volta e l'applicazione &egrave; tua per sempre con tutti i manuali inclusi." data-en="Zero monthly subscriptions: pay once, keep the app forever with both comprehensive manuals included.">Nessun abbonamento mensile: paghi una sola volta e l'applicazione &egrave; tua per sempre con tutti i manuali inclusi.</p>
     </div>
+
+    <div class="pricing-card">
+      <div class="pricing-badge-popular" data-it="OFFERTA COMPLETA &bull; ACCESSO IMMEDIATO" data-en="FULL OFFER &bull; INSTANT ACCESS">OFFERTA COMPLETA &bull; ACCESSO IMMEDIATO</div>
+      <div class="pricing-title">Career Manager Hub</div>
+      <div class="pricing-subtitle" data-it="Licenza Android APK Completa (v1.0)" data-en="Full Android APK License (v1.0)">Licenza Android APK Completa (v1.0)</div>
+
+      <div class="pricing-price-wrapper">
+        <span class="pricing-currency">&euro;</span>
+        <span class="pricing-price">15</span>
+        <span class="pricing-period" data-it="Pagamento unico &bull; Accesso illimitato a vita" data-en="One-time payment &bull; Lifetime unlimited access">Pagamento unico &bull; Accesso illimitato a vita</span>
+      </div>
+
+      <ul class="pricing-features">
+        <li data-it="<span class='check'>&#10003;</span> File APK Android (v1.0) pronto all'installazione" data-en="<span class='check'>&#10003;</span> Android APK file (v1.0) ready for install"><span class="check">&#10003;</span> File APK Android (v1.0) pronto all'installazione</li>
+        <li data-it="<span class='check'>&#10003;</span> Calcolo automatico normative FIGC e vincoli rose" data-en="<span class='check'>&#10003;</span> Automated League &amp; FIGC financial regulations"><span class="check">&#10003;</span> Calcolo automatico normative FIGC e vincoli rose</li>
+        <li data-it="<span class='check'>&#10003;</span> Integrazione Agente IA Gemini (DS &amp; Presidente)" data-en="<span class='check'>&#10003;</span> Gemini AI Agent Integration (Sporting Director &amp; Board)"><span class="check">&#10003;</span> Integrazione Agente IA Gemini (DS &amp; Presidente)</li>
+        <li data-it="<span class='check'>&#10003;</span> Gestione Rosa, Bilancio, Mercato, Prestiti e Vivaio" data-en="<span class='check'>&#10003;</span> Full Squad, Accounting, Market, Loans &amp; Academy"><span class="check">&#10003;</span> Gestione Rosa, Bilancio, Mercato, Prestiti e Vivaio</li>
+        <li data-it="<span class='check'>&#10003;</span> Generatore di Imprevisti realistici a estrazione casuale" data-en="<span class='check'>&#10003;</span> Realistic random season events &amp; plot twists"><span class="check">&#10003;</span> Generatore di Imprevisti realistici a estrazione casuale</li>
+        <li data-it="<span class='check'>&#10003;</span> Lavagna Tattica interattiva (4-3-3, 4-2-3-1, 3-5-2)" data-en="<span class='check'>&#10003;</span> Interactive pitch tactical formations"><span class="check">&#10003;</span> Lavagna Tattica interattiva (4-3-3, 4-2-3-1, 3-5-2)</li>
+        <li data-it="<span class='check'>&#10003;</span> Manuale d'Uso Completo in Italiano (PDF)" data-en="<span class='check'>&#10003;</span> Complete User Manual in Italian (PDF)"><span class="check">&#10003;</span> Manuale d'Uso Completo in Italiano (PDF)</li>
+        <li data-it="<span class='check'>&#10003;</span> Full User Manual in English (PDF)" data-en="<span class='check'>&#10003;</span> Full User Manual in English (PDF)"><span class="check">&#10003;</span> Full User Manual in English (PDF)</li>
+        <li data-it="<span class='check'>&#10003;</span> Pagamenti protetti e sicuri: PayPal, Carte &amp; Google Pay" data-en="<span class='check'>&#10003;</span> Secure payment: PayPal, Cards &amp; Google Pay"><span class="check">&#10003;</span> Pagamenti protetti e sicuri: PayPal, Carte &amp; Google Pay</li>
+      </ul>
+
+      <!-- PULSANTE UNICO DI PAGAMENTO (STRIPE + PAYPAL + GOOGLE PAY) -->
+      <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-primary btn-xl" id="checkout-main-btn" data-it="&#9889; Procedi all'Acquisto (15&euro;)" data-en="&#9889; Proceed to Checkout (15&euro;)">
+          &#9889; Procedi all'Acquisto (15&euro;)
+        </a>
+      </div>
+
+      <p class="pricing-note" data-it="&#128274; Pagamento 100% protetto e crittografato. Supporta PayPal, tutte le Carte di Credito/Debito, Google Pay e Apple Pay. Subito dopo l'acquisto vieni reindirizzato alla schermata di download immediato dell'APK e dei manuali." data-en="&#128274; 100% secure encrypted payment powered by Stripe. Supports PayPal, all major Credit/Debit Cards, Google Pay and Apple Pay. Instant APK and user manuals download right after checkout.">&#128274; Pagamento 100% protetto e crittografato. Supporta PayPal, tutte le Carte di Credito/Debito, Google Pay e Apple Pay. Subito dopo l'acquisto vieni reindirizzato alla schermata di download immediato dell'APK e dei manuali.</p>
+    </div>
+
+    <div class="pricing-guarantees">
+      <div class="guarantee-item">
+        <span class="guarantee-icon">&#9889;</span>
+        <span data-it="Download Immediato APK" data-en="Instant APK Download">Download Immediato APK</span>
+      </div>
+      <div class="guarantee-item">
+        <span class="guarantee-icon">&#128737;&#65039;</span>
+        <span data-it="Pagamento Sicuro 256-bit" data-en="256-bit Secure Checkout">Pagamento Sicuro 256-bit</span>
+      </div>
+      <div class="guarantee-item">
+        <span class="guarantee-icon">&#127359;&#65039;</span>
+        <span data-it="PayPal &amp; Carte accettate" data-en="PayPal &amp; Cards accepted">PayPal &amp; Carte accettate</span>
+      </div>
+      <div class="guarantee-item">
+        <span class="guarantee-icon">&#9854;&#65039;</span>
+        <span data-it="Accesso a vita, zero abbonamenti" data-en="Lifetime access, no fees">Accesso a vita, zero abbonamenti</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO GET STARTED -->
+<section class="section-pad section-howto" id="howto">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-it="&#128640; SEMPLICE E IMMEDIATO" data-en="&#128640; QUICK &amp; EASY">&#128640; SEMPLICE E IMMEDIATO</span>
+      <h2 data-it="Come Iniziare in 3 Semplici Passaggi" data-en="How to Get Started in 3 Simple Steps">Come Iniziare in 3 Semplici Passaggi</h2>
+    </div>
+
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h4 data-it="Clicca su Scarica ora" data-en="Click Download now">Clicca su Scarica ora</h4>
-        <p data-it="Verrai indirizzato alla pagina sicura di pagamento con opzione PayPal, Carte o Google/Apple Pay." data-en="You will be directed to the secure payment page with PayPal, Cards, or Google/Apple Pay options.">Verrai indirizzato alla pagina sicura di pagamento con opzione PayPal, Carte o Google/Apple Pay.</p>
+        <h4 data-it="Completa l'Acquisto (15&euro;)" data-en="Complete Purchase (15&euro;)">Completa l'Acquisto (15&euro;)</h4>
+        <p data-it="Clicca sul pulsante sicuro e paga in pochi secondi con PayPal, Carta o Google Pay." data-en="Click checkout and pay smoothly via PayPal, Card, or Google Pay.">Clicca sul pulsante sicuro e paga in pochi secondi con PayPal, Carta o Google Pay.</p>
       </div>
-      <div class="step-arrow">→</div>
+
+      <div class="step-arrow">&#10142;</div>
+
       <div class="step-card">
         <div class="step-num">2</div>
-        <h4 data-it="Paga €15 in sicurezza" data-en="Pay €15 securely">Paga €15 in sicurezza</h4>
-        <p data-it="Nessun abbonamento futuro: completi la transazione di 15€ protetta e crittografata." data-en="No recurring subscription: complete the one-time €15 encrypted transaction.">Nessun abbonamento futuro: completi la transazione di 15€ protetta e crittografata.</p>
+        <h4 data-it="Scarica l'APK e i Manuali" data-en="Download APK &amp; Manuals">Scarica l'APK e i Manuali</h4>
+        <p data-it="Verrai indirizzato alla pagina di download per scaricare l'APK (v1.0) e i manuali utente PDF." data-en="You are redirected to download the APK (v1.0) and comprehensive PDF guides.">Verrai indirizzato alla pagina di download per scaricare l'APK (v1.0) e i manuali utente PDF.</p>
       </div>
-      <div class="step-arrow">→</div>
+
+      <div class="step-arrow">&#10142;</div>
+
       <div class="step-card">
         <div class="step-num">3</div>
-        <h4 data-it="Scarica APK &amp; Manuali" data-en="Download APK &amp; Guides">Scarica APK &amp; Manuali</h4>
-        <p data-it="Scarica con un clic l'APK Android (Manager-v1.0.apk) e i manuali in lingua Italiana o Inglese." data-en="Instantly download the Android APK and the user manuals in Italian or English.">Scarica con un clic l'APK Android (Manager-v1.0.apk) e i manuali in lingua Italiana o Inglese.</p>
+        <h4 data-it="Installa e Domina" data-en="Install and Dominate">Installa e Domina</h4>
+        <p data-it="Apri il file sul tuo dispositivo Android, installa in 1 clic e inizia la tua Carriera Allenatore definitiva!" data-en="Open the file on Android, install in 1 tap, and build your manager dynasty!">Apri il file sul tuo dispositivo Android, installa in 1 clic e inizia la tua Carriera Allenatore definitiva!</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     FAQ
-══════════════════════════════════════ -->
-<section class="faq section-pad" id="faq">
+<!-- FAQ -->
+<section class="section-pad section-faq" id="faq">
   <div class="container">
     <div class="section-header">
-      <h2 data-it="Domande frequenti" data-en="Frequently Asked Questions">Domande frequenti</h2>
+      <span class="section-tag" data-it="&#10067; DOMANDE FREQUENTI" data-en="&#10067; FREQUENTLY ASKED QUESTIONS">&#10067; DOMANDE FREQUENTI</span>
+      <h2 data-it="Tutto Quello che Devi Sapere" data-en="Everything You Need to Know">Tutto Quello che Devi Sapere</h2>
     </div>
-    <div class="faq-list">
 
+    <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           <span data-it="Come funziona l'integrazione con l'Agente IA Gemini?" data-en="How does the Gemini AI Agent integration work?">Come funziona l'integrazione con l'Agente IA Gemini?</span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-arrow">&#9660;</span>
         </button>
         <div class="faq-a" data-it="L'app include una funzione di condivisione/esportazione dati pronta per essere analizzata da Google Gemini (o dal tuo assistente IA preferito). L'IA interpreta la struttura della tua squadra, il monte ingaggi, i vincoli FIGC e il vivaio, rispondendo esattamente come farebbe un Direttore Sportivo o il Presidente del club." data-en="The app includes a dedicated data export feature optimized for Google Gemini (or your preferred AI agent). The AI analyzes your squad balance, wage bills, league rules, and academy prospects, advising you exactly like a real Club President or Sporting Director.">L'app include una funzione di condivisione/esportazione dati pronta per essere analizzata da Google Gemini (o dal tuo assistente IA preferito). L'IA interpreta la struttura della tua squadra, il monte ingaggi, i vincoli FIGC e il vivaio, rispondendo esattamente come farebbe un Direttore Sportivo o il Presidente del club.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Come installo il file APK su Android?" data-en="How do I install the APK file on Android?">Come installo il file APK su Android?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a" data-it="Dopo il pagamento, scarichi direttamente il file .apk sul tuo telefono o tablet. Ti baster&agrave; aprirlo e acconsentire all'installazione (autorizzando l'installazione da fonti sconosciute nelle impostazioni). Nel download &egrave; incluso anche il manuale PDF illustrato passo per passo." data-en="After payment, download the .apk file to your device. Open it and allow 'Install from unknown sources' if prompted. A complete step-by-step PDF manual is included.">Dopo il pagamento, scarichi direttamente il file .apk sul tuo telefono o tablet. Ti baster&agrave; aprirlo e acconsentire all'installazione (autorizzando l'installazione da fonti sconosciute nelle impostazioni). Nel download &egrave; incluso anche il manuale PDF illustrato passo per passo.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
           <span data-it="Posso pagare con PayPal?" data-en="Can I pay with PayPal?">Posso pagare con PayPal?</span>
-          <span class="faq-arrow">▼</span>
+          <span class="faq-arrow">&#9660;</span>
         </button>
-        <div class="faq-a" data-it="Sì! Il nostro portale di pagamento supporta PayPal, oltre a tutte le principali carte di credito/debito (Visa, Mastercard, American Express), Apple Pay e Google Pay." data-en="Yes! Our payment checkout natively supports PayPal alongside all major credit/debit cards (Visa, Mastercard, Amex), Apple Pay, and Google Pay.">Sì! Il nostro portale di pagamento supporta PayPal, oltre a tutte le principali carte di credito/debito (Visa, Mastercard, American Express), Apple Pay e Google Pay.</div>
+        <div class="faq-a" data-it="S&igrave;! La cassa di pagamento supporta PayPal, oltre a tutte le principali carte di credito/debito (Visa, Mastercard, American Express), Apple Pay e Google Pay." data-en="Yes! Our payment checkout natively supports PayPal alongside all major credit/debit cards (Visa, Mastercard, Amex), Apple Pay, and Google Pay.">S&igrave;! La cassa di pagamento supporta PayPal, oltre a tutte le principali carte di credito/debito (Visa, Mastercard, American Express), Apple Pay e Google Pay.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-it="Le regole FIGC funzionano anche per altri campionati?" data-en="Do the rules work for any league?">Le regole FIGC funzionano anche per altri campionati?</span>
-          <span class="faq-arrow">▼</span>
+          <span data-it="Ci sono abbonamenti o costi futuri nascosti?" data-en="Are there any subscriptions or hidden fees?">Ci sono abbonamenti o costi futuri nascosti?</span>
+          <span class="faq-arrow">&#9660;</span>
         </button>
-        <div class="faq-a" data-it="Certamente! I parametri, le formule, le liste dei paesi comunitari e gli indicatori sono completamente personalizzabili dall'app. Puoi gestire campionati italiani, Premier League, Liga spagnola o qualsiasi torneo del mondo con le tue regole personalizzate." data-en="Absolutely! All parameters, formulas, EU nation lists, and financial ratios are fully editable in the app. You can manage Italian leagues, English Premier League, La Liga, or any world league with customized rules.">Certamente! I parametri, le formule, le liste dei paesi comunitari e gli indicatori sono completamente personalizzabili dall'app. Puoi gestire campionati italiani, Premier League, Liga spagnola o qualsiasi torneo del mondo con le tue regole personalizzate.</div>
+        <div class="faq-a" data-it="Assolutamente no. Il pagamento di 15&euro; &egrave; unico e una tantum. L'app e i manuali sono tuoi a vita senza costi ricorrenti." data-en="No recurring fees at all. The 15&euro; price is a one-time lifetime payment.">Assolutamente no. Il pagamento di 15&euro; &egrave; unico e una tantum. L'app e i manuali sono tuoi a vita senza costi ricorrenti.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-it="Come si installa il file APK su Android?" data-en="How do I install the APK on Android?">Come si installa il file APK su Android?</span>
-          <span class="faq-arrow">▼</span>
+          <span data-it="L'app funziona per qualsiasi campionato e squadra?" data-en="Does the app work for any league and team?">L'app funziona per qualsiasi campionato e squadra?</span>
+          <span class="faq-arrow">&#9660;</span>
         </button>
-        <div class="faq-a" data-it="Una volta scaricato il file, toccalo per avviarlo. Se Android mostra un avviso, basta attivare 'Installa da origini sconosciute' o 'Consenti da questa sorgente' per il tuo browser. L'installazione è immediata ed è spiegata passo passo nel manuale illustrato fornito." data-en="Once downloaded, tap the APK file to launch it. If Android prompts a warning, enable 'Install from unknown sources' for your browser. Installation takes seconds and is illustrated in the PDF manual.">Una volta scaricato il file, toccalo per avviarlo. Se Android mostra un avviso, basta attivare 'Installa da origini sconosciute' o 'Consenti da questa sorgente' per il tuo browser. L'installazione è immediata ed è spiegata passo passo nel manuale illustrato fornito.</div>
+        <div class="faq-a" data-it="S&igrave;! Puoi gestire squadre di Serie A, Serie B, Premier League, LaLiga, Bundesliga o qualsiasi altro torneo presente in EA Sports FC e FIFA." data-en="Yes! You can manage any club across Serie A, Serie B, Premier League, LaLiga, Bundesliga, or custom career leagues.">S&igrave;! Puoi gestire squadre di Serie A, Serie B, Premier League, LaLiga, Bundesliga o qualsiasi altro torneo presente in EA Sports FC e FIFA.</div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span data-it="Ci sono costi ricorrenti o abbonamenti?" data-en="Are there monthly costs or subscriptions?">Ci sono costi ricorrenti o abbonamenti?</span>
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-a" data-it="No! Paghi 15€ una sola volta e ottieni l'app a vita, inclusi i manuali in lingua Italiana e Inglese." data-en="No! You pay €15 once and enjoy lifetime access, including both Italian and English user manuals.">No! Paghi 15€ una sola volta e ottieni l'app a vita, inclusi i manuali in lingua Italiana e Inglese.</div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="logo.jpg?v=2" class="footer-logo-img" alt="Logo" />
+      <a href="#" class="footer-logo">
+        <img src="logo.jpg?v=2" alt="Career Manager Hub" class="footer-logo-img" />
         <span>Career Manager Hub</span>
+      </a>
+      <p class="footer-desc" data-it="L'app companion definitiva per gli appassionati della modalit&agrave; Carriera Allenatore su EA Sports FC &amp; FIFA. Gestisci la rosa, domina il mercato e rispetta le regole federali." data-en="The premier companion app for EA Sports FC &amp; FIFA Manager Career mode fans. Manage your squad, master the market and abide by official league rules.">L'app companion definitiva per gli appassionati della modalit&agrave; Carriera Allenatore su EA Sports FC &amp; FIFA. Gestisci la rosa, domina il mercato e rispetta le regole federali.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-it="Navigazione" data-en="Navigation">Navigazione</h4>
+      <div class="footer-links">
+        <a href="#features" data-it="Funzioni" data-en="Features">Funzioni</a>
+        <a href="#ai-advisor" data-it="Agente IA Gemini" data-en="Gemini AI Agent">Agente IA Gemini</a>
+        <a href="#screenshots" data-it="Schermate Reali" data-en="App Screenshots">Schermate Reali</a>
+        <a href="#pricing" data-it="Prezzo Licenza" data-en="License Pricing">Prezzo Licenza</a>
+        <a href="#faq" data-it="Domande Frequenti" data-en="FAQ">Domande Frequenti</a>
       </div>
-      <p data-it="La tua Carriera, le tue regole. L'app Android definitiva per gestire qualsiasi campionato su EA Sports FC &amp; FIFA con calcoli FIGC e Agente IA Gemini." data-en="Your Career, your rules. The ultimate Android companion for any league on EA Sports FC &amp; FIFA with automated rules and Gemini AI Agent.">La tua Carriera, le tue regole. L'app Android definitiva per gestire qualsiasi campionato su EA Sports FC &amp; FIFA con calcoli FIGC e Agente IA Gemini.</p>
-      <div class="footer-disclaimer" data-it="Disclaimer: Career Manager Hub è un'applicazione indipendente e non è affiliata, sponsorizzata né approvata da Electronic Arts Inc. o FIFA. EA Sports FC e FIFA sono marchi registrati dei rispettivi proprietari." data-en="Disclaimer: Career Manager Hub is an independent project and is not affiliated with, endorsed by, or sponsored by Electronic Arts Inc. or FIFA. EA Sports FC and FIFA are registered trademarks of their respective owners.">Disclaimer: Career Manager Hub è un'applicazione indipendente e non è affiliata, sponsorizzata né approvata da Electronic Arts Inc. o FIFA. EA Sports FC e FIFA sono marchi registrati dei rispettivi proprietari.</div>
     </div>
-    <div class="footer-links">
-      <h5 data-it="Sezioni" data-en="Navigation">Sezioni</h5>
-      <a href="#features" data-it="Funzionalità" data-en="Features">Funzionalità</a>
-      <a href="#ai-advisor" data-it="Agente IA Gemini" data-en="Gemini AI Agent">Agente IA Gemini</a>
-      <a href="#screenshots" data-it="Schermate Reali" data-en="Real App Screens">Schermate Reali</a>
-      <a href="#pricing" data-it="Prezzo (€15)" data-en="Pricing (€15)">Prezzo (€15)</a>
-      <a href="#faq" data-it="FAQ" data-en="FAQ">FAQ</a>
-    </div>
-    <div class="footer-links">
-      <h5 data-it="Download &amp; Pagamento" data-en="Downloads &amp; Checkout">Download &amp; Pagamento</h5>
-      <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download data-it="📄 Manuale Utente (ITA PDF)" data-en="📄 User Manual (ITA PDF)">📄 Manuale Utente (ITA PDF)</a>
-      <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download data-it="📄 User Manual (EN PDF)" data-en="📄 User Manual (EN PDF)">📄 User Manual (EN PDF)</a>
-      <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" data-it="🅿️ 💳 Acquista Licenza (€15)" data-en="🅿️ 💳 Buy License (€15)">🅿️ 💳 Acquista Licenza (€15)</a>
+
+    <div class="footer-col">
+      <h4 data-it="Download &amp; Manuali" data-en="Downloads &amp; Guides">Download &amp; Manuali</h4>
+      <div class="footer-links">
+        <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manager-v1.0.apk.apk" download data-it="&#128229; Scarica APK (v1.0)" data-en="&#128229; Download APK (v1.0)">&#128229; Scarica APK (v1.0)</a>
+        <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download data-it="&#128214; Manuale Utente (ITA PDF)" data-en="&#128214; User Manual (ITA PDF)">&#128214; Manuale Utente (ITA PDF)</a>
+        <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download data-it="&#128214; User Manual (EN PDF)" data-en="&#128214; User Manual (EN PDF)">&#128214; User Manual (EN PDF)</a>
+        <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" data-it="&#9889; Acquista Licenza (15&euro;)" data-en="&#9889; Buy License (15&euro;)">&#9889; Acquista Licenza (15&euro;)</a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p data-it="© 2026 Career Manager Hub. Tutti i diritti riservati. Pagamenti gestiti tramite Stripe &amp; PayPal." data-en="© 2026 Career Manager Hub. All rights reserved. Payments secured by Stripe &amp; PayPal.">© 2026 Career Manager Hub. Tutti i diritti riservati. Pagamenti gestiti tramite Stripe &amp; PayPal.</p>
+    <p data-it="&copy; 2026 Career Manager Hub. Tutti i diritti riservati. Pagamenti protetti da Stripe &amp; PayPal." data-en="&copy; 2026 Career Manager Hub. All rights reserved. Payments secured by Stripe &amp; PayPal.">&copy; 2026 Career Manager Hub. Tutti i diritti riservati. Pagamenti protetti da Stripe &amp; PayPal.</p>
   </div>
 </footer>
 
 <script>
-/* ═══════════════════════════════
-   CAREER MANAGER HUB – MAIN JS
-═══════════════════════════════ */
+/* CAREER MANAGER HUB - INTERACTIVE JS */
 
 let currentLang = 'it';
 
@@ -1536,7 +1552,7 @@ function toggleLang() {
   currentLang = currentLang === 'it' ? 'en' : 'it';
   applyLang();
   document.getElementById('lang-label').textContent =
-    currentLang === 'it' ? '🇬🇧 EN' : '🇮🇹 IT';
+    currentLang === 'it' ? 'EN / IT' : 'IT / EN';
   localStorage.setItem('lang', currentLang);
 }
 
@@ -1563,18 +1579,20 @@ function applyLang() {
 
   document.documentElement.lang = lang;
   document.title = lang === 'it'
-    ? 'Career Manager Hub – La Tua Carriera, Le Tue Regole'
-    : 'Career Manager Hub – Your Career, Your Rules';
+    ? 'Career Manager Hub - La Tua Carriera, Le Tue Regole'
+    : 'Career Manager Hub - Your Career, Your Rules';
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.content = lang === 'it'
-      ? 'Career Manager Hub: l\'app Android definitiva per la Carriera EA FC & FIFA con normative FIGC automatiche e integrazione Agente IA (Gemini).'
-      : 'Career Manager Hub: the ultimate Android companion for EA FC & FIFA Career Mode with automated League rules and Gemini AI Agent.';
+      ? 'Career Manager Hub: l\'app Android definitiva per la Carriera EA Sports FC & FIFA con normative FIGC automatiche e integrazione Agente IA (Gemini).'
+      : 'Career Manager Hub: the ultimate Android companion for EA Sports FC & FIFA Career Mode with automated League rules and Gemini AI Agent.';
   }
 }
 
 function toggleMenu() {
+  const hamburger = document.querySelector('.hamburger');
   const menu = document.getElementById('mobile-menu');
+  hamburger.classList.toggle('open');
   menu.classList.toggle('open');
 }
 
@@ -1596,7 +1614,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = 80;
+      const offset = 76;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
@@ -1606,7 +1624,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 20) {
-    navbar.style.boxShadow = '0 4px 24px rgba(11,23,42,0.12)';
+    navbar.style.boxShadow = '0 4px 20px rgba(11,23,42,0.10)';
   } else {
     navbar.style.boxShadow = 'none';
   }
@@ -1618,10 +1636,10 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.10 });
 
 document.querySelectorAll(
-  '.feature-card, .review-card, .step-card, .app-screen-card, .faq-item, .stat-item, .ai-spotlight-box'
+  '.feature-card, .review-card, .step-card, .app-screen-card, .faq-item, .stat-item'
 ).forEach(el => {
   el.classList.add('fade-in');
   observer.observe(el);
@@ -1632,7 +1650,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (saved && saved !== 'it') {
     currentLang = saved;
     applyLang();
-    document.getElementById('lang-label').textContent = '🇮🇹 IT';
+    document.getElementById('lang-label').textContent = 'IT / EN';
   }
 });
 </script>

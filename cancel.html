@@ -1,136 +1,166 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pagamento Annullato – Career Manager Hub</title>
-  <meta name="robots" content="noindex" />
+  <title>Pagamento Annullato - Career Manager Hub</title>
   <link rel="icon" type="image/jpeg" href="logo.jpg?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
-/* ══════════════════════════════════════════
-   CANCEL PAGE STYLES
-   ══════════════════════════════════════════ */
 :root {
   --navy: #0b172a;
   --blue: #1e6bb8;
   --blue-light: #2b8cf5;
+  --light: #f0f6fc;
+  --bg: #ffffff;
   --text: #132238;
   --muted: #576b85;
   --border: #d4e0ee;
+  --radius: 16px;
+  --shadow: 0 6px 28px rgba(11,23,42,0.08);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
-  background: linear-gradient(135deg, #0b172a 0%, #152544 100%);
+  background: var(--light);
+  line-height: 1.6;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+.logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+.main {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 16px;
+  padding: 40px 16px;
 }
-.cancel-box {
+.cancel-card {
   background: white;
-  border-radius: 26px;
-  padding: 48px 40px;
-  max-width: 520px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px 32px;
+  max-width: 540px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 35px 90px rgba(0,0,0,0.38);
+  box-shadow: var(--shadow);
 }
-.page-top-logo {
-  width: 78px;
-  height: 78px;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(11,23,42,0.18);
+.cancel-icon {
+  font-size: 3.4rem;
   margin-bottom: 16px;
-  border: 2px solid #eef3f8;
+  line-height: 1;
 }
-.cancel-icon { font-size: 3.8rem; margin-bottom: 16px; }
-.cancel-box h1 {
-  font-size: 1.85rem;
-  font-weight: 900;
+h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
   color: var(--navy);
   margin-bottom: 12px;
 }
-.cancel-box > p {
+p {
   color: var(--muted);
-  margin-bottom: 30px;
-  line-height: 1.65;
   font-size: 0.98rem;
-}
-.cancel-cta-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  margin-bottom: 24px;
+  line-height: 1.55;
 }
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   border-radius: 50px;
-  font-family: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.22s ease;
-  width: 100%;
-  max-width: 340px;
   padding: 14px 28px;
+  font-weight: 700;
   font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--blue-light), var(--blue));
-  color: white;
-  border: none;
+  color: white !important;
   box-shadow: 0 4px 16px rgba(30,107,184,0.35);
 }
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(30,107,184,0.45);
-}
+.btn-primary:hover { transform: translateY(-2px); }
 .btn-outline {
   background: transparent;
-  color: var(--navy);
+  color: var(--muted);
   border: 1px solid var(--border);
+  margin-top: 12px;
 }
-.btn-outline:hover {
-  background: #f0f6fc;
-  border-color: var(--blue);
-  color: var(--blue);
+.btn-outline:hover { background: var(--light); color: var(--navy); }
+.cancel-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
-.cancel-note {
-  margin-top: 24px;
-  font-size: 0.85rem;
-  color: #8c9eb5;
+.cancel-cta-group .btn { width: 100%; max-width: 380px; }
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
   </style>
 </head>
 <body>
-<div class="cancel-box">
-  <div><img src="logo.jpg?v=2" alt="Career Manager Hub" class="page-top-logo" /></div>
-  <div class="cancel-icon">↩️</div>
-  <h1 data-it="Pagamento annullato" data-en="Payment cancelled">Pagamento annullato</h1>
-  <p data-it="Il pagamento non è stato completato e nessun importo è stato prelevato. Puoi riprovare in qualsiasi momento pagando con PayPal, Carta o Google/Apple Pay per sbloccare Career Manager Hub." data-en="The payment was cancelled and no charge was made. You can try again at any time using PayPal, Cards, or Google/Apple Pay to unlock Career Manager Hub.">Il pagamento non è stato completato e nessun importo è stato prelevato. Puoi riprovare in qualsiasi momento pagando con PayPal, Carta o Google/Apple Pay per sbloccare Career Manager Hub.</p>
-  <div class="cancel-cta-group" style="display:flex; justify-content:center;"><a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-primary" data-it="ðŸ’³ Riprova il Pagamento (â‚¬15)" data-en="ðŸ’³ Try Payment Again (â‚¬15)">ðŸ’³ Riprova il Pagamento (â‚¬15)</a></div>
-  <p class="cancel-note" data-it="Hai dubbi o domande? Consulta le FAQ sul nostro sito." data-en="Questions? Check out the FAQ section on our website.">Hai dubbi o domande? Consulta le FAQ sul nostro sito.</p>
-</div>
 
-<script>
-const savedLang = localStorage.getItem('lang') || 'it';
-if (savedLang === 'en') {
-  document.querySelectorAll('[data-en]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-en');
-  });
-  document.documentElement.lang = 'en';
-  document.title = 'Payment cancelled – Career Manager Hub';
-}
-</script>
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg?v=2" alt="Career Manager Hub Logo" />
+      <span>Career Manager Hub</span>
+    </a>
+  </div>
+</header>
+
+<main class="main">
+  <div class="cancel-card">
+    <div class="cancel-icon">&#128721;</div>
+    <h1 data-it="Pagamento Non Completato" data-en="Payment Not Completed">Pagamento Non Completato</h1>
+    <p data-it="La transazione &egrave; stata annullata e non &egrave; stato effettuato alcun addebito. Puoi riprovare in qualsiasi momento pagando in sicurezza con PayPal, Carta di Credito o Google Pay." data-en="The checkout was cancelled and no charge was made. You can try again anytime using PayPal, Cards, or Google Pay.">La transazione &egrave; stata annullata e non &egrave; stato effettuato alcun addebito. Puoi riprovare in qualsiasi momento pagando in sicurezza con PayPal, Carta di Credito o Google Pay.</p>
+
+    <div class="cancel-cta-group">
+      <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" class="btn btn-primary" data-it="&#9889; Riprova l'Acquisto (15&euro;)" data-en="&#9889; Try Purchase Again (15&euro;)">&#9889; Riprova l'Acquisto (15&euro;)</a>
+      <a href="index.html" class="btn btn-outline" data-it="Torna alla Home" data-en="Return to Home">Torna alla Home</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  &copy; 2026 Career Manager Hub.
+</footer>
+
 </body>
 </html>

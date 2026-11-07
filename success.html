@@ -1,111 +1,139 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grazie! – Download Career Manager Hub</title>
-  <meta name="robots" content="noindex" />
+  <title>Grazie per l'acquisto! - Career Manager Hub</title>
   <link rel="icon" type="image/jpeg" href="logo.jpg?v=2" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet" />
   <style>
-/* ══════════════════════════════════════════
-   SUCCESS PAGE STYLES
-   ══════════════════════════════════════════ */
 :root {
   --navy: #0b172a;
   --blue: #1e6bb8;
   --blue-light: #2b8cf5;
-  --gold: #f5a623;
   --green: #10b981;
   --light: #f0f6fc;
+  --bg: #ffffff;
   --text: #132238;
   --muted: #576b85;
   --border: #d4e0ee;
+  --radius: 16px;
+  --shadow: 0 6px 28px rgba(11,23,42,0.08);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
-  background: linear-gradient(135deg, #0b172a 0%, #152544 100%);
+  background: var(--light);
+  line-height: 1.6;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+}
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+.logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+.main {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px 16px;
+  padding: 40px 16px;
 }
-.success-box {
+.success-card {
   background: white;
-  border-radius: 26px;
-  padding: 48px 40px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px 32px;
   max-width: 600px;
   width: 100%;
-  text-align: center;
-  box-shadow: 0 35px 90px rgba(0,0,0,0.38);
-}
-.page-top-logo {
-  width: 78px;
-  height: 78px;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(11,23,42,0.18);
-  margin-bottom: 16px;
-  border: 2px solid #eef3f8;
+  box-shadow: var(--shadow);
 }
 .success-icon {
-  font-size: 3.8rem;
-  margin-bottom: 14px;
-  animation: bounce 0.6s ease;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-.success-box h1 {
-  font-size: 1.9rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #eafaf1;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
   font-weight: 900;
+  margin: 0 auto 20px;
+}
+h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
   color: var(--navy);
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 8px;
 }
-.success-box > p {
+.sub {
   color: var(--muted);
+  text-align: center;
   font-size: 1rem;
-  margin-bottom: 26px;
-  line-height: 1.6;
+  margin-bottom: 32px;
 }
-.download-section {
-  background: #f0f6fc;
-  border: 1px solid #d8e5f2;
-  border-radius: 18px;
-  padding: 24px;
+.dl-section {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
   margin-bottom: 20px;
-  text-align: left;
 }
-.download-section h3 {
+.dl-section h3 {
+  font-size: 1.05rem;
   color: var(--navy);
   margin-bottom: 14px;
-  font-size: 1.05rem;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .download-btn {
   display: flex;
   align-items: center;
   gap: 14px;
   background: white;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 12px;
   padding: 14px 18px;
   text-decoration: none;
-  color: var(--navy);
-  font-weight: 600;
+  color: var(--text);
+  transition: 0.2s;
+  cursor: pointer;
   margin-bottom: 10px;
-  transition: all 0.2s ease;
 }
 .download-btn:hover {
   border-color: var(--blue);
-  box-shadow: 0 6px 20px rgba(30,107,184,0.18);
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(30,107,184,0.15);
 }
 .download-btn .dl-icon { font-size: 1.8rem; flex-shrink: 0; }
 .download-btn .dl-info { flex: 1; }
@@ -114,131 +142,112 @@ body {
 .download-btn .dl-arrow { color: var(--blue); font-size: 1.3rem; font-weight: 900; }
 .lang-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
 .lang-tab {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  padding: 6px 14px;
   background: white;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
-  font-family: inherit;
-  font-size: 0.88rem;
-  transition: 0.2s;
   color: var(--muted);
 }
-.lang-tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+.lang-tab.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
 .manual-panel { display: none; }
 .manual-panel.active { display: block; }
-
-.ai-hint-box {
-  background: linear-gradient(135deg, #f5eaff 0%, #edf4ff 100%);
-  border: 1px solid #d8b4fe;
-  border-radius: 14px;
-  padding: 16px 18px;
-  text-align: left;
-  margin-bottom: 20px;
-}
-.ai-hint-box h4 {
-  color: #7928ca;
-  font-size: 0.92rem;
-  font-weight: 800;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.ai-hint-box p {
-  color: #4a2574;
-  font-size: 0.84rem;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.install-note {
-  background: #fff9e6;
-  border: 1px solid #f3d98c;
+.instructions {
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
   border-radius: 12px;
-  padding: 14px 16px;
-  text-align: left;
-  margin-top: 14px;
+  padding: 16px;
+  font-size: 0.88rem;
+  color: #92400e;
+  line-height: 1.5;
+  margin-top: 20px;
 }
-.install-note p {
-  color: #7a5c00;
-  font-size: 0.84rem;
-  margin: 0;
-  line-height: 1.55;
+.instructions strong { color: #78350f; }
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
-.back-link {
-  margin-top: 16px;
-  display: inline-block;
-  color: var(--blue);
-  text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 700;
-}
-.back-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-<div class="success-box">
-  <div><img src="logo.jpg?v=2" alt="Career Manager Hub" class="page-top-logo" /></div>
-  <div class="success-icon">🎉</div>
-  <h1 data-it="Pagamento confermato!" data-en="Payment confirmed!">Pagamento confermato!</h1>
-  <p data-it="Benvenuto su <strong>Career Manager Hub</strong>! Scarica subito l'app Android e i manuali utente per iniziare a dominare la tua Carriera." data-en="Welcome to <strong>Career Manager Hub</strong>! Download the Android APK and guides below to start mastering your Career.">Benvenuto su <strong>Career Manager Hub</strong>! Scarica subito l'app Android e i manuali utente per iniziare a dominare la tua Carriera.</p>
 
-  <!-- APK DOWNLOAD -->
-  <div class="download-section">
-    <h3 data-it="📱 Download App Android (.APK)" data-en="📱 Download Android App (.APK)">📱 Download App Android (.APK)</h3>
-    <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manager-v1.0.apk.apk" download>
-      <span class="dl-icon">📦</span>
-      <span class="dl-info">
-        <span class="dl-title">CareerManagerHub-v1.0.apk</span>
-        <span class="dl-sub" data-it="Compatibile con Android 8.0+ • Versione Completa" data-en="Compatible with Android 8.0+ • Full Version">Compatibile con Android 8.0+ • Versione Completa</span>
-      </span>
-      <span class="dl-arrow">↓</span>
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg?v=2" alt="Career Manager Hub Logo" />
+      <span>Career Manager Hub</span>
     </a>
-    <div class="install-note">
-      <p data-it="⚠️ <strong>Installazione Android:</strong> Apri il file scaricato. Se richiesto, abilita 'Consenti da questa sorgente' (o 'Installa app da origini sconosciute'). L'installazione richiede pochi secondi." data-en="⚠️ <strong>Android Installation:</strong> Open the downloaded file. If prompted, toggle 'Allow from this source'. Installation finishes in seconds.">⚠️ <strong>Installazione Android:</strong> Apri il file scaricato. Se richiesto, abilita 'Consenti da questa sorgente' (o 'Installa app da origini sconosciute'). L'installazione richiede pochi secondi.</p>
-    </div>
   </div>
+</header>
 
-  <!-- AI AGENT TIP BOX -->
-  <div class="ai-hint-box">
-    <h4 data-it="🤖 Agente IA Gemini (Presidente / DS)" data-en="🤖 Gemini AI Agent (President / DS)">🤖 Agente IA Gemini (Presidente / DS)</h4>
-    <p data-it="Nel capitolo 15 del manuale allegato trovi le istruzioni per condividere i tuoi dati con l'Agente IA Gemini e ricevere consigli su mercato, monte ingaggi e vivaio come se parlassi con il tuo Direttore Sportivo!" data-en="In chapter 15 of the included manual you will find instructions to share your career data with the Gemini AI Agent to receive transfer advice as if consulting your Sporting Director!">Nel capitolo 15 del manuale allegato trovi le istruzioni per condividere i tuoi dati con l'Agente IA Gemini e ricevere consigli su mercato, monte ingaggi e vivaio come se parlassi con il tuo Direttore Sportivo!</p>
-  </div>
+<main class="main">
+  <div class="success-card">
+    <div class="success-icon">&#10003;</div>
+    <h1 data-it="Pagamento Confermato!" data-en="Payment Confirmed!">Pagamento Confermato!</h1>
+    <p class="sub" data-it="Grazie per il tuo acquisto. La tua licenza &egrave; attiva. Puoi scaricare l'app e i manuali qui sotto:" data-en="Thank you for your purchase. Your license is active. Download your app and guides below:">Grazie per il tuo acquisto. La tua licenza &egrave; attiva. Puoi scaricare l'app e i manuali qui sotto:</p>
 
-  <!-- MANUALS DOWNLOAD -->
-  <div class="download-section">
-    <h3 data-it="📄 Manuali Utente in PDF (16 Capitoli)" data-en="📄 User Manuals in PDF (16 Chapters)">📄 Manuali Utente in PDF (16 Capitoli)</h3>
-    <div class="lang-tabs">
-      <button class="lang-tab active" onclick="showManual('it', this)">🇮🇹 Italiano</button>
-      <button class="lang-tab" onclick="showManual('en', this)">🇬🇧 English</button>
-    </div>
-    <div class="manual-panel active" id="manual-it">
-      <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download>
-        <span class="dl-icon">📄</span>
-        <span class="dl-info">
-          <span class="dl-title">Manuale_utente_Manager_ITA.pdf</span>
-          <span class="dl-sub">Guida completa in Italiano con spiegazione formule FIGC</span>
-        </span>
-        <span class="dl-arrow">↓</span>
+    <!-- DOWNLOAD APK -->
+    <div class="dl-section">
+      <h3 data-it="&#128229; Download App Android (.APK)" data-en="&#128229; Download Android App (.APK)">&#128229; Download App Android (.APK)</h3>
+      <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manager-v1.0.apk.apk" download>
+        <span class="dl-icon">&#128241;</span>
+        <div class="dl-info">
+          <span class="dl-title">Manager-v1.0.apk.apk</span>
+          <span class="dl-sub" data-it="Versione 1.0 • Android 8.0+ • Dimensione: ~35 MB" data-en="Version 1.0 • Android 8.0+ • Size: ~35 MB">Versione 1.0 • Android 8.0+ • Dimensione: ~35 MB</span>
+        </div>
+        <span class="dl-arrow">&#10142;</span>
       </a>
     </div>
-    <div class="manual-panel" id="manual-en">
-      <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download>
-        <span class="dl-icon">📄</span>
-        <span class="dl-info">
-          <span class="dl-title">User_Manual_Manager_EN.pdf</span>
-          <span class="dl-sub">Complete user guide in English with formula breakdown</span>
-        </span>
-        <span class="dl-arrow">↓</span>
-      </a>
+
+    <!-- DOWNLOAD MANUALI -->
+    <div class="dl-section">
+      <h3 data-it="&#128214; Manuali Utente Illustrati (PDF)" data-en="&#128214; Illustrated User Manuals (PDF)">&#128214; Manuali Utente Illustrati (PDF)</h3>
+      <div class="lang-tabs">
+        <button class="lang-tab active" onclick="showManual('it', this)">Italiano (ITA)</button>
+        <button class="lang-tab" onclick="showManual('en', this)">English (EN)</button>
+      </div>
+
+      <div class="manual-panel active" id="manual-it">
+        <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/Manuale_utente_Manager_ITA.pdf" download>
+          <span class="dl-icon">&#128214;</span>
+          <div class="dl-info">
+            <span class="dl-title">Manuale_utente_Manager_ITA.pdf</span>
+            <span class="dl-sub">Guida passo passo in Italiano • Formato PDF</span>
+          </div>
+          <span class="dl-arrow">&#10142;</span>
+        </a>
+      </div>
+
+      <div class="manual-panel" id="manual-en">
+        <a class="download-btn" href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download>
+          <span class="dl-icon">&#128214;</span>
+          <div class="dl-info">
+            <span class="dl-title">User_Manual_Manager_EN.pdf</span>
+            <span class="dl-sub">Comprehensive step-by-step Guide in English • PDF</span>
+          </div>
+          <span class="dl-arrow">&#10142;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <strong data-it="Istruzioni rapide d'installazione:" data-en="Quick install instructions:">Istruzioni rapide d'installazione:</strong><br />
+      <span data-it="1. Tocca il pulsante di download per scaricare l'APK sul tuo dispositivo Android.<br />2. Apri il file scaricato. Se richiesto, abilita 'Consenti da questa fonte' nelle impostazioni.<br />3. Conferma l'installazione e apri Career Manager Hub!" data-en="1. Tap download to save the APK file to your Android device.<br />2. Open the file. Enable 'Allow from this source' if prompted.<br />3. Complete the installation and enjoy Career Manager Hub!">1. Tocca il pulsante di download per scaricare l'APK sul tuo dispositivo Android.<br />2. Apri il file scaricato. Se richiesto, abilita 'Consenti da questa fonte' nelle impostazioni.<br />3. Conferma l'installazione e apri Career Manager Hub!</span>
     </div>
   </div>
+</main>
 
-  <a href="index.html" class="back-link" data-it="← Torna alla home" data-en="← Back to home">← Torna alla home</a>
-</div>
+<footer class="footer">
+  &copy; 2026 Career Manager Hub.
+</footer>
 
 <script>
 function showManual(lang, btn) {
@@ -246,19 +255,6 @@ function showManual(lang, btn) {
   document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('manual-' + lang).classList.add('active');
   btn.classList.add('active');
-}
-
-const savedLang = localStorage.getItem('lang') || 'it';
-if (savedLang === 'en') {
-  document.querySelectorAll('[data-en]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-en');
-  });
-  document.documentElement.lang = 'en';
-  document.title = 'Thank you! – Download Career Manager Hub';
-  const tabs = document.querySelectorAll('.lang-tab');
-  if (tabs.length > 1) {
-    showManual('en', tabs[1]);
-  }
 }
 </script>
 </body>
