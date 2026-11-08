@@ -1005,7 +1005,7 @@ p { color: var(--muted); line-height: 1.65; }
   /* NAVBAR MOBILE */
   .nav-inner { height: 60px; padding: 0 12px; gap: 6px; }
   .nav-logo { font-size: 1rem; gap: 6px; min-width: 0; flex: 1; }
-  .nav-logo span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.92rem; }
+  .nav-logo span { white-space: nowrap; font-size: 0.92rem; font-weight: 800; letter-spacing: -0.01em; }
   .nav-logo-badge { display: none !important; }
   .nav-logo-img { width: 30px; height: 30px; }
   .lang-toggle { padding: 4px 8px; font-size: 0.74rem; }
@@ -1166,7 +1166,7 @@ p { color: var(--muted); line-height: 1.65; }
 
 @media (max-width: 480px) {
   .nav-inner { height: 56px; padding: 0 10px; }
-  .nav-logo span { max-width: 130px; font-size: 0.88rem; }
+  .nav-logo span { font-size: 0.88rem; font-weight: 800; letter-spacing: -0.01em; }
   .nav-logo-img { width: 28px; height: 28px; }
   .hero { padding: 70px 0 28px; }
   h1 { font-size: 1.6rem !important; }
@@ -1174,6 +1174,40 @@ p { color: var(--muted); line-height: 1.65; }
   .pricing-price { font-size: 2.7rem !important; }
   .pricing-card { padding: 24px 12px !important; }
   .btn-xl { font-size: 0.95rem !important; padding: 14px 12px !important; }
+}
+/* LEGAL DISCLAIMER BOX */
+.legal-disclaimer-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 36px 0 20px;
+  font-size: 0.80rem;
+  line-height: 1.55;
+  color: #94a3b8;
+  text-align: left;
+}
+.disclaimer-title {
+  color: #f1f5f9;
+  font-weight: 800;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legal-disclaimer-box p {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.cover-disclaimer {
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--muted);
+  margin-top: 8px;
+  font-style: italic;
 }
 </style>
 </head>
@@ -1226,10 +1260,11 @@ p { color: var(--muted); line-height: 1.65; }
     <div class="hero-cover-wrapper">
       <img src="cover.jpg?v=3" alt="Carriera Allenatore - Career Manager Hub" class="hero-cover-img" />
     </div>
+    <div class="cover-disclaimer" data-it="* Applicazione companion gestionale indipendente non affiliata o sponsorizzata da Electronic Arts Inc." data-en="* Independent companion tool not affiliated with or endorsed by Electronic Arts Inc.">* Applicazione companion gestionale indipendente non affiliata o sponsorizzata da Electronic Arts Inc.</div>
 
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="hero-badge" data-it="&#9917; Per la Carriera EA Sports FC &amp; FIFA" data-en="&#9917; For EA Sports FC &amp; FIFA Career Mode">&#9917; Per la Carriera EA Sports FC &amp; FIFA</div>
+        <div class="hero-badge" data-it="&#9917; Companion App Indipendente &bull; Carriera EA Sports FC &amp; FIFA" data-en="&#9917; Independent Companion Tool &bull; EA Sports FC &amp; FIFA Career Mode">&#9917; Companion App Indipendente &bull; Carriera EA Sports FC &amp; FIFA</div>
         
         <h1 data-it="LA TUA CARRIERA,<br/><span class='highlight-text'>LE TUE REGOLE</span>" data-en="YOUR CAREER,<br/><span class='highlight-text'>YOUR RULES</span>">LA TUA CARRIERA,<br/><span class="highlight-text">LE TUE REGOLE</span></h1>
         
@@ -1620,6 +1655,13 @@ p { color: var(--muted); line-height: 1.65; }
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-it="Career Manager Hub &egrave; un'app ufficiale affiliata a EA Sports o FIFA?" data-en="Is Career Manager Hub an official app affiliated with EA Sports or FIFA?">Career Manager Hub &egrave; un'app ufficiale affiliata a EA Sports o FIFA?</span>
+          <span class="faq-arrow">&#9660;</span>
+        </button>
+        <div class="faq-a" data-it="No. Career Manager Hub &egrave; un'applicazione gestionale ('companion app') indipendente creata per la community di videogiocatori della modalit&agrave; carriera. Non &egrave; affiliata, associata, autorizzata, approvata o in alcun modo ufficialmente collegata a Electronic Arts Inc. (EA), FIFA o federazioni calcistiche. Tutti i marchi, nomi di club e competizioni citati appartengono ai rispettivi proprietari e sono usati unicamente a fini descrittivi e di compatibilit&agrave; (Nominative Fair Use). L'app funziona in modo esterno e offline, senza toccare il codice di alcun videogioco." data-en="No. Career Manager Hub is an independent third-party companion app created for career mode gamers. It is not affiliated with, endorsed by, sponsored by, or connected to Electronic Arts Inc. (EA), FIFA, or football federations. All trademarks, logos, and club names cited are property of their respective owners and used strictly for descriptive and compatibility purposes (Fair Use). The app works entirely externally and offline without modifying game code.">No. Career Manager Hub &egrave; un'applicazione gestionale ('companion app') indipendente creata per la community di videogiocatori della modalit&agrave; carriera. Non &egrave; affiliata, associata, autorizzata, approvata o in alcun modo ufficialmente collegata a Electronic Arts Inc. (EA), FIFA o federazioni calcistiche. Tutti i marchi, nomi di club e competizioni citati appartengono ai rispettivi proprietari e sono usati unicamente a fini descrittivi e di compatibilit&agrave; (Nominative Fair Use). L'app funziona in modo esterno e offline, senza toccare il codice di alcun videogioco.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
           <span data-it="Come funziona l'integrazione con l'Agente IA Gemini?" data-en="How does the Gemini AI Agent integration work?">Come funziona l'integrazione con l'Agente IA Gemini?</span>
           <span class="faq-arrow">&#9660;</span>
         </button>
@@ -1691,6 +1733,12 @@ p { color: var(--muted); line-height: 1.65; }
         <a href="https://github.com/bslucalg/manager-app/releases/download/v1.0/User_Manual_Manager_EN.pdf" download data-it="&#128214; User Manual (EN PDF)" data-en="&#128214; User Manual (EN PDF)">&#128214; User Manual (EN PDF)</a>
         <a href="https://buy.stripe.com/cNifZi5r22RW7rFfdGafS00" data-it="&#9889; Acquista Licenza (15&euro;)" data-en="&#9889; Buy License (15&euro;)">&#9889; Acquista Licenza (15&euro;)</a>
       </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="legal-disclaimer-box">
+      <div class="disclaimer-title" data-it="&#9878;&#65039; Nota Legale &amp; Marchi Registrati (Disclaimer)" data-en="&#9878;&#65039; Legal Disclaimer &amp; Trademark Notice">&#9878;&#65039; Nota Legale &amp; Marchi Registrati (Disclaimer)</div>
+      <p data-it="<strong>Dichiarazione di Non-Affiliazione e Fair Use:</strong> Career Manager Hub &egrave; un'applicazione gestionale companion indipendente sviluppata per scopi informativi, organizzativi e di intrattenimento a supporto degli appassionati di videogiochi calcistici. Questo software e questo sito web non sono affiliati, associati, autorizzati, sponsorizzati, approvati o in alcun modo ufficialmente collegati a <strong>Electronic Arts Inc. (EA), EA SPORTS, FIFA, FIGC</strong> o a qualsiasi altra lega, club o federazione calcistica ufficiale.<br/><br/>I marchi <em>EA, EA SPORTS, EA SPORTS FC, FIFA</em> cos&igrave; come tutti i nomi di squadre, stemmi, stadi, campionati e marchi registrati citati in questa pagina o all'interno dell'applicazione appartengono esclusivamente ai rispettivi legittimi proprietari. Il loro utilizzo in questo contesto avviene esclusivamente a scopo descrittivo, identificativo e informativo al fine di indicare la compatibilit&agrave; concettuale con la modalit&agrave; carriera (Nominative Fair Use). Career Manager Hub non include risorse protette da copyright proprietario, non modifica n&eacute; esegue reverse engineering del codice di alcun videogioco, non accede ai server EA e non interagisce con le API di gioco, funzionando come taccuino gestionale autonomo ed esterno." data-en="<strong>Non-Affiliation and Nominative Fair Use Statement:</strong> Career Manager Hub is an independent companion application developed solely for informational, organizational, and entertainment purposes to assist football video game enthusiasts. This application and website are not affiliated with, associated with, authorized by, endorsed by, sponsored by, or in any way officially connected to <strong>Electronic Arts Inc. (EA), EA SPORTS, FIFA, FIGC</strong>, or any official football league, federation, or club.<br/><br/>All trademarks, including <em>EA, EA SPORTS, EA SPORTS FC, FIFA</em>, alongside team names, crests, leagues, and registered trademarks referenced herein or within the application, are the sole property of their respective owners. Their mention is strictly for descriptive, nominative, and identification purposes (Fair Use). Career Manager Hub does not contain proprietary game files, does not alter or reverse-engineer game code, does not access EA servers, and functions entirely externally as an independent managerial ledger."><strong>Dichiarazione di Non-Affiliazione e Fair Use:</strong> Career Manager Hub &egrave; un'applicazione gestionale companion indipendente sviluppata per scopi informativi, organizzativi e di intrattenimento a supporto degli appassionati di videogiochi calcistici. Questo software e questo sito web non sono affiliati, associati, autorizzati, sponsorizzati, approvati o in alcun modo ufficialmente collegati a <strong>Electronic Arts Inc. (EA), EA SPORTS, FIFA, FIGC</strong> o a qualsiasi altra lega, club o federazione calcistica ufficiale.<br/><br/>I marchi <em>EA, EA SPORTS, EA SPORTS FC, FIFA</em> cos&igrave; come tutti i nomi di squadre, stemmi, stadi, campionati e marchi registrati citati in questa pagina o all'interno dell'applicazione appartengono esclusivamente ai rispettivi legittimi proprietari. Il loro utilizzo in questo contesto avviene esclusivamente a scopo descrittivo, identificativo e informativo al fine di indicare la compatibilit&agrave; concettuale con la modalit&agrave; carriera (Nominative Fair Use). Career Manager Hub non include risorse protette da copyright proprietario, non modifica n&eacute; esegue reverse engineering del codice di alcun videogioco, non accede ai server EA e non interagisce con le API di gioco, funzionando come taccuino gestionale autonomo ed esterno.</p>
     </div>
   </div>
   <div class="footer-bottom">
