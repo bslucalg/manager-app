@@ -52,12 +52,16 @@ body {
   color: var(--navy);
   font-weight: 800;
   font-size: 1.15rem;
+  flex-shrink: 0;
 }
 .logo img {
   width: 36px;
   height: 36px;
   border-radius: 9px;
   object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(11,23,42,0.14);
+  border: 1px solid rgba(212,224,238,0.8);
 }
 .lang-toggle {
   background: var(--light);
@@ -198,6 +202,8 @@ h1 {
 
 @media (max-width: 480px) {
   .header { padding: 12px 16px; }
+  .logo { font-size: 0.98rem; gap: 8px; }
+  .logo img { width: 30px; height: 30px; flex-shrink: 0; }
   .success-card { padding: 24px 16px; border-radius: 16px; }
   .dl-section { padding: 16px; }
   .download-btn { padding: 12px 14px; gap: 10px; }
