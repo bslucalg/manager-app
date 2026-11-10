@@ -59,6 +59,25 @@ body {
   border-radius: 9px;
   object-fit: cover;
 }
+.lang-toggle {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+.lang-toggle:hover {
+  border-color: var(--blue);
+  background: white;
+}
 .main {
   flex: 1;
   display: flex;
@@ -136,11 +155,11 @@ h1 {
   box-shadow: 0 4px 16px rgba(30,107,184,0.15);
 }
 .download-btn .dl-icon { font-size: 1.8rem; flex-shrink: 0; }
-.download-btn .dl-info { flex: 1; }
-.download-btn .dl-title { font-size: 0.98rem; font-weight: 800; color: var(--navy); display: block; }
-.download-btn .dl-sub { font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
-.download-btn .dl-arrow { color: var(--blue); font-size: 1.3rem; font-weight: 900; }
-.lang-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.download-btn .dl-info { flex: 1; min-width: 0; overflow: hidden; }
+.download-btn .dl-title { font-size: 0.98rem; font-weight: 800; color: var(--navy); display: block; word-break: break-all; overflow-wrap: break-word; }
+.download-btn .dl-sub { font-size: 0.8rem; color: var(--muted); font-weight: 400; margin-top: 2px; word-break: break-word; }
+.download-btn .dl-arrow { color: var(--blue); font-size: 1.3rem; font-weight: 900; flex-shrink: 0; }
+.lang-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
 .lang-tab {
   padding: 6px 14px;
   background: white;
@@ -167,6 +186,7 @@ h1 {
   color: #92400e;
   line-height: 1.5;
   margin-top: 20px;
+  word-break: break-word;
 }
 .instructions strong { color: #78350f; }
 .footer {
@@ -174,6 +194,19 @@ h1 {
   padding: 20px;
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+@media (max-width: 480px) {
+  .header { padding: 12px 16px; }
+  .success-card { padding: 24px 16px; border-radius: 16px; }
+  .dl-section { padding: 16px; }
+  .download-btn { padding: 12px 14px; gap: 10px; }
+  .dl-icon { font-size: 1.5rem; }
+  .dl-title { font-size: 0.88rem; }
+  .dl-sub { font-size: 0.75rem; }
+  h1 { font-size: 1.5rem; }
+  .sub { font-size: 0.92rem; margin-bottom: 24px; }
+  .instructions { font-size: 0.82rem; padding: 14px; }
 }
   </style>
 </head>
@@ -185,6 +218,9 @@ h1 {
       <img src="logo.jpg?v=2" alt="Career Manager Hub Logo" />
       <span>Career Manager Hub</span>
     </a>
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="Cambia lingua">
+      <span id="lang-label">EN / IT</span>
+    </button>
   </div>
 </header>
 
@@ -211,8 +247,8 @@ h1 {
     <div class="dl-section">
       <h3 data-it="&#128214; Manuali Utente Illustrati (PDF)" data-en="&#128214; Illustrated User Manuals (PDF)">&#128214; Manuali Utente Illustrati (PDF)</h3>
       <div class="lang-tabs">
-        <button class="lang-tab active" onclick="showManual('it', this)">Italiano (ITA)</button>
-        <button class="lang-tab" onclick="showManual('en', this)">English (EN)</button>
+        <button class="lang-tab active" onclick="showManual('it', this)" data-it="Italiano (ITA)" data-en="Italian (ITA)">Italiano (ITA)</button>
+        <button class="lang-tab" onclick="showManual('en', this)" data-it="Inglese (EN)" data-en="English (EN)">English (EN)</button>
       </div>
 
       <div class="manual-panel active" id="manual-it">
@@ -220,7 +256,7 @@ h1 {
           <span class="dl-icon">&#128214;</span>
           <div class="dl-info">
             <span class="dl-title">Manuale_utente_Manager_ITA.pdf</span>
-            <span class="dl-sub">Guida passo passo in Italiano • Formato PDF</span>
+            <span class="dl-sub" data-it="Guida passo passo in Italiano • Formato PDF" data-en="Step-by-step guide in Italian • PDF format">Guida passo passo in Italiano • Formato PDF</span>
           </div>
           <span class="dl-arrow">&#10142;</span>
         </a>
@@ -231,7 +267,7 @@ h1 {
           <span class="dl-icon">&#128214;</span>
           <div class="dl-info">
             <span class="dl-title">User_Manual_Manager_EN.pdf</span>
-            <span class="dl-sub">Comprehensive step-by-step Guide in English • PDF</span>
+            <span class="dl-sub" data-it="Guida passo passo completa in Inglese • Formato PDF" data-en="Comprehensive step-by-step Guide in English • PDF format">Comprehensive step-by-step Guide in English • PDF format</span>
           </div>
           <span class="dl-arrow">&#10142;</span>
         </a>
@@ -246,16 +282,54 @@ h1 {
 </main>
 
 <footer class="footer">
-  &copy; 2026 Career Manager Hub.
+  <span data-it="&copy; 2026 Career Manager Hub. Tutti i diritti riservati." data-en="&copy; 2026 Career Manager Hub. All rights reserved.">&copy; 2026 Career Manager Hub. Tutti i diritti riservati.</span>
 </footer>
 
 <script>
+let currentLang = 'it';
+
+function toggleLang() {
+  currentLang = currentLang === 'it' ? 'en' : 'it';
+  applyLang();
+  document.getElementById('lang-label').textContent =
+    currentLang === 'it' ? 'EN / IT' : 'IT / EN';
+  localStorage.setItem('lang', currentLang);
+}
+
+function applyLang() {
+  const lang = currentLang;
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = val;
+    } else {
+      el.innerHTML = val;
+    }
+  });
+  document.documentElement.lang = lang;
+  document.title = lang === 'it'
+    ? 'Grazie per l\'acquisto! - Career Manager Hub'
+    : 'Thank you for your purchase! - Career Manager Hub';
+}
+
 function showManual(lang, btn) {
   document.querySelectorAll('.manual-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('manual-' + lang).classList.add('active');
   btn.classList.add('active');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  const saved = langParam || localStorage.getItem('lang');
+  if (saved && saved === 'en') {
+    currentLang = 'en';
+    applyLang();
+    const lbl = document.getElementById('lang-label');
+    if (lbl) lbl.textContent = 'IT / EN';
+  }
+});
 </script>
 </body>
 </html>
